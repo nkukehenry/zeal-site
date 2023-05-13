@@ -1,0 +1,33 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+
+ERROR - 2021-03-31 00:05:44 --> 404 Page Not Found: Assets/admin
+ERROR - 2021-03-31 07:46:24 --> 404 Page Not Found: Wp_includes/js
+ERROR - 2021-03-31 07:46:25 --> 404 Page Not Found: Administrator/help
+ERROR - 2021-03-31 07:46:25 --> 404 Page Not Found: Administrator/language
+ERROR - 2021-03-31 07:46:26 --> 404 Page Not Found: Plugins/system
+ERROR - 2021-03-31 07:46:26 --> 404 Page Not Found: Administrator/index
+ERROR - 2021-03-31 07:46:27 --> 404 Page Not Found: Misc/ajax.js
+ERROR - 2021-03-31 07:46:28 --> 404 Page Not Found: admin/View/javascript
+ERROR - 2021-03-31 07:46:28 --> 404 Page Not Found: admin/Includes/general.js
+ERROR - 2021-03-31 07:46:28 --> 404 Page Not Found: Images/editor
+ERROR - 2021-03-31 07:46:29 --> 404 Page Not Found: Js/header_rollup_554.js
+ERROR - 2021-03-31 08:51:55 --> 404 Page Not Found: Theme/assets
+ERROR - 2021-03-31 08:51:55 --> 404 Page Not Found: Theme/assets
+ERROR - 2021-03-31 09:12:30 --> 404 Page Not Found: 403shtml/index
+ERROR - 2021-03-31 09:12:37 --> 404 Page Not Found: 403shtml/index
+ERROR - 2021-03-31 09:12:44 --> 404 Page Not Found: 403shtml/index
+ERROR - 2021-03-31 09:12:51 --> 404 Page Not Found: 403shtml/index
+ERROR - 2021-03-31 09:12:58 --> 404 Page Not Found: 403shtml/index
+ERROR - 2021-03-31 09:13:05 --> 404 Page Not Found: 403shtml/index
+ERROR - 2021-03-31 09:13:12 --> 404 Page Not Found: 403shtml/index
+ERROR - 2021-03-31 09:13:22 --> 404 Page Not Found: 403shtml/index
+ERROR - 2021-03-31 09:13:30 --> 404 Page Not Found: 403shtml/index
+ERROR - 2021-03-31 09:13:37 --> 404 Page Not Found: 403shtml/index
+ERROR - 2021-03-31 09:13:44 --> 404 Page Not Found: 403shtml/index
+ERROR - 2021-03-31 09:13:52 --> 404 Page Not Found: 403shtml/index
+ERROR - 2021-03-31 11:14:52 --> 404 Page Not Found: Old/wp_admin
+ERROR - 2021-03-31 12:51:08 --> 404 Page Not Found: Assets/backend
+ERROR - 2021-03-31 19:31:27 --> 404 Page Not Found: 403shtml/index
+ERROR - 2021-03-31 20:10:07 --> 404 Page Not Found: Vendor/studio_42
+ERROR - 2021-03-31 20:10:07 --> 404 Page Not Found: Public/sximo5
+ERROR - 2021-03-31 20:10:07 --> 404 Page Not Found: Theme/assets

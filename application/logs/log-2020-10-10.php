@@ -1,0 +1,31 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+
+ERROR - 2020-10-10 08:38:32 --> 404 Page Not Found: Oluxphp/index
+ERROR - 2020-10-10 08:38:33 --> 404 Page Not Found: Indoxploitphp/index
+ERROR - 2020-10-10 08:38:35 --> 404 Page Not Found: Indoxploitphp/index
+ERROR - 2020-10-10 08:38:37 --> 404 Page Not Found: Wsophp/index
+ERROR - 2020-10-10 08:38:39 --> 404 Page Not Found: Images/index
+ERROR - 2020-10-10 08:38:41 --> 404 Page Not Found: Uploads/index
+ERROR - 2020-10-10 08:38:44 --> 404 Page Not Found: Img/index
+ERROR - 2020-10-10 08:38:46 --> 404 Page Not Found: Upload/index
+ERROR - 2020-10-10 08:38:48 --> 404 Page Not Found: Gallery/index
+ERROR - 2020-10-10 08:38:50 --> 404 Page Not Found: Files/index
+ERROR - 2020-10-10 08:38:52 --> 404 Page Not Found: Pdf/index
+ERROR - 2020-10-10 08:38:54 --> 404 Page Not Found: Docs/index
+ERROR - 2020-10-10 08:38:58 --> 404 Page Not Found: Upphp/index
+ERROR - 2020-10-10 08:39:00 --> 404 Page Not Found: Uploadphp/index
+ERROR - 2020-10-10 08:39:02 --> 404 Page Not Found: Shellphp/index
+ERROR - 2020-10-10 12:49:14 --> 404 Page Not Found: Apple_touch_icon_120x120_precomposedpng/index
+ERROR - 2020-10-10 12:49:15 --> 404 Page Not Found: Apple_touch_icon_120x120png/index
+ERROR - 2020-10-10 12:49:15 --> 404 Page Not Found: Apple_touch_icon_precomposedpng/index
+ERROR - 2020-10-10 12:49:15 --> 404 Page Not Found: Apple_touch_iconpng/index
+ERROR - 2020-10-10 16:51:24 --> 404 Page Not Found: Humanstxt/index
+ERROR - 2020-10-10 16:51:25 --> 404 Page Not Found: Adstxt/index
+ERROR - 2020-10-10 20:07:45 --> 404 Page Not Found: Banks/online.citi.eu
+ERROR - 2020-10-10 20:09:36 --> 404 Page Not Found: Banks/index
+ERROR - 2020-10-10 20:09:36 --> 404 Page Not Found: Banks/online.citi.eu
+ERROR - 2020-10-10 20:09:43 --> 404 Page Not Found: Banks/index
+ERROR - 2020-10-10 20:14:42 --> 404 Page Not Found: Banks/online.citi.eu
+ERROR - 2020-10-10 20:14:42 --> 404 Page Not Found: Banks/index
+ERROR - 2020-10-10 20:17:22 --> 404 Page Not Found: Banks/index
+ERROR - 2020-10-10 20:17:22 --> 404 Page Not Found: Banks/online.citi.eu

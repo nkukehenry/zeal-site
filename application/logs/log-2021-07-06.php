@@ -1,0 +1,31 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+
+ERROR - 2021-07-06 05:58:52 --> 404 Page Not Found: Stylephp/index
+ERROR - 2021-07-06 05:59:16 --> 404 Page Not Found: Modulessphp/index
+ERROR - 2021-07-06 05:59:55 --> 404 Page Not Found: Wp_content/plugins
+ERROR - 2021-07-06 06:00:09 --> 404 Page Not Found: Adminphp/index
+ERROR - 2021-07-06 06:01:18 --> 404 Page Not Found: Boomphp/index
+ERROR - 2021-07-06 06:02:13 --> 404 Page Not Found: Wp_content/db_cache.php
+ERROR - 2021-07-06 06:02:53 --> 404 Page Not Found: Xmlrpphp/index
+ERROR - 2021-07-06 06:03:37 --> 404 Page Not Found: Wpindexphp/index
+ERROR - 2021-07-06 06:04:00 --> 404 Page Not Found: Larvaphp/index
+ERROR - 2021-07-06 06:04:16 --> 404 Page Not Found: Th3_err0rphp/index
+ERROR - 2021-07-06 06:04:33 --> 404 Page Not Found: Alfindexphp/index
+ERROR - 2021-07-06 06:06:02 --> 404 Page Not Found: Cindexphp/index
+ERROR - 2021-07-06 06:07:53 --> 404 Page Not Found: Wp_includes/fonts
+ERROR - 2021-07-06 06:08:48 --> 404 Page Not Found: Wp_includes/css
+ERROR - 2021-07-06 06:09:44 --> 404 Page Not Found: Configbakphp/index
+ERROR - 2021-07-06 06:10:54 --> 404 Page Not Found: Wp_includes/config.bak.php
+ERROR - 2021-07-06 06:11:13 --> 404 Page Not Found: Wp_content/themes
+ERROR - 2021-07-06 06:11:32 --> 404 Page Not Found: Wp_content/plugins
+ERROR - 2021-07-06 06:12:35 --> 404 Page Not Found: Wp_includes/wpconfig.bak.php
+ERROR - 2021-07-06 06:13:01 --> 404 Page Not Found: Wp_content/plugins
+ERROR - 2021-07-06 06:13:52 --> 404 Page Not Found: Wp_content/wp_old_index.php
+ERROR - 2021-07-06 06:14:00 --> 404 Page Not Found: Legionphp/index
+ERROR - 2021-07-06 06:14:16 --> 404 Page Not Found: Wp_content/mu_plugins
+ERROR - 2021-07-06 06:14:27 --> 404 Page Not Found: Wp_includes/lfx.php
+ERROR - 2021-07-06 06:15:51 --> 404 Page Not Found: Upphp/index
+ERROR - 2021-07-06 06:16:00 --> 404 Page Not Found: Uploadphp/index
+ERROR - 2021-07-06 06:16:12 --> 404 Page Not Found: Configphp/index
+ERROR - 2021-07-06 06:16:22 --> 404 Page Not Found: Testphp/index
+ERROR - 2021-07-06 06:17:13 --> 404 Page Not Found: Vendor/phpunit

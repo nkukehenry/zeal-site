@@ -1,0 +1,30 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+
+ERROR - 2021-01-07 00:41:46 --> 404 Page Not Found: Atomxml/index
+ERROR - 2021-01-07 01:33:56 --> 404 Page Not Found: 403shtml/index
+ERROR - 2021-01-07 01:34:19 --> 404 Page Not Found: 403shtml/index
+ERROR - 2021-01-07 01:35:26 --> 404 Page Not Found: 403shtml/index
+ERROR - 2021-01-07 01:35:54 --> 404 Page Not Found: 403shtml/index
+ERROR - 2021-01-07 01:36:39 --> 404 Page Not Found: 403shtml/index
+ERROR - 2021-01-07 01:37:22 --> 404 Page Not Found: 403shtml/index
+ERROR - 2021-01-07 01:38:38 --> 404 Page Not Found: 403shtml/index
+ERROR - 2021-01-07 01:38:52 --> 404 Page Not Found: 403shtml/index
+ERROR - 2021-01-07 01:39:18 --> 404 Page Not Found: 403shtml/index
+ERROR - 2021-01-07 01:51:45 --> 404 Page Not Found: Vendor/phpunit
+ERROR - 2021-01-07 01:53:40 --> 404 Page Not Found: Env/index
+ERROR - 2021-01-07 01:53:40 --> 404 Page Not Found: Vendor/phpunit
+ERROR - 2021-01-07 07:56:14 --> 404 Page Not Found: Wp_admin/index
+ERROR - 2021-01-07 08:44:22 --> 404 Page Not Found: Adstxt/index
+ERROR - 2021-01-07 09:47:49 --> 404 Page Not Found: Public/painel
+ERROR - 2021-01-07 09:47:49 --> 404 Page Not Found: Assets/lib
+ERROR - 2021-01-07 10:12:53 --> 404 Page Not Found: Public/common
+ERROR - 2021-01-07 11:32:10 --> 404 Page Not Found: Wp_admin/install.php
+ERROR - 2021-01-07 16:04:56 --> 404 Page Not Found: Vendor/phpunit
+ERROR - 2021-01-07 16:36:36 --> 404 Page Not Found: Public/common
+ERROR - 2021-01-07 16:36:36 --> 404 Page Not Found: Assets/template_admin
+ERROR - 2021-01-07 16:36:36 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2021-01-07 16:36:36 --> 404 Page Not Found: Assets/script
+ERROR - 2021-01-07 23:24:40 --> 404 Page Not Found: Assets/components
+ERROR - 2021-01-07 23:24:40 --> 404 Page Not Found: Assets/common
+ERROR - 2021-01-07 23:24:40 --> 404 Page Not Found: Assets/backend
+ERROR - 2021-01-07 23:24:40 --> 404 Page Not Found: Assets/plupload
