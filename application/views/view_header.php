@@ -196,8 +196,22 @@ if($class_name == 'event')
     background-position:right;
     background-size:contain;
     background-repeat:no-repeat;
-}
+   }
     
+}
+
+.rounded{
+    border-radius: 30px!important;
+}
+
+.btn{
+
+    padding-top: 7px!important;
+    padding-bottom: 7px!important;
+}
+
+.btn-outline{
+
 }
 
 </style>
@@ -229,8 +243,8 @@ if($class_name == 'event')
 <div class="container">
 <nav class="navbar navbar-expand-md navbar-light">
 <a class="navbar-brand" href="<?php echo base_url(); ?>">
-<img class="logo-light" src="<?php echo base_url(); ?>assets/site/img/logo.png" alt="logo">
-<img class="logo-dark" src="<?php echo base_url(); ?>assets/site/img/logo-white.png" alt="logo">
+<img class="logo-light" src="<?php echo base_url(); ?>public/uploads/<?php echo $setting['logo']; ?>" alt="logo" width="200px">
+<img class="logo-dark" src="<?php echo base_url(); ?>public/uploads/<?php echo $setting['logo']; ?>" alt="logo"  width="200px">
 </a>
 <div class="collapse navbar-collapse main-menu-wrap" id="navbarSupportedContent">
 <div class="menu-close d-lg-none">
@@ -239,16 +253,16 @@ if($class_name == 'event')
 <ul class="navbar-nav ms-auto">
 <li class="nav-item">
 <a href="<?php echo base_url(); ?>" class="nav-link active">
-HOME
+Home
 </a>
 </li>
 <li class="nav-item">
 <a href="<?php echo base_url('about'); ?>" class="nav-link">
- ABOUT US
+ About Us
 </a>
 </li>
 <li class="nav-item">
-<a href="<?php echo base_url('faq'); ?>" class="nav-link">FAQs</a>
+<a href="<?php echo base_url('faq'); ?>" class="nav-link">Faqs</a>
 </li>
 
 <!-- <li class="nav-item">
@@ -257,17 +271,17 @@ Blog
 </a>
 <li> -->
 <li class="nav-item">
-<a href="<?php echo base_url('contact'); ?>" class="nav-link">CONTACT US</a>
+<a href="<?php echo base_url('contact'); ?>" class="nav-link">Contact Us</a>
 </li>
 <li class="nav-item d-lg-none">
-<a href="tel:+256755544555" class="nav-link btn style1">Call  +256 755 544 555<</a>
+<a href="tel:+256755544555" class="nav-link btn rounded style1">Call  +256 755 544 555<</a>
 </li>
 </ul>
 
 <div class="other-options md-none">
 
 <div class="option-item">
-<a href="tel:+256755544555" class="btn style1">Call  +256 755 544 555</a>
+<a href="tel:+256755544555" class="btn  rounded style1">Call  +256 755 544 555</a>
 </div>
 </div>
 

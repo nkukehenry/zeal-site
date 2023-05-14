@@ -3,9 +3,9 @@
 <section class="hero-wrap style2">
 <div class="container">
 <div class="hero-shape" data-speed="0.06" data-revert="true">
-<img src="<?php echo base_url(); ?>assets/site/img/hero/hero-shape-4.png" alt="Image" class="hero-shape-one">
-<img src="<?php echo base_url(); ?>assets/site/img/hero/hero-shape-5.png" alt="Image" class="hero-shape-two">
-<img src="<?php echo base_url(); ?>assets/site/img/hero/hero-shape-6.png" alt="Image" class="hero-shape-three">
+<img src="<?php echo base_url(); ?>assets/site/img/hero/hero-shape-4.png"  class="hero-shape-one">
+<img src="<?php echo base_url(); ?>assets/site/img/hero/hero-shape-5.png"  class="hero-shape-two">
+<img src="<?php echo base_url(); ?>assets/site/img/hero/hero-shape-6.png"  class="hero-shape-three">
 </div>
 <div class="row align-items-center gx-5">
 <div class="col-lg-6">
@@ -28,10 +28,10 @@
 <h6>10+ <span>Years Serving</span></h6>
 </div>
 <div class="hero-img-one">
-<img src="<?php echo base_url(); ?>assets/site/img/hero/hero-img-2.jpg" alt="Image">
+<img src="<?php echo base_url(); ?>assets/site/img/hero/hero-img-2.jpg" >
 </div>
 <div class="hero-img-two">
-<img src="<?php echo base_url(); ?>assets/site/img/hero/hero-img-3.jpg" alt="Image">
+<img src="<?php echo base_url(); ?>assets/site/img/hero/hero-img-3.jpg" >
 </div>
 </div>
 </div>
@@ -45,19 +45,19 @@
 <div class="container">
 <div class="partner-slider owl-carousel">
 <div class="partner-item">
-<img src="<?php echo base_url(); ?>assets/site/img/partner/partner-1.png" alt="Image">
+<img src="<?php echo base_url(); ?>assets/site/img/partner/partner-1.png" >
 </div>
 <div class="partner-item">
-<img src="<?php echo base_url(); ?>assets/site/img/partner/partner-2.png" alt="Image">
+<img src="<?php echo base_url(); ?>assets/site/img/partner/partner-2.png" >
 </div>
 <div class="partner-item">
-<img src="<?php echo base_url(); ?>assets/site/img/partner/partner-3.png" alt="Image">
+<img src="<?php echo base_url(); ?>assets/site/img/partner/partner-3.png" >
 </div>
 <div class="partner-item">
-<img src="<?php echo base_url(); ?>assets/site/img/partner/partner-4.png" alt="Image">
+<img src="<?php echo base_url(); ?>assets/site/img/partner/partner-4.png" >
 </div>
 <div class="partner-item">
-<img src="<?php echo base_url(); ?>assets/site/img/partner/partner-5.png" alt="Image">
+<img src="<?php echo base_url(); ?>assets/site/img/partner/partner-5.png" >
 </div>
 </div>
 
@@ -233,18 +233,18 @@
 <div class="col-lg-6 order-lg-2 order-md-1 order-1" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
 <div class="row align-items-end">
 <div class="col-6 wh-img-wrap">
-<img src="<?php echo base_url(); ?>assets/site/img/shape-2.png" alt="Image" class="wh-shape-one moveHorizontal">
+<img src="<?php echo base_url(); ?>assets/site/img/shape-2.png"  class="wh-shape-one moveHorizontal">
 <div class="wh-img">
-<img src="<?php echo base_url(); ?>assets/site/img/why-choose-us/wh-img-4.jpg" alt="Image">
+<img src="<?php echo base_url(); ?>assets/site/img/why-choose-us/wh-img-4.jpg" >
 </div>
 <div class="wh-img">
-<img src="<?php echo base_url(); ?>assets/site/img/why-choose-us/wh-img-5.jpg" alt="Image">
+<img src="<?php echo base_url(); ?>assets/site/img/why-choose-us/wh-img-5.jpg" >
 </div>
 </div>
 <div class="col-6 wh-img-wrap">
 <div class="wh-img">
-<img src="<?php echo base_url(); ?>assets/site/img/shape-3.png" alt="Image" class="wh-shape-two bounce">
-<img src="<?php echo base_url(); ?>assets/site/img/why-choose-us/wh-img-6.jpg" alt="Image">
+<img src="<?php echo base_url(); ?>assets/site/img/shape-3.png"  class="wh-shape-two bounce">
+<img src="<?php echo base_url(); ?>assets/site/img/why-choose-us/wh-img-6.jpg" >
 </div>
 </div>
 </div>
@@ -318,7 +318,7 @@
     <div class="client-info-area">
     <div class="client-info-wrap">
     <div class="client-img">
-    <img src="<?php echo base_url(); ?>assets/site/img/testimonials/client.jpg" alt="Image">
+    <img src="<?php echo base_url(); ?>assets/site/img/testimonials/client.jpg" >
     </div>
     <div class="client-info">
     <h3>Client <?php echo $testimonial; ?></h3>
@@ -353,7 +353,7 @@
 <div class="col-xl-4 col-lg-6 col-md-6" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
 <div class="blog-card style2">
 <div class="blog-img">
-<img src="<?php echo base_url(); ?>assets/site/img/blog/blog-1.jpg" alt="Image">
+<img src="<?php echo base_url(); ?>assets/site/img/blog/blog-1.jpg" >
 <a href="<?php echo base_url('news/view/5'); ?>" class="blog-cat">Corporate</a>
 </div>
 <div class="blog-info">
@@ -368,7 +368,7 @@
 <div class="col-xl-4 col-lg-6 col-md-6" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500">
 <div class="blog-card style2">
 <div class="blog-img">
-<img src="<?php echo base_url(); ?>assets/site/img/blog/blog-2.jpg" alt="Image">
+<img src="<?php echo base_url(); ?>assets/site/img/blog/blog-2.jpg" >
 <a href="<?php echo base_url('news/view/5'); ?>" class="blog-cat">Consumer</a>
 </div>
 <div class="blog-info">
@@ -383,7 +383,7 @@
 <div class="col-xl-4 col-lg-6 col-md-6" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
 <div class="blog-card style2">
 <div class="blog-img">
-<img src="<?php echo base_url(); ?>assets/site/img/blog/blog-3.jpg" alt="Image">
+<img src="<?php echo base_url(); ?>assets/site/img/blog/blog-3.jpg" >
 <a href="<?php echo base_url('news/view/5'); ?>" class="blog-cat">Finance</a>
 </div>
 <div class="blog-info">

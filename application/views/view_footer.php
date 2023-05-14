@@ -12,22 +12,22 @@ Lorem ipsum dolor sit amet consc tetur adicing elit. Dolor emque dicta molest en
 </p>
 <ul class="social-profile style1 list-style">
 <li>
-<a target="_blank" href="https://facebook.com/">
+<a href="https://facebook.com/">
 <i class="ri-facebook-fill"></i>
 </a>
 </li>
 <li>
-<a target="_blank" href="https://twitter.com/">
+<a href="https://twitter.com/">
 <i class="ri-twitter-fill"></i>
 </a>
 </li>
 <li>
-<a target="_blank" href="https://instagram.com/">
+<a href="https://instagram.com/">
 <i class="ri-instagram-line"></i>
 </a>
 </li>
 <li>
-<a target="_blank" href="https://linkedin.com/">
+<a href="https://linkedin.com/">
 <i class="ri-linkedin-fill"></i>
 </a>
 </li>
@@ -40,24 +40,24 @@ Lorem ipsum dolor sit amet consc tetur adicing elit. Dolor emque dicta molest en
 <h3 class="footer-widget-title">Resources</h3>
 <ul class="footer-menu list-style">
 <li>
-<a href="contact.html" target="_blank">
-Home
-</a>
+    <a href="<?php echo base_url(); ?>">
+    Home
+    </a>
 </li>
 <li>
-<a href="contact.html" target="_blank">
-About Us
-</a>
+    <a href="<?php echo base_url('about'); ?>">
+    About Us
+    </a>
 </li>
 <li>
-<a href="contact.html" target="_blank">
-Contact Us
-</a>
+    <a href="<?php echo base_url('contact'); ?>">
+    Contact Us
+    </a>
 </li>
 <li>
-<a href="faq.html" target="_blank">
-FAQ's
-</a>
+    <a href="<?php echo base_url('faq'); ?>">
+    FAQ's
+    </a>
 </li>
 </ul>
 </div>
@@ -68,19 +68,19 @@ FAQ's
 <h3 class="footer-widget-title">Contact Us</h3>
 <ul class="contact-info list-style">
 <li>
-<i class="ri-map-pin-fill"></i>
-<h6>Location</h6>
-<p>Plot 1 Namaganda Plaza. P.O.Box 11562 kampala-Russel Rd</p>
+    <i class="ri-map-pin-fill"></i>
+    <h6>Location</h6>
+    <p>Plot 1 Namaganda Plaza. P.O.Box 11562 kampala-Russel Rd</p>
 </li>
 <li>
-<i class="ri-mail-open-fill"></i>
-<h6>Email</h6>
-<a href="">info@zealforex.com</a>
+    <i class="ri-mail-open-fill"></i>
+    <h6>Email</h6>
+    <a href="">info@zealforex.com</a>
 </li>
 <li>
-<i class="ri-phone-fill"></i>
-<h6>Phone</h6>
-<a href="tel:13454567877">+256 785 438 382 </a>
+    <i class="ri-phone-fill"></i>
+    <h6>Phone</h6>
+    <a href="tel:13454567877">+256 785 438 382 </a>
  </li>
 </ul>
 </div>
