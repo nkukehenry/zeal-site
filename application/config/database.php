@@ -78,6 +78,7 @@ $db['default'] = array(
 	'hostname' => 'localhost',
 	'username' => 'root',
 	'password' => '',
+	// 'database' => '',
 	'database' => 'zealforex',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',

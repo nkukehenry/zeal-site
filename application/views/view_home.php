@@ -22,83 +22,125 @@
 </div>
 
 <div class="col-lg-6">
-<div class="hero-img-wrap">
-<div class="hero-promo-text bounce">
-<span><i class="flaticon-calendar"></i></span>
-<h6>10+ <span>Years Serving</span></h6>
-</div>
-<div class="hero-img-one">
-<img src="<?php echo base_url(); ?>assets/site/img/hero/hero-img-2.jpg" >
-</div>
-<div class="hero-img-two">
-<img src="<?php echo base_url(); ?>assets/site/img/hero/hero-img-3.jpg" >
-</div>
-</div>
+
+    <div class="converterWrapper" style="width:100%;">
+      <form action="#">
+        <div class="drop-list">
+          <div class="from">
+                <div class="amount">
+                <p>Send (UGX)</p>
+                <input type="text" value="1">
+                </div>
+          </div>
+          <div class="icon"> <!-- <i class="fas fa-exchange-alt"></i> --> <> </div>
+          <div class="to">
+            <p>To</p>
+            <div class="select-box">
+              <img src="<?php echo base_url(); ?>assets/site/custom/flags/4x3/in.svg" alt="flag">
+              <select> <!-- Options tag are inserted from JavaScript --> </select>
+            </div>
+          </div>
+        </div>
+       </form>
+    </div>
+
+    <div class="converterWrapper mt-2" style="width:100%;">
+      <form action="#">
+        <div class="drop-list">
+          <div class="from">
+                <div class="amount">
+                <p>Currency Exhange</p>
+                <input type="text" value="1">
+                </div>
+          </div>
+          <div class="to">
+            <label>From</lable>
+            <div class="select-box">
+              <img src="<?php echo base_url(); ?>assets/site/custom/flags/4x3/in.svg" alt="flag">
+              <select> <!-- Options tag are inserted from JavaScript --> </select>
+            </div>
+
+            <label>To</lable>
+            <div class="select-box">
+              <img src="<?php echo base_url(); ?>assets/site/custom/flags/4x3/in.svg" alt="flag">
+              <select> <!-- Options tag are inserted from JavaScript --> </select>
+            </div>
+          </div>
+        </div>
+       </form>
+    </div>
+
+
+
 </div>
 
 </div>
 </div>
 </section>
 
-
-<div class="partner-wrap ptb-100">
-<div class="container">
+<div class="partner-wrap pb-30 pt-10 pb-20" >
+<div class="row">
 <div class="partner-slider owl-carousel">
-<div class="partner-item">
-<img src="<?php echo base_url(); ?>assets/site/img/partner/partner-1.png" >
+
+<!-- Hakim Modifications --Currency slider -->
+
+<div class="partner-item partnerStyle forex-item" style="border: solid 1px; padding: 0px; border-radius: 12px; text-align: center;">
+    <p class="p"><i class="fi fi-ug"></i> <small> UGX / </small><strong> 25000.00 </strong></p>
 </div>
-<div class="partner-item">
-<img src="<?php echo base_url(); ?>assets/site/img/partner/partner-2.png" >
+<div class="partner-item partnerStyle forex-item" style="border: solid 1px; padding: 0px; border-radius: 12px; text-align: center;">
+    <p class="p"><i class="fi fi-us"></i> <small> USD / </small><strong> 25000.00 </strong></p>
 </div>
-<div class="partner-item">
-<img src="<?php echo base_url(); ?>assets/site/img/partner/partner-3.png" >
+<div class="partner-item partnerStyle forex-item" style="border: solid 1px; padding: 0px; border-radius: 12px; text-align: center;">
+    <p class="p"><i class="fi fi-ke"></i> <small> KE / </small><strong> 25000.00 </strong></p>
 </div>
-<div class="partner-item">
-<img src="<?php echo base_url(); ?>assets/site/img/partner/partner-4.png" >
+<div class="partner-item partnerStyle forex-item" style="border: solid 1px; padding: 0px; border-radius: 12px; text-align: center;">
+    <p class="p"><i class="fi fi-ec"></i> <small> EC / </small><strong> 25000.00 </strong></p>
 </div>
-<div class="partner-item">
-<img src="<?php echo base_url(); ?>assets/site/img/partner/partner-5.png" >
+<div class="partner-item partnerStyle forex-item" style="border: solid 1px; padding: 0px; border-radius: 12px; text-align: center;">
+    <p class="p"><i class="fi fi-az"></i> <small> AZ / </small><strong> 25000.00 </strong></p>
+</div>
+<div class="partner-item partnerStyle forex-item" style="border: solid 1px; padding: 0px; border-radius: 12px; text-align: center;">
+    <p class="p"><i class="fi fi-ee"></i> <small> EE / </small><strong> 25000.00 </strong></p>
+</div>
+<div class="partner-item partnerStyle forex-item" style="border: solid 1px; padding: 0px; border-radius: 12px; text-align: center;">
+    <p class="p"><i class="fi fi-ba"></i> <small> BA / </small><strong> 25000.00 </strong></p>
+</div>
+<div class="partner-item partnerStyle forex-item" style="border: solid 1px; padding: 0px; border-radius: 12px; text-align: center;">
+    <p class="p"><i class="fi fi-bb"></i> <small> BB / </small><strong> 25000.00 </strong></p>
+</div>
+<div class="partner-item partnerStyle forex-item" style="border: solid 1px; padding: 0px; border-radius: 12px; text-align: center;">
+    <p class="p"><i class="fi fi-bd"></i> <small> BD / </small><strong> 25000.00 </strong></p>
+</div>
+<div class="partner-item partnerStyle forex-item" style="border: solid 1px; padding: 0px; border-radius: 12px; text-align: center;">
+    <p class="p"><i class="fi fi-ax"></i> <small> AX / </small><strong> 25000.00 </strong></p>
+</div>
+
+<!-- Hakim Modifications --Currency slider -->
+
+</div>
 </div>
 </div>
 
-<h6 class="text-center pt-5 text-muted"><small>We partner with numerous reputable financial service providers to serve you better!</small></h6>
 
 
-</div>
-</div>
-
-
-<section class="about-wrap style2 pb-100">
+<section class="about-wrap style2 pb-70">
 <div class="container">
 <div class="row gx-5 align-items-center justify-content-center">
-<div class="col-lg-6" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200">
-    <div class="card">
-        <div class="card-body  fx-rates">
-            <table class="table table-striped">
-                <thead>
-                <tr>
-                    <th>CURRENCY</th>
-                    <th>WE SELL (UGX)</th>
-                    <th>WE BUY (UGX)</th>
-                </tr>
-                </thead>
-                <?php 
-                    $i = 0;
-                    foreach(['USD','CAD','EUR','GPB','KE','JPY'] as $row):
-                        $i * 10;
-                 ?>
-                <tr>
-                    <td><?php echo $row ?></td>
-                    <td><?php echo number_format(3400-$i); ?></td>
-                    <td><?php echo number_format(3400-($i*2)); ?></td>
-                </tr>
-                <?php endforeach; ?>
-            </table>
-            <maquee>Note: <b class="text-danger">Rates are subject to change at any time</b></maquee>
-        </div>
+
+
+<!-- Hakim Modifications --Currency Converter -->
+<div class="col-lg-4" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200">
+    
+<div class="hero-img-wrap">
+    
+    <div class="hero-img-two">
+    <img src="<?php echo base_url(); ?>assets/site/img/hero/hero-img-3.jpg" >
     </div>
 </div>
-<div class="col-lg-6" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+
+</div>
+
+<div class="col-lg-8" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
 <div class="about-content">
 <div class="content-title style1">
 <span>ABOUT US</span>
@@ -399,3 +441,30 @@
 </div>
 </section>
 
+<div class="partner-wrap ptb-100">
+<div class="container">
+<div class="partner-slider owl-carousel">
+
+    <div class="partner-item">
+        <img src="<?php echo base_url(); ?>assets/site/img/partner/partner-1.png" >
+    </div>
+    <div class="partner-item">
+        <img src="<?php echo base_url(); ?>assets/site/img/partner/partner-2.png" >
+    </div>
+    <div class="partner-item">
+        <img src="<?php echo base_url(); ?>assets/site/img/partner/partner-3.png" >
+    </div>
+    <div class="partner-item">
+        <img src="<?php echo base_url(); ?>assets/site/img/partner/partner-4.png" >
+    </div>
+    <div class="partner-item">
+        <img src="<?php echo base_url(); ?>assets/site/img/partner/partner-5.png" >
+    </div>
+</div>
+
+<h6 class="text-center pt-5 text-muted"><small>We partner with numerous reputable financial service providers to serve you better!</small></h6>
+
+
+</div>
+</div>
+</div>

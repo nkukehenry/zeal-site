@@ -112,5 +112,18 @@ Lorem ipsum dolor sit amet consc tetur adicing elit. Dolor emque dicta molest en
 <script src="<?php echo base_url(); ?>assets/site/js/jquery.appear.js"></script>
 <script src="<?php echo base_url(); ?>assets/site/js/tweenmax.min.js"></script>
 <script src="<?php echo base_url(); ?>assets/site/js/main.js"></script>
+
+
+<!-- Hakim loaded this for converter and currency slider -->
+<script type="rocketlazyloadscript" data-rocket-src="<?php echo base_url(); ?>assets/site/custom/js/jquery.magnific-popup.min.js?v=1.03" defer></script>
+<script type="rocketlazyloadscript" data-rocket-src="<?php echo base_url(); ?>assets/site/custom/js/slick.min.js" defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-src="<?php echo base_url(); ?>assets/site/custom/css/js/script.js?ver=1683622252" defer></script>
+
+<script src="<?php echo base_url(); ?>assets/site/custom/js/country.js"></script>
+<script src="<?php echo base_url(); ?>assets/site/custom/js/converter.js"></script>
+<!-- Hakim loaded this for converter and currency slider -->
+
+
+
 </body>
 </html>
