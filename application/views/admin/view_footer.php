@@ -23,6 +23,8 @@
 	<script src="<?php echo base_url(); ?>public/admin/js/jquery.magnific-popup.min.js"></script>
 	<script src="<?php echo base_url(); ?>public/admin/js/demo.js"></script>
 
+
+
 	<script>
 
 

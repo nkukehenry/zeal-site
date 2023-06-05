@@ -29,10 +29,34 @@ class Home extends CI_Controller {
 		$data['pricing_table'] = $this->Model_home->all_pricing_table();
 		$data['home_faq'] = $this->Model_home->all_faq_home();
 
+
+		// Hakim Modifications Currency List
+		$data['currency_sending'] = $this->Model_home->get_currency_data('tbl_currencies', 'is_forex', 0);
+		$data['forex_exchange'] = $this->Model_home->get_currency_data('tbl_currencies', 'is_forex', 1);
+		// Hakim Modifications Currency List
+
+		// Hakim Modifications Home Content
+		$data['currency_section_headers'] = $this->Model_home->get_home_content('tbl_home_currency_section_headers')->row_array();
+		$data['about_section'] = $this->Model_home->get_home_content('tbl_home_about_section')->row_array();
+		$data['we_are_flexible_headers'] = $this->Model_home->get_home_content('tbl_home_we_are_flexible_headers')->row_array();
+		$data['we_are_flexible_content'] = $this->Model_home->get_home_content('tbl_home_we_are_flexible_content')->result_array();
+		$data['why_choose_us_header_content'] = $this->Model_home->get_home_content('tbl_home_why_choose_us_top_content')->row_array();
+		$data['why_choose_us_services_content'] = $this->Model_home->get_home_content('tbl_home_why_choose_us_services')->result_array();
+		$data['why_choose_us_images_and_shapes'] = $this->Model_home->get_home_content('tbl_home_why_choose_us_images_and_shapes')->row_array();
+		$data['home_more_benefits_headers'] = $this->Model_home->get_home_content('tbl_home_more_benefits_headers')->row_array();
+		$data['home_more_benefits_content'] = $this->Model_home->get_home_content('tbl_home_more_benefits_content')->result_array();
+		$data['home_reviews_headers'] = $this->Model_home->get_home_content('tbl_home_our_review_headers')->row_array();
+		$data['home_reviews_content'] = $this->Model_home->get_home_content('tbl_home_our_review_content')->result_array();
+		// Hakim Modifications Home Content
+
+
+
 		$data['portfolio_category'] = $this->Model_portfolio->get_portfolio_category();
 		$data['portfolio'] = $this->Model_portfolio->get_portfolio_data();
 
 		$data['portfolio_footer'] = $this->Model_portfolio->get_portfolio_data();
+
+		
 
 		$this->load->view('view_header',$data);
 		$this->load->view('view_home',$data);
@@ -123,4 +147,5 @@ class Home extends CI_Controller {
             redirect(base_url());
         }
 	}
+
 }

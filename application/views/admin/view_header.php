@@ -20,7 +20,13 @@
 	<link rel="stylesheet" href="<?php echo base_url(); ?>public/admin/css/summernote.css">
 	<link rel="stylesheet" href="<?php echo base_url(); ?>public/admin/css/magnific-popup.css">
 	<link rel="stylesheet" href="<?php echo base_url(); ?>public/admin/css/style.css">
-	
+
+	<link rel="stylesheet" href="<?php echo base_url(); ?>public/admin/custom/css/flaticon.css">
+
+
+
+
+
 
 
 	<style>
@@ -159,6 +165,26 @@
 			            <i class="fa fa-file-text"></i> <span>Page</span>
 			          </a>
 			        </li>
+
+					<li class="treeview <?php if( ($class_name == 'event') ) {echo 'active';} ?>">
+			          <a href="<?php echo base_url(); ?>admin/home_content_management">
+			            <i class="fa fa-calendar"></i> <span>Home Management</span>
+			          </a>
+			        </li>
+
+					<li class="treeview <?php if( ($class_name == 'category') || ($class_name == 'news') || ($class_name == 'comment') ) {echo 'active';} ?>">
+						<a href="#">
+							<i class="fa fa-money"></i>
+							<span>Currencies</span>
+							<span class="pull-right-container">
+								<i class="fa fa-angle-left pull-right"></i>
+							</span>
+						</a>
+						<ul class="treeview-menu">
+							<li><a href="<?php echo base_url(); ?>admin/currencies/currency_sending"><i class="fa fa-circle-o"></i> Currency Sending </a></li>
+							<li><a href="<?php echo base_url(); ?>admin/currencies/forex_exchange"><i class="fa fa-circle-o"></i> Forex Exchange </a></li>
+						</ul>
+					</li>
 
 			        <li class="treeview <?php if( ($class_name == 'language') ) {echo 'active';} ?>">
 			          <a href="<?php echo base_url(); ?>admin/language">

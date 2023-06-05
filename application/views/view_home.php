@@ -8,66 +8,89 @@
 <img src="<?php echo base_url(); ?>assets/site/img/hero/hero-shape-6.png"  class="hero-shape-three">
 </div>
 <div class="row align-items-center gx-5">
-<div class="col-lg-6">
+
+    <!-- Home Currency exchange Section headers -->
+<div class="col-lg-8" style="background-image:url(<?php echo base_url('assets/site/img/globe.png'); ?>); background-position:bottom right !important; background-size:50%; background-repeat:no-repeat; padding:10px!important;">
 <div class="hero-content">
-<span data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">Currency Exchange, Money Transfers, Banking</span>
-<h1 data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">Your trusted Money Transfer, Forex and Banking partner since 2009</h1>
-<p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">Money Transfer, Forex and Banking partner since 2009</p>
+<span data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200"><?php echo $currency_section_headers['top_header'];?></span>
+<h1 data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300"><?php echo $currency_section_headers['second_header'];?></h1>
+<p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400"><?php echo $currency_section_headers['third_header'];?></p>
 <div class="hero-btn" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500">
-<a href="<?php echo base_url(); ?>contact" class="btn style1">Contact Us<i class="ri-arrow-right-s-line"></i></a>
+<a href="<?php echo base_url(); ?>contact" class="btn style1"><?php echo $currency_section_headers['contact_us_button_text'];?><i class="ri-arrow-right-s-line"></i></a>
 
 </div>
 
 </div>
 </div>
 
-<div class="col-lg-6">
+<div class="col-lg-4">
 
-    <div class="converterWrapper" style="width:100%;">
-      <form action="#">
-        <div class="drop-list">
-          <div class="from">
-                <div class="amount">
-                <p>Send (UGX)</p>
-                <input type="text" value="1">
+<div class="col-lg-12">
+        <div class="row card" style="padding:20px; margin-top:10px; background-color:#f5fcfc; box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;">
+
+         <div class="col-lg-12">
+                <div class="form-group mt-2">
+                    <label style="padding-bottom:10px; color:#A90E0C;">Send Money</label>
+                    <select class="form-control"> 
+                        <?php foreach($currency_sending as $send): ?>
+                            <option value="<?php echo $send['currency_icon']; ?>"><?php echo $send['currency']; ?></option>
+                        <?php endforeach; ?>
+                    </select>
                 </div>
-          </div>
-          <div class="icon"> <!-- <i class="fas fa-exchange-alt"></i> --> <> </div>
-          <div class="to">
-            <p>To</p>
-            <div class="select-box">
-              <img src="<?php echo base_url(); ?>assets/site/custom/flags/4x3/in.svg" alt="flag">
-              <select> <!-- Options tag are inserted from JavaScript --> </select>
             </div>
-          </div>
+            <div class="col-lg-12 mt-2">
+                    <div class="from-group">
+                        <label style="color:#001F60;">Amount</label>
+                        <input type="text" class="form-control" value="1" style="color: grey;">
+                    </div>
+            </div>
+
+            <div class="col-lg-12 mt-2">
+                    <div class="from-group">
+                        <label style="color:#001F60;">They receive</label>
+                        <input type="text" class="form-control" disabled>
+                    </div>
+            </div>
         </div>
-       </form>
+
     </div>
 
-    <div class="converterWrapper mt-2" style="width:100%;">
-      <form action="#">
-        <div class="drop-list">
-          <div class="from">
-                <div class="amount">
-                <p>Currency Exhange</p>
-                <input type="text" value="1">
-                </div>
-          </div>
-          <div class="to">
-            <label>From</lable>
-            <div class="select-box">
-              <img src="<?php echo base_url(); ?>assets/site/custom/flags/4x3/in.svg" alt="flag">
-              <select> <!-- Options tag are inserted from JavaScript --> </select>
-            </div>
 
-            <label>To</lable>
-            <div class="select-box">
-              <img src="<?php echo base_url(); ?>assets/site/custom/flags/4x3/in.svg" alt="flag">
-              <select> <!-- Options tag are inserted from JavaScript --> </select>
+    <div class="col-lg-12">
+    <div class="row card " style="padding:20px; margin-top:10px; background-color:#f5fcfc; box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;">
+
+            <div class="col-lg-12">
+                <div class="row">
+                <label class="col-lg-12"style="padding-bottom:10px; color:#A90E0C;">Exchange Money</label>
+                <div class="form-group col-lg-6">
+                    <label style="color:#001F60;">I have</label>
+                    <select class="form-control"> 
+                        <?php foreach($currency_sending as $send): ?>
+                            <option value="<?php echo $send['currency_icon']; ?>"><?php echo $send['currency']; ?></option>
+                        <?php endforeach; ?>
+                    </select>
+                </div>
+
+                <div class="form-group col-lg-6">
+                    <label style="color:#001F60;">I want</label>
+                    <select class="form-control"> 
+                        <?php foreach($currency_sending as $send): ?>
+                            <option value="<?php echo $send['currency_icon']; ?>"><?php echo $send['currency']; ?></option>
+                        <?php endforeach; ?>
+                    </select>
+                </div>
+                </div>
             </div>
-          </div>
+            <div class="col-lg-12 mt-2">
+                    <div class="from-group">
+                        <label style="color:#001F60;">Amount</label>
+                        <input type="text" class="form-control" value="1" style="color: grey;">
+                    </div>
+            </div>
         </div>
-       </form>
+ 
+           
+    </div>
     </div>
 
 
@@ -123,6 +146,9 @@
 
 
 
+
+
+<!-- Hakim Modifications -- Home About Us Content -->
 <section class="about-wrap style2 pb-70">
 <div class="container">
 <div class="row gx-5 align-items-center justify-content-center">
@@ -134,7 +160,7 @@
 <div class="hero-img-wrap">
     
     <div class="hero-img-two">
-    <img src="<?php echo base_url(); ?>assets/site/img/hero/hero-img-3.jpg" >
+    <img src="<?php echo base_url(); ?>assets/site/img/hero/<?php echo $about_section['about_us_image'];?>" >
     </div>
 </div>
 
@@ -143,9 +169,9 @@
 <div class="col-lg-8" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
 <div class="about-content">
 <div class="content-title style1">
-<span>ABOUT US</span>
-<h2>We are committed to excellent service delivery</h2>
-<p>With wealth of expertise under our belt, we give you nothing but the best in financial service offering in Currency Exchange, Money Transfers and remittances and Agent Banking.</p>
+<span><?php echo $about_section['about_us_top_header'];?></span>
+<h2><?php echo $about_section['about_us_second_header'];?></h2>
+<p><?php echo $about_section['about_us_description'];?></p>
 </div>
 <div class="feature-item-wrap">
 <div class="feature-item">
@@ -153,8 +179,8 @@
 <i class="flaticon-application"></i>
 </div>
 <div class="feature-text">
-<h3>Unbeatable Rates</h3>
-<p>Our exchange rates are very considerate and highly negotiable for bigger transactions.</p>
+<h3><?php echo $about_section['about_us_rates_header'];?></h3>
+<p><?php echo $about_section['about_us_rates_description'];?></p>
 </div>
 </div>
 <div class="feature-item">
@@ -162,12 +188,12 @@
 <i class="flaticon-speedometer"></i>
 </div>
 <div class="feature-text">
-<h3>Excellent Attention</h3>
-<p>We value your time above everything else, choose us and we shall serve you happily and super fast.</p>
+<h3><?php echo $about_section['about_us_attention_header'];?></h3>
+<p><?php echo $about_section['about_us_attention_description'];?></p>
 </div>
 </div>
 </div>
-<a href="<?php echo base_url('contact'); ?>" class="btn style1">Contact Us<i class="ri-arrow-right-s-line"></i></a>
+<a href="<?php echo base_url('contact'); ?>" class="btn style1"><?php echo $about_section['about_us_button_text'];?><i class="ri-arrow-right-s-line"></i></a>
 </div>
 </div>
 </div>
@@ -175,118 +201,80 @@
 </section>
 
 
+<!-- Hakim Modification We Are Flexible Section -->
 <div class="feature-wrap style1 ptb-100 bg-whisper">
 <div class="container">
 <div class="row">
 <div class="col-xl-6 offset-xl-3 col-lg-10 offset-lg-1">
 <div class="section-title style1 text-center mb-40">
-<span>WE ARE FLEXIBLE</span>
-<h2>Come to us and shall serve you your fiancial needs</h2>
+<span><?php echo $we_are_flexible_headers['home_we_are_flexible_top_header']; ?></span>
+<h2><?php echo $we_are_flexible_headers['home_we_are_flexible_second_header']; ?></h2>
 </div>
 </div>
  </div>
+
+
 <div class="feature-slider-one owl-carousel">
-<div class="feature-card style3">
-<div class="feature-title">
-<span>
-<i class="flaticon-hand"></i>
-</span>
-<h3><a href="send-money.html">Currency Exchange Options</a></h3>
-</div>
-<p>We allow both over the counter and bank-wire currency exchange deals, we are caring and ready to serve you.</p>
-<a href="send-money.html" class="link style1">Read More<i class="ri-arrow-right-s-line"></i></a>
-</div>
-<div class="feature-card style3">
-<div class="feature-title">
-<span>
-<i class="flaticon-pie-chart"></i>
-</span>
-<h3><a href="">Currency Covergae</a></h3>
-</div>
-<p>We cover a variety of currecies on the market and extra more.Our rates are very attractive and flexible too! </p>
-<a href="" class="link style1">Read More<i class="ri-arrow-right-s-line"></i></a>
-</div>
-<div class="feature-card style3">
-<div class="feature-title">
-<span>
-<i class="flaticon-notification"></i>
-</span>
-<h3><a href="">Rate Alerts</a></h3>
-</div>
-<p>Subscribe to instantly receive our rate offers. We also make rate exceptions for bigger deals.</p>
-<a href="alerts.html" class="link style1">Read More<i class="ri-arrow-right-s-line"></i></a>
-</div>
-<div class="feature-card style3">
-<div class="feature-title">
-<span>
-<i class="flaticon-verified"></i>
-</span>
-<h3><a href="">One Stop for needs</a></h3>
-</div>
-<p>Bank, exchange and transfer money, all in one place. Don't risk moving with cash when we can serve you all at once!</p>
-<a href="" class="link style1">Read More<i class="ri-arrow-right-s-line"></i></a>
+    <?php foreach($we_are_flexible_content as $flexible): ?>
+        <div class="feature-card style3">
+            <div class="feature-title">
+                <span>
+                    <i class="<?php echo $flexible['content_icon']; ?>"></i>
+                </span>
+                    <h3><a href="send-money.html"><?php echo $flexible['content_header']; ?></a></h3>
+            </div>
+                <p><?php echo $flexible['content_description']; ?></p>
+                <a href="<?php echo $flexible['content_button_url']; ?>" class="link style1"><?php echo $flexible['content_button_text']; ?><i class="ri-arrow-right-s-line"></i></a>
+        </div>
+    <?php endforeach; ?>
 </div>
 </div>
 </div>
-</div>
+<!-- Hakim Modification We Are Flexible Section -->
 
 
 <section class="wh-wrap style2 ptb-100">
 <div class="container">
 <div class="row gx-5 align-items-center">
 <div class="col-lg-6 order-lg-1 order-md-2 order-2" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
-<div class="wh-content">
+<div class="wh-content">   
 <div class="content-title style1">
-<span>WHY CHOOSE US</span> 
-<h2>We offer affordable services with variety options</h2>
-<p>Whether you are exchanging money, remitting it or banking it, we give our customers priority treatment regardless of the type and nature of their transactions.</p>
+<span><?php echo $why_choose_us_header_content['main_header']; ?></span> 
+<h2><?php echo $why_choose_us_header_content['second_header']; ?></h2>
+<p><?php echo $why_choose_us_header_content['main_description']; ?></p>
 </div>
 <div class="feature-item-wrap">
-<div class="feature-item">
-    <div class="feature-icon">
-    <i class="flaticon-tick"></i>
+    
+    <?php foreach($why_choose_us_services_content as $service): ?>
+    <div class="feature-item">
+        <div class="feature-icon">
+        <i class="<?php echo $service['service_icon']; ?>"></i>
+        </div>
+        <div class="feature-text">
+        <h3><?php echo $service['service_header']; ?></h3>
+        <p><?php echo $service['service_description']; ?></p>
+        </div>
     </div>
-    <div class="feature-text">
-    <h3>Customer assistance</h3>
-    <p>We offer excellent customer service.</p>
-    </div>
-</div>
-<div class="feature-item">
-    <div class="feature-icon">
-    <i class="flaticon-tick"></i>
-    </div>
-    <div class="feature-text">
-    <h3>Multi-bank coverage</h3>
-    <p>We are an agency banking partner and we have multiple bank options.</p>
-    </div>
-</div>
-<div class="feature-item">
-    <div class="feature-icon">
-    <i class="flaticon-tick"></i>
-    </div>
-    <div class="feature-text">
-    <h3>Competitive Currency Rates</h3>
-    <p>Doing business with us is much cherished and appreciated that's why we don't hike our rates.</p>
-    </div>
-</div>
+    <?php endforeach; ?>
+
 </div>
 </div>
 </div>
 <div class="col-lg-6 order-lg-2 order-md-1 order-1" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
 <div class="row align-items-end">
 <div class="col-6 wh-img-wrap">
-<img src="<?php echo base_url(); ?>assets/site/img/shape-2.png"  class="wh-shape-one moveHorizontal">
+<img src="<?php echo base_url(); ?>assets/site/img/<?php echo $why_choose_us_images_and_shapes['shape_2']; ?>"  class="wh-shape-one moveHorizontal">
 <div class="wh-img">
-<img src="<?php echo base_url(); ?>assets/site/img/why-choose-us/wh-img-4.jpg" >
+<img src="<?php echo base_url(); ?>assets/site/img/why-choose-us/<?php echo $why_choose_us_images_and_shapes['choose_image_1']; ?>" >
 </div>
 <div class="wh-img">
-<img src="<?php echo base_url(); ?>assets/site/img/why-choose-us/wh-img-5.jpg" >
+<img src="<?php echo base_url(); ?>assets/site/img/why-choose-us/<?php echo $why_choose_us_images_and_shapes['choose_image_2']; ?>" >
 </div>
 </div>
 <div class="col-6 wh-img-wrap">
 <div class="wh-img">
-<img src="<?php echo base_url(); ?>assets/site/img/shape-3.png"  class="wh-shape-two bounce">
-<img src="<?php echo base_url(); ?>assets/site/img/why-choose-us/wh-img-6.jpg" >
+<img src="<?php echo base_url(); ?>assets/site/img/<?php echo $why_choose_us_images_and_shapes['shape_1']; ?>"  class="wh-shape-two bounce">
+<img src="<?php echo base_url(); ?>assets/site/img/why-choose-us/<?php echo $why_choose_us_images_and_shapes['choose_image_3']; ?>" >
 </div>
 </div>
 </div>
@@ -300,46 +288,30 @@
 <div class="row">
 <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
 <div class="section-title style1 text-center mb-40">
-<span>MORE BENIFITS</span>
-    <h2>As your partner, allow us to do more for you.</h2>
+<span><?php echo $home_more_benefits_headers['benefits_main_header']; ?></span>
+    <h2><?php echo $home_more_benefits_headers['benefits_second_header']; ?></h2>
 </div>
 </div>
 </div>
 <div class="row justify-content-center">
 
-<div class="col-xl-4 col-lg-6 col-md-6" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500">
+
+<?php foreach($home_more_benefits_content as $benefit): ?>
+<div class="col-xl-4 col-lg-6 col-md-6" data-aos="fade-up" data-aos-duration="<?php echo $benefit['benefits_content_duration']; ?>" data-aos-delay="<?php echo $benefit['benefits_content_delay']; ?>">
 <div class="feature-card style4">
 <div class="feature-icon">
-<i class="flaticon-money-1"></i>
+ <i class="<?php echo $benefit['benefits_content_icon']; ?>"></i>
 </div>
 <div class="feature-info">
-<h3><a href="#">Lowest Fees</a></h3>
-<p>Our transaction fees are very affordable so you money is truly yours.</p>
+<h3><a href="#"><?php echo $benefit['benefits_content_header']; ?></a></h3>
+<p><?php echo $benefit['benefits_content_description']; ?></p>
 </div>
 </div>
 </div>
-<div class="col-xl-4 col-lg-6 col-md-6" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600">
-<div class="feature-card style4">
-<div class="feature-icon">
- <i class="flaticon-automation"></i>
-</div>
-<div class="feature-info">
-<h3><a href="#">Instant Processing</a></h3>
-<p>We prioritise each and every customer apy maximum attention fast transaction processing.</p>
-</div>
-</div>
-</div>
-<div class="col-xl-4 col-lg-6 col-md-6" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="700">
-<div class="feature-card style4">
-<div class="feature-icon">
-<i class="flaticon-shield"></i>
-</div>
-<div class="feature-info">
-<h3><a href="#">Bank Lavel Security</a></h3>
-<p>Your data is secure with us, we don't share or expose it with/to anyone.</p>
-</div>
-</div>
-</div>
+<?php endforeach; ?>
+
+
+
 </div>
 </div>
 </div>
@@ -349,29 +321,29 @@
 <div class="container">
 <div class="col-xl-6 offset-xl-3 col-lg-8 offset-lg-2">
 <div class="section-title style1 text-center mb-40">
-<span>OUR REVIEWS</span>
-<h2>More Than 20,000+ Happy Customers Trust Our Services</h2>
+<span><?php echo $home_reviews_headers['our_review_main_header']; ?></span>
+<h2><?php echo $home_reviews_headers['our_review_second_header']; ?></h2>
 </div>
 </div>
 <div class="testimonial-slider-two owl-carousel">
 
-<?php foreach([0,1,2,3,4] as $testimonial): ?>
+<?php foreach($home_reviews_content as $comment): ?>
     <div class="testimonial-card style3">
     <div class="client-info-area">
     <div class="client-info-wrap">
     <div class="client-img">
-    <img src="<?php echo base_url(); ?>assets/site/img/testimonials/client.jpg" >
+    <img src="<?php echo base_url(); ?>assets/site/img/testimonials/<?php echo $comment['our_review_client_image']; ?>" >
     </div>
     <div class="client-info">
-    <h3>Client <?php echo $testimonial; ?></h3>
-    <span>Director, BAT</span>
+    <h3><?php echo $comment['our_review_client_name']; ?></h3>
+    <span><?php echo $comment['our_review_client_roll']; ?></span>
     </div>
     </div>
     <div class="quote-icon">
     <i class="flaticon-quotation-mark"></i>
     </div>
     </div>
-    <p class="client-quote">I appreciate the sense of urgency and exception treatment I was given.</p>
+    <p class="client-quote"><?php echo $comment['our_review_client_comment']; ?></p>
     </div>
 <?php endforeach; ?>
 

@@ -121,6 +121,7 @@ Lorem ipsum dolor sit amet consc tetur adicing elit. Dolor emque dicta molest en
 
 <script src="<?php echo base_url(); ?>assets/site/custom/js/country.js"></script>
 <script src="<?php echo base_url(); ?>assets/site/custom/js/converter.js"></script>
+<script src="<?php echo base_url(); ?>assets/site/custom/js/custom.js"></script>
 <!-- Hakim loaded this for converter and currency slider -->
 
 

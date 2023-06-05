@@ -2874,10 +2874,11 @@ select {
 
 .hero-wrap.style2 {
   background-color: #FAFAFC;
-  padding: 100px 0;
+  padding: 30px 0!important;
   margin-top: 85px;
   z-index: 1;
   position: relative;
+  overflow-y: hidden;
 }
 
 .hero-wrap.style2 .hero-shape {
@@ -6121,3 +6122,13 @@ input,textarea{
 
 
 /*# sourceMappingURL=style.css.map */
+
+.hero-wrap.style2{
+  width: 100%!important;
+}
+
+.feature-wrap{
+  margin: 0!important;
+  padding-left: 0!important;
+  padding-right: 0!important;
+}

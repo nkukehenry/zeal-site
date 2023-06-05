@@ -304,3 +304,27 @@ ERROR - 2023-05-26 09:06:45 --> 404 Page Not Found: Assets/site
 ERROR - 2023-05-26 09:07:09 --> 404 Page Not Found: Assets/site
 ERROR - 2023-05-26 09:07:09 --> 404 Page Not Found: Assets/site
 ERROR - 2023-05-26 09:07:09 --> 404 Page Not Found: Assets/site
+ERROR - 2023-05-26 23:26:31 --> 404 Page Not Found: Assets/site
+ERROR - 2023-05-26 23:26:34 --> 404 Page Not Found: Assets/site
+ERROR - 2023-05-26 23:26:34 --> 404 Page Not Found: Assets/site
+ERROR - 2023-05-26 23:26:34 --> 404 Page Not Found: Assets/site
+ERROR - 2023-05-26 23:26:34 --> 404 Page Not Found: Assets/site
+ERROR - 2023-05-26 23:26:34 --> 404 Page Not Found: Assets/site
+ERROR - 2023-05-26 23:27:44 --> 404 Page Not Found: Assets/site
+ERROR - 2023-05-26 23:28:50 --> 404 Page Not Found: Assets/site
+ERROR - 2023-05-26 23:28:52 --> 404 Page Not Found: Assets/site
+ERROR - 2023-05-26 23:28:52 --> 404 Page Not Found: Assets/site
+ERROR - 2023-05-26 23:28:52 --> 404 Page Not Found: Assets/site
+ERROR - 2023-05-26 23:28:52 --> 404 Page Not Found: Assets/site
+ERROR - 2023-05-26 23:28:52 --> 404 Page Not Found: Assets/site
+ERROR - 2023-05-26 23:28:57 --> 404 Page Not Found: About/admin
+ERROR - 2023-05-26 23:30:28 --> 404 Page Not Found: Lule/admin
+ERROR - 2023-05-26 23:32:25 --> 404 Page Not Found: Assets/site
+ERROR - 2023-05-26 23:32:26 --> 404 Page Not Found: Assets/site
+ERROR - 2023-05-26 23:32:26 --> 404 Page Not Found: Assets/site
+ERROR - 2023-05-26 23:32:26 --> 404 Page Not Found: Assets/site
+ERROR - 2023-05-26 23:32:26 --> 404 Page Not Found: Assets/site
+ERROR - 2023-05-26 23:32:26 --> 404 Page Not Found: Assets/site
+ERROR - 2023-05-26 23:40:13 --> Query error: Table 'zealforex.tbl_subscriber' doesn't exist - Invalid query: SELECT * FROM tbl_subscriber WHERE subs_active=1
+ERROR - 2023-05-26 23:40:26 --> Query error: Table 'zealforex.tbl_subscriber' doesn't exist - Invalid query: SELECT * FROM tbl_subscriber WHERE subs_active=1
+ERROR - 2023-05-26 23:40:51 --> Query error: Table 'zealforex.tbl_subscriber' doesn't exist - Invalid query: SELECT * FROM tbl_subscriber WHERE subs_active=1
