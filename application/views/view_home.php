@@ -7,7 +7,7 @@
 <img src="<?php echo base_url(); ?>assets/site/img/hero/hero-shape-5.png"  class="hero-shape-two">
 <img src="<?php echo base_url(); ?>assets/site/img/hero/hero-shape-6.png"  class="hero-shape-three">
 </div>
-<div class="row align-items-center gx-5">
+<div class="row align-items-center gx-5" style="padding: 20px;">
 
     <!-- Home Currency exchange Section headers -->
 <div class="col-lg-8" style="background-image:url(<?php echo base_url('assets/site/img/globe.png'); ?>); background-position:bottom right !important; background-size:50%; background-repeat:no-repeat; padding:10px!important;">
@@ -23,7 +23,7 @@
 </div>
 </div>
 
-<div class="col-lg-4">
+<div class="col-lg-4"  style=" overflow-y:hidden;">
 
 <div class="col-lg-12">
         <div class="row card" style="padding:20px; margin-top:10px; background-color:#f5fcfc; box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;">
@@ -97,7 +97,6 @@
 
 </div>
 
-</div>
 </div>
 </section>
 

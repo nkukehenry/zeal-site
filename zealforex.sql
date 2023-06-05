@@ -54,6 +54,8 @@ INSERT INTO `tbl_category` (`category_id`, `category_name`, `category_banner`, `
 -- Table structure for table `tbl_client`
 --
 
+ TABLE `tbl_client`
+
 CREATE TABLE `tbl_client` (
   `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,

@@ -91,6 +91,7 @@ Lorem ipsum dolor sit amet consc tetur adicing elit. Dolor emque dicta molest en
 <p class="copyright-text"><i class="ri-copyright-line"></i> <span><?php echo $setting['footer_copyright']; ?></span>. All Rights Reserved</p>
 </div>
 </div>
+
 </div>
 </footer>
 
