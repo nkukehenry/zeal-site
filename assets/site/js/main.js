@@ -180,13 +180,13 @@
         autoHeight: true,
         responsive: {
             0: {
-                items: 3,
+                items: 1,
             },
             576: {
-                items: 3,
+                items: 1,
             },
             768: {
-                items: 4,
+                items: 3,
             },
             992: {
                 items: 5,
@@ -211,12 +211,15 @@
 
     // Responsive mmenu
     $(window).on('resize', function() {
+
         if($(window).width() <= 1199) {
             $('.collapse.navbar-collapse').removeClass('collapse');
         }else{
             $('.navbar-collapse').addClass('collapse');
         }
+
     });
+
 
     $('.mobile-menu a').on('click', function() {
         $('.main-menu-wrap').show();
@@ -237,13 +240,16 @@
     $('.mobile-top-bar').on('click', function () {
         $('.header-top').addClass('open')
     });
+
     $('.close-header-top button').on('click', function () {
         $('.header-top').collapse('open')
     });
+
     var $offcanvasNav = $('.navbar-nav'),
     $offcanvasNavSubMenu = $offcanvasNav.find('.dropdown-menu');
     $offcanvasNavSubMenu.parent().prepend('<span class="menu-expand"><i class="ri-arrow-down-s-line"></i></span>');
     $offcanvasNavSubMenu.slideUp();
+    
     $offcanvasNav.on('click', 'li a, li .menu-expand', function (e) {
         var $this = $(this);
         if (($this.attr('href') === '#' || $this.hasClass('menu-expand'))) {
