@@ -1804,6 +1804,10 @@ select {
     display: none;
   }
 
+  .partner-slider{
+    padding: auto 20px!important;
+  }
+
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
@@ -1831,9 +1835,17 @@ select {
   .header-wrap.sticky.style1 {
     margin-top: -85px;
   }
+  .main-menu-wrap{
+    display: none;
+  }
+
 }
 
 @media only screen and (max-width: 991px) {
+  .main-menu-wrap{
+    display: none;
+  }
+
   .header-wrap .header-top .header-top-left .contact-item {
     width: 100%;
     margin: 0 0 15px;
@@ -6128,8 +6140,9 @@ input,textarea{
 
 /*# sourceMappingURL=style.css.map */
 
-.hero-wrap.style2{
+.hero-wrap {
   width: 100%!important;
+  overflow-x: hidden!important;
 }
 
 .feature-wrap{
