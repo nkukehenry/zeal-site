@@ -898,6 +898,106 @@ if(!$this->session->userdata('id')) {
 
 
 
+                            
+                            <!-- Home Content Management Our Partners Logos start -->
+                            <h3 class="sec_title">Home Content Management - Our Partners Section</h3>
+                            <div class="row">
+
+                                <div class="col-lg-6"  id="add_form">
+                                    <?php echo form_open_multipart(base_url().'admin/home_content_management/add_home_content/' ,array('class' => 'form-horizontal')); ?>
+
+                                        <!-- Hidden input holds the table -->
+                                        <input type="hidden" name="hidden_table" value="tbl_home_partners">
+                                        <input type="hidden" name="hidden_image" value="partner">
+                                        <!-- Hidden input holds the table -->
+
+                                        <div class="form-group">
+                                            <label for="" class="col-sm-4 control-label"> Partner Name </label>
+                                            <div class="col-sm-8">
+                                                <input type="text" name="partner_title" class="form-control" value="" required>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="" class="col-sm-4 control-label"> Partner Description </label>
+                                            <div class="col-sm-8">
+                                                <textarea class="form-control" name="partner_description" style="height:60px;" required></textarea>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="" class="col-sm-4 control-label"> Partner Logo </label>
+                                            <div class="col-sm-8">
+                                                <input type="file" name="userfile" class="form-control">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="" class="col-sm-4"></label>
+                                            <div class="col-sm-8">
+                                                <button type="submit" class="btn btn-success pull-left" name="form_home">Add One</button>
+                                            </div>
+                                        </div> 
+                                    <?php echo form_close(); ?>
+                                </div>
+
+                                <div class="col-lg-12">
+                                    <table class="table table-striped" id="table">
+                                        <?php foreach($our_partners as $partner): ?>
+                                            <?php echo form_open_multipart(base_url().'admin/home_content_management/update_home_content/'.$partner['id'].'/'.$partner['partner_logo'], array('class' => 'form-horizontal')); ?>
+                                                    
+                                                    <!-- Hidden input holds the table -->
+                                                    <input type="hidden" name="hidden_table" value="tbl_home_partners">
+                                                    <input type="hidden" name="hidden_image" value="partner">
+                                                    <!-- Hidden input holds the table -->
+
+                                                <tr class="table-header">
+                                                    <td id="content_header">
+                                                        <div class="form-group">
+                                                            <!-- <div class="col-sm-8"> -->
+                                                                <input type="text" name="partner_title" id="form_content_header" class="form-control" value="<?php echo $partner['partner_title']; ?>">
+                                                            <!-- </div> -->
+                                                        </div>
+                                                    </td>
+                                                    <td id="content_description">
+                                                        <div class="form-group">
+                                                            <!-- <div class="col-sm-8"> -->
+                                                                <textarea class="form-control" name="partner_description" style="height:60px;"><?php echo $partner['partner_description']; ?></textarea>
+                                                            <!-- </div> -->
+                                                        </div>
+                                                    </td>
+                                                    <!-- <td id="content_icon">
+                                                        <div class="form-group"> -->
+                                                            <!-- <div class="col-sm-8"> -->
+                                                                <!-- <input type="text" name="our_review_client_roll" id="form_content_header" class="form-control" value="<?php //echo $review['our_review_client_roll']; ?>" width="30px"> -->
+                                                            <!-- </div> -->
+                                                        <!-- </div>
+                                                    </td> -->
+                                                    <td id="content_button_text">
+                                                        <div class="form-group">
+                                                            <div class="col-sm-8">
+                                                                <input type="file" name="userfile" class="form-control" width="30px">
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td id="content_button_url">
+                                                        <div class="form-group">
+                                                            <!-- <div class="col-sm-8"> -->
+                                                                <img src="<?php echo base_url(); ?>assets/site/img/partner/<?php echo $partner['partner_logo']; ?>" alt="" width="80px">
+                                                            <!-- </div> -->
+                                                        </div>
+                                                    </td>
+                                                    <td><button data-content="<?php echo $partner['id']; ?>" class="btn btn-info btn-xs show-update-form">Update</button></td>
+                                                    <td><a href="<?php echo base_url(); ?>admin/home_content_management/delete_home_content/<?php echo $partner['id'],'/tbl_home_partners'; ?>" class="btn btn-danger btn-xs">Delete</a></td>
+                                                </tr>
+                                            <?php echo form_close(); ?>
+                                        <?php endforeach; ?>
+                                    </table>
+                                </div>
+                            </div>
+
+
+
 
 
 

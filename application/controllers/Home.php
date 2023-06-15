@@ -47,6 +47,10 @@ class Home extends CI_Controller {
 		$data['home_more_benefits_content'] = $this->Model_home->get_home_content('tbl_home_more_benefits_content')->result_array();
 		$data['home_reviews_headers'] = $this->Model_home->get_home_content('tbl_home_our_review_headers')->row_array();
 		$data['home_reviews_content'] = $this->Model_home->get_home_content('tbl_home_our_review_content')->result_array();
+		$data['currency_slider'] = $this->Model_home->get_home_content('tbl_currencies')->result_array(); // Currency Slider
+		$data['partner_slider'] = $this->Model_home->get_home_content('tbl_home_partners')->result_array(); // Currency Slider
+
+		$data['get_news'] = $this->Model_home->get_home_content('tbl_news')->result_array(); // News
 		// Hakim Modifications Home Content
 
 

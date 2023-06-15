@@ -25,6 +25,7 @@ class Home_content_management extends CI_Controller {
         $data['home_more_benefits_content'] = $this->home_content_management_mdl->get_home_content('tbl_home_more_benefits_content')->result_array(); // Home More Benefits Content
         $data['home_our_review_headers'] = $this->home_content_management_mdl->get_home_content('tbl_home_our_review_headers')->row_array(); // Home Our Reviews Headers
         $data['home_our_review_content'] = $this->home_content_management_mdl->get_home_content('tbl_home_our_review_content')->result_array(); // Home Our Reviews Content
+        $data['our_partners'] = $this->home_content_management_mdl->get_home_content('tbl_home_partners')->result_array(); // Home Our Partners
 
 
 		$this->load->view('admin/view_header', $data);
@@ -46,6 +47,8 @@ class Home_content_management extends CI_Controller {
                 $path = "./assets/site/img/why-choose-us/";
             }elseif($get_path === 'testimonials'){
                 $path = "./assets/site/img/testimonials/";
+            }elseif($get_path === 'partner'){
+                $path = "./assets/site/img/partner/";
             }else{
                 $path = "./assets/site/img/hero/";
             }
@@ -80,6 +83,8 @@ class Home_content_management extends CI_Controller {
         $get_path = $this->input->post('hidden_image');
         if($get_path === 'comment'){
             $path = "./assets/site/img/testimonials/";
+        }elseif($get_path === 'partner'){
+            $path = "./assets/site/img/partner/";
         }else{
             $path = FALSE;
         }

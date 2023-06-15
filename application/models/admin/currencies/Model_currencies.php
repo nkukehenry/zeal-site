@@ -35,5 +35,12 @@ class Model_currencies extends CI_Model
         $this->db->insert($table_name, $data);
         return $var;
     }
+
+    // Delete Currency Data from here
+    public function delete_currency_data($table_name, $column_name, $id){
+        $this->db->where($column_name, $id);
+        $this->db->delete($table_name);
+        return true;
+    }
    
 }

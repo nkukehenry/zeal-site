@@ -65,8 +65,8 @@ if(!$this->session->userdata('id')) {
 	                    <td><p class="badge">Forex Exchange</p></td>
                         <?php endif; ?>
 	                    <td>
-	                        <a href="<?php echo base_url(); ?>admin/portfolio_category/edit/<?php //echo $row['category_id']; ?>" class="btn btn-primary btn-xs">Edit</a>
-                            <a href="<?php echo base_url(); ?>admin/portfolio_category/delete/<?php //echo $row['category_id']; ?>" class="btn btn-danger btn-xs" onClick="return confirm('Are you sure?');">Delete</a>
+	                        <!-- <a href="<?php echo base_url(); ?>admin/currencies/edit/<?php //echo $row['category_id']; ?>" class="btn btn-primary btn-xs">Edit</a> -->
+                            <a href="<?php echo base_url(); ?>admin/currencies/delete_currency_data/<?php echo $row['currency_id'].'/'.$row['is_forex']; ?>" class="btn btn-danger btn-xs" onClick="return confirm('Are you sure?');">Delete</a>
 	                    </td>
 	                </tr>
                     <?php endif; ?>

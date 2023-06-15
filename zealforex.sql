@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 03, 2023 at 07:44 PM
+-- Generation Time: Jun 09, 2023 at 10:34 AM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.2
 
@@ -53,8 +53,6 @@ INSERT INTO `tbl_category` (`category_id`, `category_name`, `category_banner`, `
 --
 -- Table structure for table `tbl_client`
 --
-
- TABLE `tbl_client`
 
 CREATE TABLE `tbl_client` (
   `id` int(11) NOT NULL,
@@ -372,27 +370,28 @@ CREATE TABLE `tbl_currencies` (
   `currency_icon` varchar(100) NOT NULL,
   `date_added` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `country_id` int(11) NOT NULL,
-  `is_forex` int(11) NOT NULL
+  `is_forex` int(11) NOT NULL,
+  `we_buy` double NOT NULL,
+  `we_sell` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `tbl_currencies`
 --
 
-INSERT INTO `tbl_currencies` (`currency_id`, `currency_icon`, `date_added`, `country_id`, `is_forex`) VALUES
-(6, 'ug', '2023-05-29 12:09:08', 480, 0),
-(7, 'us', '2023-05-29 12:09:34', 484, 1),
-(8, 'ar', '2023-05-29 12:27:31', 259, 1),
-(9, 'af', '2023-05-29 15:28:10', 250, 1),
-(10, 'ad', '2023-05-29 15:28:26', 254, 1),
-(11, 'ug', '2023-05-29 15:29:11', 480, 1),
-(12, 'ng', '2023-05-29 15:29:30', 410, 1),
-(13, 'ax', '2023-05-29 15:29:44', 498, 0),
-(14, 'ao', '2023-05-29 15:30:03', 255, 0),
-(15, 'fr', '2023-05-29 15:30:15', 324, 0),
-(16, 'vi', '2023-05-29 16:01:41', 492, 1),
-(17, 'eh', '2023-05-29 16:03:42', 494, 0),
-(18, 'mr', '2023-05-29 20:36:19', 389, 1);
+INSERT INTO `tbl_currencies` (`currency_id`, `currency_icon`, `date_added`, `country_id`, `is_forex`, `we_buy`, `we_sell`) VALUES
+(22, 'us', '2023-06-06 14:45:02', 484, 0, 3715.67, 3757.66),
+(24, 'gb', '2023-06-06 14:48:29', 483, 0, 4616.48, 4669.41),
+(27, 'ke', '2023-06-06 15:08:19', 364, 0, 26.5834, 27.2286),
+(28, 'eu', '2023-06-06 15:10:00', 498, 0, 3975.38, 4020.88),
+(29, 'za', '2023-06-06 15:11:26', 454, 0, 193.043, 195.395),
+(30, 'in', '2023-06-06 15:13:39', 351, 0, 45.0036, 45.5161),
+(31, 'ca', '2023-06-06 15:16:40', 288, 0, 2769.05, 2800.76),
+(32, 'au', '2023-06-06 15:17:02', 262, 0, 2473.03, 2501.53),
+(33, 'ch', '2023-06-06 15:18:20', 464, 0, 4096.45, 4143.63),
+(34, 'tz', '2023-06-06 15:19:18', 468, 0, 1.56305, 1.59117),
+(35, 'rw', '2023-06-06 15:21:24', 431, 0, 3.24149, 3.36022),
+(36, 'ae', '2023-06-06 15:22:59', 482, 0, 1011.45, 1023.26);
 
 -- --------------------------------------------------------
 
@@ -882,6 +881,31 @@ CREATE TABLE `tbl_home_our_review_headers` (
 
 INSERT INTO `tbl_home_our_review_headers` (`id`, `our_review_main_header`, `our_review_second_header`) VALUES
 (1, 'OUR REVIEWS', 'More Than 20,000+ Happy Customers Trust Our Services');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_home_partners`
+--
+
+CREATE TABLE `tbl_home_partners` (
+  `id` int(11) NOT NULL,
+  `partner_title` varchar(100) NOT NULL,
+  `partner_logo` varchar(100) NOT NULL,
+  `partner_description` text NOT NULL,
+  `date_posted` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_home_partners`
+--
+
+INSERT INTO `tbl_home_partners` (`id`, `partner_title`, `partner_logo`, `partner_description`, `date_posted`) VALUES
+(1, 'MoneyGram', 'partner-1.png', '', '2023-06-08 09:20:52'),
+(2, 'Western Union', 'partner-2.png', '', '2023-06-08 09:20:52'),
+(3, 'Express Money', 'partner-3.png', '', '2023-06-08 09:20:52'),
+(4, 'Equity', 'partner-4.png', '', '2023-06-08 09:20:52'),
+(5, 'WorldRemit', 'partner-5.png', '', '2023-06-08 09:20:52');
 
 -- --------------------------------------------------------
 
@@ -1915,6 +1939,12 @@ ALTER TABLE `tbl_home_our_review_headers`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `tbl_home_partners`
+--
+ALTER TABLE `tbl_home_partners`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `tbl_home_we_are_flexible_content`
 --
 ALTER TABLE `tbl_home_we_are_flexible_content`
@@ -1982,7 +2012,7 @@ ALTER TABLE `tbl_countries`
 -- AUTO_INCREMENT for table `tbl_currencies`
 --
 ALTER TABLE `tbl_currencies`
-  MODIFY `currency_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `currency_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT for table `tbl_flags`
@@ -2025,6 +2055,12 @@ ALTER TABLE `tbl_home_our_review_content`
 --
 ALTER TABLE `tbl_home_our_review_headers`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `tbl_home_partners`
+--
+ALTER TABLE `tbl_home_partners`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `tbl_home_we_are_flexible_content`

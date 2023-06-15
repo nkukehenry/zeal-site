@@ -114,6 +114,14 @@ class Home_content_management_mdl extends CI_Model
                 'our_review_client_comment' => $this->input->post('our_review_client_comment'),
                 
             );
+        }elseif($table_name === 'tbl_home_partners'){
+            $data = array(
+
+                'partner_title' => $this->input->post('partner_title'),
+                'partner_logo' => $image,
+                'partner_description' => $this->input->post('partner_description'),
+                
+            );
         }
 
         $this->db->where('id', $id);
@@ -145,6 +153,14 @@ class Home_content_management_mdl extends CI_Model
                 'our_review_client_roll' => $this->input->post('our_review_client_roll'),
                 'our_review_client_image' => $upload_image,
                 'our_review_client_comment' => $this->input->post('our_review_client_comment'),
+            );
+        }elseif($table_name === "tbl_home_partners"){
+            $data = array(
+
+                'partner_title' => $this->input->post('partner_title'),
+                'partner_logo' => $upload_image,
+                'partner_description' => $this->input->post('partner_description'),
+                
             );
         }
 

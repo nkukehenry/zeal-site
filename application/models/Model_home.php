@@ -82,9 +82,18 @@ class Model_home extends CI_Model
 
     // Hakim Modification Home Content
     public function get_home_content($table_name, $table_column = FALSE){
-        $this->db->select('*');
-        $this->db->from($table_name);
-        $query = $this->db->get();
-        return $query;
+        if($table_name === 'tbl_currencies'){
+            $this->db->select('*');
+            $this->db->from($table_name);
+            $this->db->join('tbl_countries', 'tbl_countries.country_id = tbl_currencies.country_id');
+            $query = $this->db->get();
+            return $query;
+        }else{
+            $this->db->select('*');
+            $this->db->from($table_name);
+            $query = $this->db->get();
+            return $query;
+        }
+
     }
 }

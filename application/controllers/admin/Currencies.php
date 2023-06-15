@@ -67,5 +67,21 @@ class Currencies extends CI_Controller
 		}
 		
 	}
+
+	// Delete Currency Data
+	public function delete_currency_data($id, $is_forex){
+		$this->load->model('model_currencies');
+		$this->model_currencies->delete_currency_data("tbl_currencies", "currency_id", $id);
+
+			if($is_forex == 0){
+				redirect('admin/currencies/currency_sending');
+			}elseif($is_forex == 1){
+				redirect('admin/currencies/forex_exchange');
+			}else{
+				redirect('admin');
+			}
+		
+	}
+
     
 }

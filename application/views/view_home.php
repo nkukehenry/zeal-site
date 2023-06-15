@@ -33,7 +33,7 @@
                     <label style="padding-bottom:10px; color:#A90E0C;">Send Money</label>
                     <select class="form-control"> 
                         <?php foreach($currency_sending as $send): ?>
-                            <option value="<?php echo $send['currency_icon']; ?>"><?php echo $send['currency']; ?></option>
+                            <option value="<?php echo $send['currency']; ?>"><?php echo $send['country_name']; ?></option>
                         <?php endforeach; ?>
                     </select>
                 </div>
@@ -106,10 +106,29 @@
 
 <!-- Hakim Modifications --Currency slider -->
 
+<?php foreach($currency_slider as $slider): ?>
 <div class="partner-item partnerStyle forex-item" style="border: solid 1px; padding: 0px; border-radius: 12px; text-align: center;">
-    <p class="p"><i class="fi fi-ug"></i> <small> UGX / </small><strong> 25000.00 </strong></p>
+    <p class="p"><i class="fi fi-<?php echo $slider['currency_icon']; ?>"></i> <strong style="padding-right: 12px;"> <?php echo $slider['currency']; ?>  </strong>
+        <small>
+            <table>
+                <tr>
+                    <td style="font-size: 10px; font-weight: bold;">
+                        <small> WE SELL: UGX </small><?php echo $slider['we_sell']; ?> 
+                    </td>
+                </tr>
+                <tr>
+                    <td style="font-size: 10px; font-weight: bold;">
+                        <small> WE BUY : UGX </small><?php echo $slider['we_buy']; ?> 
+                    </td>
+                </tr>
+            </table>
+            
+        </small> 
+    </p>
 </div>
-<div class="partner-item partnerStyle forex-item" style="border: solid 1px; padding: 0px; border-radius: 12px; text-align: center;">
+<?php endforeach; ?>
+
+<!-- <div class="partner-item partnerStyle forex-item" style="border: solid 1px; padding: 0px; border-radius: 12px; text-align: center;">
     <p class="p"><i class="fi fi-us"></i> <small> USD / </small><strong> 25000.00 </strong></p>
 </div>
 <div class="partner-item partnerStyle forex-item" style="border: solid 1px; padding: 0px; border-radius: 12px; text-align: center;">
@@ -134,7 +153,7 @@
     <p class="p"><i class="fi fi-bd"></i> <small> BD / </small><strong> 25000.00 </strong></p>
 </div>
 <div class="partner-item partnerStyle forex-item" style="border: solid 1px; padding: 0px; border-radius: 12px; text-align: center;">
-    <p class="p"><i class="fi fi-ax"></i> <small> AX / </small><strong> 25000.00 </strong></p>
+    <p class="p"><i class="fi fi-ax"></i> <small> AX / </small><strong> 25000.00 </strong></p> -->
 </div>
 
 <!-- Hakim Modifications --Currency slider -->
@@ -363,22 +382,29 @@
 </div>
 </div>
 <div class="row justify-content-center">
+
+
+<?php foreach($get_news as $news): ?>
 <div class="col-xl-4 col-lg-6 col-md-6" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
 <div class="blog-card style2">
 <div class="blog-img">
-<img src="<?php echo base_url(); ?>assets/site/img/blog/blog-1.jpg" >
-<a href="<?php echo base_url('news/view/5'); ?>" class="blog-cat">Corporate</a>
+<img src="<?php echo base_url(); ?>public/uploads/<?php echo $news['photo']; ?>" >
+<a href="<?php echo base_url('news/view/5'); ?>" class="blog-cat">Read More</a>
 </div>
 <div class="blog-info">
 <ul class="blog-metainfo  list-style">
-<li><i class="ri-calendar-2-line"></i><a href="posts-by-date.html">May 22, 2022</a></li>
+<li><i class="ri-calendar-2-line"></i><a href="posts-by-date.html"><?php echo $news['news_date']; ?></a></li>
 <li><i class="ri-chat-3-line"></i>No Comment</li>
 </ul>
-<h3><a href="<?php echo base_url('news/view/5'); ?>">5 Things You Need To Know Before Starting Business</a></h3>
+<h3><a href="<?php echo base_url('news/view/5'); ?>"><?php echo $news['news_title']; ?></a></h3>
 </div>
 </div>
 </div>
-<div class="col-xl-4 col-lg-6 col-md-6" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500">
+<?php endforeach; ?>
+
+
+
+<!-- <div class="col-xl-4 col-lg-6 col-md-6" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500">
 <div class="blog-card style2">
 <div class="blog-img">
 <img src="<?php echo base_url(); ?>assets/site/img/blog/blog-2.jpg" >
@@ -392,8 +418,9 @@
 <h3><a href="<?php echo base_url('news/view/5'); ?>">Effect Of Inflation On Our Daily Expenditure</a></h3>
 </div>
 </div>
-</div>
-<div class="col-xl-4 col-lg-6 col-md-6" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+</div> -->
+
+<!-- <div class="col-xl-4 col-lg-6 col-md-6" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
 <div class="blog-card style2">
 <div class="blog-img">
 <img src="<?php echo base_url(); ?>assets/site/img/blog/blog-3.jpg" >
@@ -407,7 +434,9 @@
 <h3><a href="<?php echo base_url('news/view/5'); ?>">7 Tips To Get Best Exchange Rate In Currency</a></h3>
 </div>
 </div>
-</div>
+</div> -->
+
+
 </div>
 </div>
 </section>
@@ -415,22 +444,13 @@
 <div class="partner-wrap ptb-100">
 <div class="container">
 <div class="partner-slider owl-carousel">
-
-    <div class="partner-item">
-        <img src="<?php echo base_url(); ?>assets/site/img/partner/partner-1.png" >
-    </div>
-    <div class="partner-item">
-        <img src="<?php echo base_url(); ?>assets/site/img/partner/partner-2.png" >
-    </div>
-    <div class="partner-item">
-        <img src="<?php echo base_url(); ?>assets/site/img/partner/partner-3.png" >
-    </div>
-    <div class="partner-item">
-        <img src="<?php echo base_url(); ?>assets/site/img/partner/partner-4.png" >
-    </div>
-    <div class="partner-item">
-        <img src="<?php echo base_url(); ?>assets/site/img/partner/partner-5.png" >
-    </div>
+    <!-- Hakim Modifications - Partners Slider -->
+        <?php foreach($partner_slider as $slider): ?>
+        <div class="partner-item">
+            <img src="<?php echo base_url(); ?>assets/site/img/partner/<?php echo $slider['partner_logo']; ?>" >
+        </div>
+        <?php endforeach; ?>
+    <!-- Hakim Modifications - Partners Slider -->
 </div>
 
 <h6 class="text-center pt-5 text-muted"><small>We partner with numerous reputable financial service providers to serve you better!</small></h6>
