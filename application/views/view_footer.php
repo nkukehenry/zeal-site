@@ -100,6 +100,9 @@ Lorem ipsum dolor sit amet consc tetur adicing elit. Dolor emque dicta molest en
 
 <a href="javascript:void(0)" class="back-to-top bounce"><i class="ri-arrow-up-s-line"></i></a>
 
+<script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
+<div class="elfsight-app-099fe50e-de90-4bf6-a42a-9cfbf49d1926"></div>
+
 
 <script src="<?php echo base_url(); ?>assets/site/js/jquery.min.js"></script>
 <script src="<?php echo base_url(); ?>assets/site/js/bootstrap.bundle.min.js"></script>
@@ -122,9 +125,9 @@ Lorem ipsum dolor sit amet consc tetur adicing elit. Dolor emque dicta molest en
 
 <script src="<?php echo base_url(); ?>assets/site/custom/js/country.js"></script>
 <script src="<?php echo base_url(); ?>assets/site/custom/js/converter.js"></script>
+<script src="<?php echo base_url(); ?>assets/site/custom/js/home_converter.js"></script>
 <script src="<?php echo base_url(); ?>assets/site/custom/js/custom.js"></script>
 <!-- Hakim loaded this for converter and currency slider -->
-
 
 
 </body>

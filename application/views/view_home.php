@@ -1,6 +1,26 @@
 
+<style type="text/css">
+    
+.modal-dialog {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
 
-<section class="hero-wrap style2">
+.modal-content {
+  height: auto;
+  min-height: 100%;
+  border-radius: 0;
+}
+
+</style>
+
+
+
+
+
+<section class="hero-wrap style2"  style="background-image:url(<?php echo base_url('assets/site/img/banner.webp'); ?>); background-size:cover; background-repeat:no-repeat; padding:10px!important;">
 <div class="container">
 <div class="hero-shape" data-speed="0.06" data-revert="true">
 <img src="<?php echo base_url(); ?>assets/site/img/hero/hero-shape-4.png"  class="hero-shape-one">
@@ -9,12 +29,12 @@
 </div>
 <div class="row align-items-center gx-5" style="padding: 20px;">
 
-    <!-- Home Currency exchange Section headers -->
-<div class="col-lg-8" style="background-image:url(<?php echo base_url('assets/site/img/globe.png'); ?>); background-position:bottom right !important; background-size:50%; background-repeat:no-repeat; padding:10px!important;">
-<div class="hero-content">
-<span data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200"><?php echo $currency_section_headers['top_header'];?></span>
-<h1 data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300"><?php echo $currency_section_headers['second_header'];?></h1>
-<p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400"><?php echo $currency_section_headers['third_header'];?></p>
+<div class="col-lg-8">
+<div class="hero-content text-white">
+<span data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200" class="text-white"><?php echo $currency_section_headers['top_header'];?></span>
+<h1 data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300" class="text-white"><?php echo $currency_section_headers['second_header'];?></h1>
+<p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400" class="text-gray text-bold"><?php echo $currency_section_headers['third_header'];?></p>
+
 <div class="hero-btn" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500">
 <a href="<?php echo base_url(); ?>contact" class="btn style1"><?php echo $currency_section_headers['contact_us_button_text'];?><i class="ri-arrow-right-s-line"></i></a>
 
@@ -26,29 +46,29 @@
 <div class="col-lg-4"  style=" overflow-y:hidden;">
 
 <div class="col-lg-12">
-        <div class="row card" style="padding:20px; margin-top:10px; background-color:#f5fcfc; box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;">
+        <div class="row card glass-box">
 
          <div class="col-lg-12">
                 <div class="form-group mt-2">
-                    <label style="padding-bottom:10px; color:#A90E0C;">Send Money</label>
-                    <select class="form-control"> 
+                    <label style="padding-bottom:10px;" class="text-white">Send Money To</label>
+                    <select class="form-control"  id="country_name"> 
                         <?php foreach($currency_sending as $send): ?>
-                            <option value="<?php echo $send['currency']; ?>"><?php echo $send['country_name']; ?></option>
+                            <option value="<?php echo $send['we_sell']; ?>"><?php echo $send['country_name']; ?></option>
                         <?php endforeach; ?>
                     </select>
                 </div>
             </div>
             <div class="col-lg-12 mt-2">
                     <div class="from-group">
-                        <label style="color:#001F60;">Amount</label>
-                        <input type="text" class="form-control" value="1" style="color: grey;">
+                        <label class="text-white">Amount (UGX) </label>
+                        <input type="number" class="form-control" value="1" style="color: grey;" id="send_amount">
                     </div>
             </div>
 
             <div class="col-lg-12 mt-2">
                     <div class="from-group">
-                        <label style="color:#001F60;">They receive</label>
-                        <input type="text" class="form-control" disabled>
+                        <label class="text-white">They receive</label>
+                        <input id="receive_amount" type="text" class="form-control" disabled>
                     </div>
             </div>
         </div>
@@ -57,35 +77,41 @@
 
 
     <div class="col-lg-12">
-    <div class="row card " style="padding:20px; margin-top:10px; background-color:#f5fcfc; box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;">
+    <div class="row card glass-box">
 
             <div class="col-lg-12">
                 <div class="row">
-                <label class="col-lg-12"style="padding-bottom:10px; color:#A90E0C;">Exchange Money</label>
+                <label class="col-lg-12 text-white" style="padding-bottom:10px;" >Exchange Money</label>
                 <div class="form-group col-lg-6">
-                    <label style="color:#001F60;">I have</label>
-                    <select class="form-control"> 
+                    <label class="text-white">I have</label>
+                    <select class="form-control" id="convert_from"> 
                         <?php foreach($currency_sending as $send): ?>
-                            <option value="<?php echo $send['currency_icon']; ?>"><?php echo $send['currency']; ?></option>
+                            <option data-set="<?php echo $send['currency']; ?>" value="<?php echo $send['we_sell']; ?>"><?php echo $send['currency']; ?></option>
                         <?php endforeach; ?>
                     </select>
                 </div>
 
                 <div class="form-group col-lg-6">
-                    <label style="color:#001F60;">I want</label>
-                    <select class="form-control"> 
+                    <label class="text-white">I want</label>
+                    <select class="form-control" id="convert_to"> 
                         <?php foreach($currency_sending as $send): ?>
-                            <option value="<?php echo $send['currency_icon']; ?>"><?php echo $send['currency']; ?></option>
+                            <option data-set="<?php echo $send['currency']; ?>" value="<?php echo $send['we_sell']; ?>"><?php echo $send['currency']; ?></option>
                         <?php endforeach; ?>
                     </select>
                 </div>
                 </div>
             </div>
             <div class="col-lg-12 mt-2">
-                    <div class="from-group">
-                        <label style="color:#001F60;">Amount</label>
-                        <input type="text" class="form-control" value="1" style="color: grey;">
-                    </div>
+                <div class="from-group">
+                    <label class="text-white">Amount </label>
+                    <input id="convert_amount" type="number" class="form-control" value="1" style="color: grey;">
+                </div>
+            </div>
+            <div class="col-lg-12 mt-2">
+                <div class="from-group">
+                    <label class="text-white">Output Amount</label>
+                    <input id="convert_output" type="text" class="form-control" value="1" style="color: grey;" disabled>
+                </div>
             </div>
         </div>
  
@@ -127,36 +153,7 @@
     </p>
 </div>
 <?php endforeach; ?>
-
-<!-- <div class="partner-item partnerStyle forex-item" style="border: solid 1px; padding: 0px; border-radius: 12px; text-align: center;">
-    <p class="p"><i class="fi fi-us"></i> <small> USD / </small><strong> 25000.00 </strong></p>
 </div>
-<div class="partner-item partnerStyle forex-item" style="border: solid 1px; padding: 0px; border-radius: 12px; text-align: center;">
-    <p class="p"><i class="fi fi-ke"></i> <small> KE / </small><strong> 25000.00 </strong></p>
-</div>
-<div class="partner-item partnerStyle forex-item" style="border: solid 1px; padding: 0px; border-radius: 12px; text-align: center;">
-    <p class="p"><i class="fi fi-ec"></i> <small> EC / </small><strong> 25000.00 </strong></p>
-</div>
-<div class="partner-item partnerStyle forex-item" style="border: solid 1px; padding: 0px; border-radius: 12px; text-align: center;">
-    <p class="p"><i class="fi fi-az"></i> <small> AZ / </small><strong> 25000.00 </strong></p>
-</div>
-<div class="partner-item partnerStyle forex-item" style="border: solid 1px; padding: 0px; border-radius: 12px; text-align: center;">
-    <p class="p"><i class="fi fi-ee"></i> <small> EE / </small><strong> 25000.00 </strong></p>
-</div>
-<div class="partner-item partnerStyle forex-item" style="border: solid 1px; padding: 0px; border-radius: 12px; text-align: center;">
-    <p class="p"><i class="fi fi-ba"></i> <small> BA / </small><strong> 25000.00 </strong></p>
-</div>
-<div class="partner-item partnerStyle forex-item" style="border: solid 1px; padding: 0px; border-radius: 12px; text-align: center;">
-    <p class="p"><i class="fi fi-bb"></i> <small> BB / </small><strong> 25000.00 </strong></p>
-</div>
-<div class="partner-item partnerStyle forex-item" style="border: solid 1px; padding: 0px; border-radius: 12px; text-align: center;">
-    <p class="p"><i class="fi fi-bd"></i> <small> BD / </small><strong> 25000.00 </strong></p>
-</div>
-<div class="partner-item partnerStyle forex-item" style="border: solid 1px; padding: 0px; border-radius: 12px; text-align: center;">
-    <p class="p"><i class="fi fi-ax"></i> <small> AX / </small><strong> 25000.00 </strong></p> -->
-</div>
-
-<!-- Hakim Modifications --Currency slider -->
 
 </div>
 </div>
@@ -401,40 +398,6 @@
 </div>
 </div>
 <?php endforeach; ?>
-
-
-
-<!-- <div class="col-xl-4 col-lg-6 col-md-6" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500">
-<div class="blog-card style2">
-<div class="blog-img">
-<img src="<?php echo base_url(); ?>assets/site/img/blog/blog-2.jpg" >
-<a href="<?php echo base_url('news/view/5'); ?>" class="blog-cat">Consumer</a>
-</div>
-<div class="blog-info">
-<ul class="blog-metainfo  list-style">
-<li><i class="ri-calendar-2-line"></i><a href="posts-by-date.html">May 13, 2022</a></li>
-<li><i class="ri-chat-3-line"></i>No Comment</li>
-</ul>
-<h3><a href="<?php echo base_url('news/view/5'); ?>">Effect Of Inflation On Our Daily Expenditure</a></h3>
-</div>
-</div>
-</div> -->
-
-<!-- <div class="col-xl-4 col-lg-6 col-md-6" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
-<div class="blog-card style2">
-<div class="blog-img">
-<img src="<?php echo base_url(); ?>assets/site/img/blog/blog-3.jpg" >
-<a href="<?php echo base_url('news/view/5'); ?>" class="blog-cat">Finance</a>
-</div>
-<div class="blog-info">
-<ul class="blog-metainfo  list-style">
-<li><i class="ri-calendar-2-line"></i><a href="posts-by-date.html">Apr 15, 2022</a></li>
-<li><i class="ri-chat-3-line"></i>No Comment</li>
-</ul>
-<h3><a href="<?php echo base_url('news/view/5'); ?>">7 Tips To Get Best Exchange Rate In Currency</a></h3>
-</div>
-</div>
-</div> -->
 
 
 </div>

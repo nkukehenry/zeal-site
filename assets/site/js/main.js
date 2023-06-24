@@ -14,6 +14,10 @@
     $('.user-menu').on('click', function() {
         $(this).toggleClass('open');
     });
+
+     $('.hide-advert').on('click', function() {
+        $('.advert').fadeOut(300);
+    });
     
     $('.user-login span').on('click', function() {
         $('.user-login ul').toggleClass('open');
