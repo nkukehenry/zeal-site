@@ -6152,13 +6152,14 @@ input,textarea{
 }
 
 .glass-box{
-  padding:20px; margin-top:10px; 
+  padding:12px; margin-top:10px; 
  background: rgba(255, 255, 255, 0.09);
  border-radius: 16px;
  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
  backdrop-filter: blur(2.4px);
  -webkit-backdrop-filter: blur(2.4px);
  border: 1px solid rgba(255, 255, 255, 0.28);
+ margin: 5px!important;
 }
 
 .text-white{
@@ -6166,8 +6167,9 @@ input,textarea{
 }
 
 .text-main{
-  color: #E31C25!important;
+  color: #001F60!important;
 }
+
 
 .text-gray{
   color: #EEEEEE!important;

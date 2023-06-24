@@ -13,6 +13,7 @@ class Home_content_management extends CI_Controller {
     // Load Home Content
 	public function index() {
 
+
 		$data['title'] = "Home Content Management";
         $data['home_currency_section_headers'] = $this->home_content_management_mdl->get_home_content('tbl_home_currency_section_headers')->row_array(); // Home Currency exchange Section headers
         $data['home_about_us_section'] = $this->home_content_management_mdl->get_home_content('tbl_home_about_section')->row_array(); // Home Content About Us Section
@@ -43,6 +44,7 @@ class Home_content_management extends CI_Controller {
         }else{
 
             $get_path = $this->input->post('hidden_image');
+
             if($get_path == 1 || $get_path == 2 || $get_path == 3){
                 $path = "./assets/site/img/why-choose-us/";
             }elseif($get_path === 'testimonials'){
@@ -54,7 +56,7 @@ class Home_content_management extends CI_Controller {
             }
             // Upload Image from here if it is available
             $config['upload_path'] = $path;
-            $config['allowed_types'] = "jpg|jpeg|gif|png";
+            $config['allowed_types'] = "jpg|jpeg|gif|png|webp";
             $config['max_size'] = "5000";
             $config['max_width'] = "5000";
             $config['max_height'] = "5000";
@@ -107,7 +109,9 @@ class Home_content_management extends CI_Controller {
 
             }
 
-            $table_name = $this->input->post('hidden_table'); // Value comes from the submitted Table
+             // Value comes from the submitted Table
+            $table_name = $this->input->post('hidden_table'); 
+
             $this->home_content_management_mdl->add_home_content($table_name, $upload_image);
             redirect('admin/home_content_management');
     }

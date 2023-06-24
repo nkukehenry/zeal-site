@@ -17,7 +17,13 @@
 </style>
 
 
+<div class="preloader advert"
+style="background-image:url(<?php echo base_url('assets/site/img/advert.webp'); ?>); background-size:cover; background-repeat:no-repeat; padding:0px!important;">
 
+  <a href="#" class="btn style1 hide-advert advert-btn" onclick="hideAdvert()">
+    CONTINUE TO HOME PAGE <i class="ri-arrow-right-s-line"></i> </a>
+
+</div>
 
 
 <section class="hero-wrap style2"  style="background-image:url(<?php echo base_url('assets/site/img/banner.webp'); ?>); background-size:cover; background-repeat:no-repeat; padding:10px!important;">
@@ -27,13 +33,13 @@
 <img src="<?php echo base_url(); ?>assets/site/img/hero/hero-shape-5.png"  class="hero-shape-two">
 <img src="<?php echo base_url(); ?>assets/site/img/hero/hero-shape-6.png"  class="hero-shape-three">
 </div>
-<div class="row align-items-center gx-5" style="padding: 20px;">
+<div class="row align-items-center gx-5" style="padding: 20px; padding-top:0px;">
 
-<div class="col-lg-8">
-<div class="hero-content text-white">
-<span data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200" class="text-white"><?php echo $currency_section_headers['top_header'];?></span>
-<h1 data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300" class="text-white"><?php echo $currency_section_headers['second_header'];?></h1>
-<p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400" class="text-gray text-bold"><?php echo $currency_section_headers['third_header'];?></p>
+<div class="col-lg-6">
+<div class="hero-content">
+<span data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200" class="text-white text-bold"><?php echo $currency_section_headers['top_header'];?></span>
+<h3 data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300" class="text-white"><?php echo $currency_section_headers['second_header'];?></h3>
+<p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400" class="text-main text-bold"><?php echo $currency_section_headers['third_header'];?></p>
 
 <div class="hero-btn" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500">
 <a href="<?php echo base_url(); ?>contact" class="btn style1"><?php echo $currency_section_headers['contact_us_button_text'];?><i class="ri-arrow-right-s-line"></i></a>
@@ -43,14 +49,17 @@
 </div>
 </div>
 
-<div class="col-lg-4"  style=" overflow-y:hidden;">
+<div class="col-lg-6"  style=" overflow-y:hidden;">
 
-<div class="col-lg-12">
+<div class="row">
+
+<div class="col-lg-6">
         <div class="row card glass-box">
 
          <div class="col-lg-12">
                 <div class="form-group mt-2">
-                    <label style="padding-bottom:10px;" class="text-white">Send Money To</label>
+                    <label  class="text-white">Send Money</label>
+                    <label style="padding-bottom:5px;" class="text-white">Choose Country</label>
                     <select class="form-control"  id="country_name"> 
                         <?php foreach($currency_sending as $send): ?>
                             <option value="<?php echo $send['we_sell']; ?>"><?php echo $send['country_name']; ?></option>
@@ -73,10 +82,9 @@
             </div>
         </div>
 
-    </div>
+</div>
 
-
-    <div class="col-lg-12">
+<div class="col-lg-6">
     <div class="row card glass-box">
 
             <div class="col-lg-12">
@@ -109,7 +117,7 @@
             </div>
             <div class="col-lg-12 mt-2">
                 <div class="from-group">
-                    <label class="text-white">Output Amount</label>
+                    <label class="text-white">You get</label>
                     <input id="convert_output" type="text" class="form-control" value="1" style="color: grey;" disabled>
                 </div>
             </div>
@@ -119,8 +127,7 @@
     </div>
     </div>
 
-
-
+</div>
 </div>
 
 </div>
@@ -175,7 +182,7 @@
 <div class="hero-img-wrap">
     
     <div class="hero-img-two">
-    <img src="<?php echo base_url(); ?>assets/site/img/hero/<?php echo $about_section['about_us_image'];?>" >
+    <img src="<?php echo base_url(); ?>assets/site/img/services.webp" >
     </div>
 </div>
 

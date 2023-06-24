@@ -247,7 +247,7 @@ if($class_name == 'event')
 </head>
 <body>
 
-<!--
+
 <div class="preloader js-preloader">
 <div class="loader loader-inner-1">
 <div class="loader loader-inner-2">
@@ -255,24 +255,16 @@ if($class_name == 'event')
 </div>
 </div>
 </div>
-</div> -->
-
-<div class="preloader advert"
-style="background-image:url(<?php echo base_url('assets/site/img/advert.webp'); ?>); background-size:cover; background-repeat:no-repeat; padding:0px!important;">
-
-  <a href="#" class="btn style1 hide-advert advert-btn" onclick="hideAdvert()">
-    CONTINUE TO HOME PAGE <i class="ri-arrow-right-s-line"></i> </a>
-
 </div>
 
 
 
-<div class="switch-theme-mode">
+<!-- <div class="switch-theme-mode">
 <label id="switch" class="switch">
 <input type="checkbox" onchange="toggleTheme()" id="slider">
 <span class="slider round"></span>
 </label>
-</div>
+</div> -->
 
 
 <div class="page-wrapper">
