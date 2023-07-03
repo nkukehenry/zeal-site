@@ -187,7 +187,7 @@
 <div class="hero-img-wrap">
     
     <div class="hero-img-two">
-    <img src="<?php echo base_url(); ?>assets/site/img/hero/<?php echo $about_section['about_us_image'];?>">
+    <img src="<?php echo base_url(); ?>assets/site/img/<?php echo $about_section['about_us_image'];?>">
     </div>
 </div>
 
