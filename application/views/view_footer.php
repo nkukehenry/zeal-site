@@ -5,32 +5,20 @@
 <div class="col-xl-3 col-lg-5 col-md-5 col-sm-6">
 <div class="footer-widget">
 <a href="index-2.html" class="footer-logo">
-<img src="<?php echo base_url(); ?>assets/site/img/logo-white.png" alt="Image">
+<img src="<?php echo base_url(); ?>assets/site/img/<?php echo $setting['logo']; ?>" alt="Image">
 </a>
 <p class="comp-desc">
-Lorem ipsum dolor sit amet consc tetur adicing elit. Dolor emque dicta molest enim beatae ame consequ atur tempo pretium auctor nam.
+    <?php echo $setting['newsletter_text']; ?>
 </p>
 <ul class="social-profile style1 list-style">
+
+<?php foreach($social as $media): ?>
 <li>
-<a href="https://facebook.com/">
-<i class="ri-facebook-fill"></i>
+<a href="<?php echo $media['social_url']; ?>">
+<i class="<?php echo $media['social_icon']; ?>"></i>
 </a>
 </li>
-<li>
-<a href="https://twitter.com/">
-<i class="ri-twitter-fill"></i>
-</a>
-</li>
-<li>
-<a href="https://instagram.com/">
-<i class="ri-instagram-line"></i>
-</a>
-</li>
-<li>
-<a href="https://linkedin.com/">
-<i class="ri-linkedin-fill"></i>
-</a>
-</li>
+<?php endforeach; ?>
 </ul>
 </div>
 </div>
@@ -70,17 +58,17 @@ Lorem ipsum dolor sit amet consc tetur adicing elit. Dolor emque dicta molest en
 <li>
     <i class="ri-map-pin-fill"></i>
     <h6>Location</h6>
-    <p>Plot 1 Namaganda Plaza. P.O.Box 11562 kampala-Russel Rd</p>
+    <p><?php echo $setting['footer_address']; ?></p>
 </li>
 <li>
     <i class="ri-mail-open-fill"></i>
     <h6>Email</h6>
-    <a href="">info@zealforex.com</a>
+    <a href="mailto:<?php echo $setting['footer_email']; ?>"><?php echo $setting['footer_email']; ?></a>
 </li>
 <li>
     <i class="ri-phone-fill"></i>
     <h6>Phone</h6>
-    <a href="tel:13454567877">+256 785 438 382 </a>
+    <a href="tel:13454567877"><?php echo $setting['footer_phone']; ?></a>
  </li>
 </ul>
 </div>

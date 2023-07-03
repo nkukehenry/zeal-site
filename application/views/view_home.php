@@ -17,8 +17,13 @@
 </style>
 
 
-<div class="preloader advert"
-style="background-image:url(<?php echo base_url('assets/site/img/advert.webp'); ?>); background-size:cover; background-repeat:no-repeat; padding:0px!important;">
+<div class="preloader advert" style="background-image:url(<?php echo base_url('assets/site/img/advert.webp'); ?>); ">
+
+    <h2 class="mb-30 text-center">
+        <span class="text-main">Send Money to India </span>
+        <span class="text-alt">at greatly reduced rates</span>
+    </h2>
+
 
   <a href="#" class="btn style1 hide-advert advert-btn" onclick="hideAdvert()">
     CONTINUE TO HOME PAGE <i class="ri-arrow-right-s-line"></i> </a>
@@ -141,7 +146,7 @@ style="background-image:url(<?php echo base_url('assets/site/img/advert.webp'); 
 
 <?php foreach($currency_slider as $slider): ?>
 <div class="partner-item partnerStyle forex-item" style="border: solid 1px; padding: 0px; border-radius: 12px; text-align: center;">
-    <p class="p"><i class="fi fi-<?php echo $slider['currency_icon']; ?>"></i> <strong style="padding-right: 12px;"> <?php echo $slider['currency']; ?>  </strong>
+    <p class="p"><i class="fi fi-<?php echo $slider['currency_icon']; ?>"></i> <strong style="padding-right: 12px;" class="currency_code"> <?php echo $slider['currency']; ?>  </strong>
         <small>
             <table>
                 <tr>
@@ -182,7 +187,7 @@ style="background-image:url(<?php echo base_url('assets/site/img/advert.webp'); 
 <div class="hero-img-wrap">
     
     <div class="hero-img-two">
-    <img src="<?php echo base_url(); ?>assets/site/img/services.webp" >
+    <img src="<?php echo base_url(); ?>assets/site/img/hero/<?php echo $about_section['about_us_image'];?>">
     </div>
 </div>
 
@@ -393,14 +398,14 @@ style="background-image:url(<?php echo base_url('assets/site/img/advert.webp'); 
 <div class="blog-card style2">
 <div class="blog-img">
 <img src="<?php echo base_url(); ?>public/uploads/<?php echo $news['photo']; ?>" >
-<a href="<?php echo base_url('news/view/5'); ?>" class="blog-cat">Read More</a>
+<a href="<?php echo base_url(); ?>news/view/<?php echo $news['news_id']; ?>" class="blog-cat">Read More</a>
 </div>
 <div class="blog-info">
 <ul class="blog-metainfo  list-style">
 <li><i class="ri-calendar-2-line"></i><a href="posts-by-date.html"><?php echo $news['news_date']; ?></a></li>
 <li><i class="ri-chat-3-line"></i>No Comment</li>
 </ul>
-<h3><a href="<?php echo base_url('news/view/5'); ?>"><?php echo $news['news_title']; ?></a></h3>
+<h3><a href="<?php echo base_url(); ?>news/view/<?php echo $news['news_id']; ?>"><?php echo $news['news_title']; ?></a></h3>
 </div>
 </div>
 </div>

@@ -91,7 +91,8 @@ class Model_common extends CI_Model
     }
     public function all_social()
     {
-        $query = $this->db->query("SELECT * from tbl_social");
+                 
+        $query = $this->db->query("SELECT * from tbl_social LIMIT 5");
         return $query->result_array();
     }
     public function all_news()

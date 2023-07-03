@@ -259,12 +259,13 @@ if($class_name == 'event')
 
 
 
-<!-- <div class="switch-theme-mode">
+<!-- Theme Switch -->
+<div class="switch-theme-mode">
 <label id="switch" class="switch">
 <input type="checkbox" onchange="toggleTheme()" id="slider">
 <span class="slider round"></span>
 </label>
-</div> -->
+</div>
 
 
 <div class="page-wrapper">
@@ -327,3 +328,16 @@ Blog
 </div>
 </div>
 </header>
+
+<link rel="stylesheet" href="<?php echo base_url(); ?>assets/site/custom/css/social.css">
+
+<section class="banner">
+    <div class="banner-social-icons_wrapper">
+    <!-- <center> -->
+        <?php foreach($social as $media): ?>
+            <a href="https://www.linkedin.com/company/2629703/" class="<?php echo $media['social_icon']; ?> twitter-bg" target="_blank" title="linkedin" style="width: 50px; text-align: center;">
+                <img width="32" height="32" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3C/svg%3E" alt="icon" data-lazy-src="https://www.efsme.com/wp-content/uploads/2022/02/linkedin.svg"><noscript> <i class="ri-phone-fill"></i> </noscript>
+            </a>
+        <?php endforeach; ?>
+    </div>
+</section>

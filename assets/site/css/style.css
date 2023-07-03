@@ -6170,10 +6170,15 @@ input,textarea{
   color: #001F60!important;
 }
 
+.text-alt{
+  color: #dbad21;
+}
+
 
 .text-gray{
   color: #EEEEEE!important;
 }
+
 .text-bold{
   font-weight: bold;
 }
@@ -6181,12 +6186,19 @@ input,textarea{
 .advert{
    overflow: hidden!important;
    cursor: pointer;
-   background-size: contain!important;
    display: flex;
-   justify-content: space-around;
+   justify-content:center;
+   flex-direction: column;
+   align-items: center;
+   background-size:cover; 
+   background-repeat:no-repeat; 
+   background-position-x: center;
+   background-position-y: center;
+   line-height: 5px;
+   color: white;
 }
 
 .advert-btn{
-  margin-top: 40%;
    bottom: 0px!important;
 }
+
