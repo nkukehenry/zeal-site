@@ -19,9 +19,10 @@
 
 <div class="preloader advert" style="background-image:url(<?php echo base_url('assets/site/img/advert.webp'); ?>); ">
 
+
     <h2 class="mb-30 text-center">
-        <span class="text-main">Send Money to India </span>
-        <span class="text-alt">at greatly reduced rates</span>
+        <span class="text-main">Send money to your loved ones in India with </span>
+        <span class="text-alt">a better rate & low transfer fees</span>
     </h2>
 
 

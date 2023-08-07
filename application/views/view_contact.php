@@ -14,9 +14,9 @@
 </div>
 
 
-<section class="contact-us-wrap ptb-100">
+<section class="contact-us-wrap ptb-100" id="location">
 <div class="container">
-<div class="row justify-content-center">
+<div class="row justify-content-center"  >
 <div class="col-xl-4 col-lg-6 col-md-6">
 <div class="contact-item">
 <span class="contact-icon">

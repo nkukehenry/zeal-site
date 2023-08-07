@@ -4,7 +4,7 @@
 <div class="row pt-100 pb-75">
 <div class="col-xl-3 col-lg-5 col-md-5 col-sm-6">
 <div class="footer-widget">
-<a href="index-2.html" class="footer-logo">
+<a href="<?php echo base_url(); ?>" class="footer-logo">
 <img src="<?php echo base_url(); ?>assets/site/img/<?php echo $setting['logo']; ?>" alt="Image">
 </a>
 <p class="comp-desc">
@@ -68,7 +68,7 @@
 <li>
     <i class="ri-phone-fill"></i>
     <h6>Phone</h6>
-    <a href="tel:13454567877"><?php echo $setting['footer_phone']; ?></a>
+    <a href="tel:<?php echo $setting['footer_phone']; ?>"><?php echo $setting['footer_phone']; ?></a>
  </li>
 </ul>
 </div>
@@ -85,11 +85,17 @@
 
 </div>
 
+<a href="https://api.whatsapp.com/send?phone=256777245670&text=Hello%20Zeal%20Forex%20I'm%20contacting%20you%20via%20your%20website.%20" class="float" target="_blank">
+<i class="fa fa-whatsapp my-float 3x"></i>
+</a>
+
+<a href="<?php echo base_url('contact'); ?>#location" class="float2"  title="Our location">
+<i class="fa fa-map-pin my-float 3x"></i>
+</a>
+
 
 <!-- <a href="javascript:void(0)" class="back-to-top bounce"><i class="ri-arrow-up-s-line"></i></a> -->
 
-<script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
-<div class="elfsight-app-099fe50e-de90-4bf6-a42a-9cfbf49d1926"></div>
 
 
 <script src="<?php echo base_url(); ?>assets/site/js/jquery.min.js"></script>
