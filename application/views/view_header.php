@@ -16,11 +16,11 @@
 
 <link data-minify="1" rel='stylesheet' id='wpmm_css-css' href='<?php echo base_url(); ?>assets/site/custom/css/wpmm70f0.css?ver=1683709233' type='text/css' media='all' />
 <!-- <script type="rocketlazyloadscript" data-rocket-type='text/javascript' data-rocket-src='<?php echo base_url(); ?>assets/site/custom/js/rate.js?ver=1.1.1' id='jquery-js' defer></script> -->
-<link data-minify="1" href="<?php echo base_url(); ?>assets/site/custom/css/homea9a4.css?ver=1683709234" rel="stylesheet">
+<!-- <link data-minify="1" href="<?php echo base_url(); ?>assets/site/custom/css/homea9a4.css?ver=1683709234" rel="stylesheet">
 <link data-minify="1" href="<?php echo base_url(); ?>assets/site/custom/css/responsive70f0.css?ver=1683709233" rel="stylesheet">
-<link data-minify="1" href="<?php echo base_url(); ?>assets/site/custom/css/flags.css" rel="stylesheet">
-<link data-minify="1" href="<?php echo base_url(); ?>assets/site/custom/css/custom.css" rel="stylesheet">
-<link data-minify="1" href="<?php echo base_url(); ?>assets/site/custom/css/flag-icons.min.css" rel="stylesheet">
+<link data-minify="1" href="<?php echo base_url(); ?>assets/site/custom/css/flags.css" rel="stylesheet"> -->
+<link data-minify="1" href="<?php echo base_url(); ?>assets/site/custom/css/custom.css" rel="stylesheet"> 
+<link data-minify="1" href="<?php echo base_url(); ?>assets/site/custom/css/flag-icons.min.css" rel="stylesheet"> 
 
 <link href="<?php echo base_url(); ?>assets/site/custom/css/converter.css" rel="stylesheet">
 <link href="<?php echo base_url(); ?>assets/site/custom/fonts/myFonts.css" rel="stylesheet">

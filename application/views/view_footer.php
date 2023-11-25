@@ -84,14 +84,14 @@
 </footer>
 
 </div>
-
+<!-- 
 <a href="https://api.whatsapp.com/send?phone=256777245670&text=Hello%20Zeal%20Forex%20I'm%20contacting%20you%20via%20your%20website.%20" class="float" target="_blank">
 <i class="fa fa-whatsapp my-float 3x"></i>
 </a>
 
 <a href="<?php echo base_url('contact'); ?>#location" class="float2"  title="Our location">
 <i class="fa fa-map-pin my-float 3x"></i>
-</a>
+</a> -->
 
 
 <!-- <a href="javascript:void(0)" class="back-to-top bounce"><i class="ri-arrow-up-s-line"></i></a> -->

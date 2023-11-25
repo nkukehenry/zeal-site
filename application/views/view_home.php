@@ -32,7 +32,7 @@
 </div>
 
 
-<section class="hero-wrap style2"  style="background-image:url(<?php echo base_url('assets/site/img/banner.webp'); ?>); background-size:cover; background-repeat:no-repeat; padding:10px!important;">
+<section class="hero-wrap style2"  style="background-image:url(<?php echo base_url('assets/site/img/banner.webp'); ?>); background-size:cover; background-repeat:no-repeat;">
 <div class="container">
 <div class="hero-shape" data-speed="0.06" data-revert="true">
 <img src="<?php echo base_url(); ?>assets/site/img/hero/hero-shape-4.png"  class="hero-shape-one">
