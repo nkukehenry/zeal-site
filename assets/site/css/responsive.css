@@ -65,6 +65,10 @@
 }
 
 @media only screen and (max-width: 767px) {
+  body,html{
+    margin: 0px!important;
+    padding: 0px!important;
+  }
   p, input, textarea {
     font-size: 14px;
   }
@@ -258,7 +262,7 @@
   }
   .hero-wrap.style2 {
     padding: 60px 0;
-    margin-top: 67px;
+    margin-top: 0px;
   }
   .hero-wrap.style2 .hero-shape-one,
   .hero-wrap.style2 .hero-shape-three {
@@ -850,7 +854,7 @@
   }
   .hero-wrap.style2 {
     padding: 60px 0;
-    margin-top: 78px;
+    margin-top: 10px;
   }
   .hero-wrap.style2 .hero-img-wrap .hero-promo-text {
     left: 25%;
