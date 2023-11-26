@@ -1,27 +1,61 @@
 var country_name = document.querySelector('#country_name');
 var send_amount = document.querySelector('#send_amount');
 var receive_amount = document.querySelector('#receive_amount');
+var send_amount_currency = document.querySelector('#send_amount_currency');
+var receive_amount_currency = document.querySelector('#receive_amount_currency');
 
-	country = "";
-	send = "";
 
-	country_name.addEventListener('change', sendMoney);
-	send_amount.addEventListener('keypress', sendMoney);
 
-		function sendMoney(){
-			country = country_name.value;
-			send = send_amount.value;
+	country_name.addEventListener("change", putDataToReceiveCurrency);
 
-			setToSend();
+		function putDataToReceiveCurrency(){
+			var splitContent = this.value.split('-');
+			var weBuy = splitContent[0];
+			var weSell = splitContent[1];
+			var currency = splitContent[2];
+			receive_amount_currency.value = currency;
+			setAmountToSend(weBuy, weSell);
+			setAmountToReceive(weBuy, weSell);
 		}
 
-		function setToSend(){
-			var c = parseFloat(country);
-			var s = parseFloat(send);
+		function setAmountToSend(weBuy, weSell){
+			send_amount.onkeyup = function(){
+				send_amount.value;
 
-			var output = s/c;
-			receive_amount.value = output.toFixed(3);
+				receive_amount.value = send_amount.value / weSell;
+			}
 		}
+
+		function setAmountToReceive(weBuy, weSell){
+			receive_amount.onkeyup = function(){
+				receive_amount.value;
+
+				send_amount.value = receive_amount.value * weSell;
+			}
+		}
+
+
+
+	// country = "";
+	// send = "";
+
+	// country_name.addEventListener('change', sendMoney);
+	// send_amount.addEventListener('keypress', sendMoney);
+
+		// function sendMoney(){
+		// 	country = country_name.value;
+		// 	send = send_amount.value;
+
+		// 	setToSend();
+		// }
+
+		// function setToSend(){
+		// 	var c = parseFloat(country);
+		// 	var s = parseFloat(send);
+
+		// 	var output = s/c;
+		// 	receive_amount.value = output.toFixed(3);
+		// }
 
 // -------------------Currency Converter-------------------
 

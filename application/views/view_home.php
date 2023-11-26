@@ -68,12 +68,31 @@
                     <label style="padding-bottom:5px;" class="text-white">Choose Country</label>
                     <select class="form-control"  id="country_name"> 
                         <?php foreach($currency_sending as $send): ?>
-                            <option value="<?php echo $send['we_sell']; ?>"><?php echo $send['country_name']; ?></option>
+                            <option value="<?php echo $send['we_buy']; ?>-<?php echo $send['we_sell']; ?>-<?php echo $send['currency']; ?>"><?php echo $send['country_name']; ?></option>
                         <?php endforeach; ?>
                     </select>
                 </div>
             </div>
+
             <div class="col-lg-12 mt-2">
+                <div class="from-group">
+                    <label class="text-white"> Amount (UGX) </label>
+                    <div class="input-group">
+                        <input type="text" readonly value="UGX" class="form-control text text-center" style="padding: 0px;" id="send_amount_currency">
+                        <input type="number" value="0" class="form-control" id="send_amount">
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-12 mt-2">
+                <div class="from-group">
+                    <label class="text-white"> They receive </label>
+                    <div class="input-group">
+                        <input type="text" readonly value="$" class="form-control text text-center" style="padding: 0px;" id="receive_amount_currency">
+                        <input type="number" value="0" class="form-control" id="receive_amount">
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="col-lg-12 mt-2">
                     <div class="from-group">
                         <label class="text-white">Amount (UGX) </label>
                         <input type="number" class="form-control" value="1" style="color: grey;" id="send_amount">
@@ -85,7 +104,7 @@
                         <label class="text-white">They receive</label>
                         <input id="receive_amount" type="text" class="form-control" disabled>
                     </div>
-            </div>
+            </div> -->
         </div>
 
 </div>
