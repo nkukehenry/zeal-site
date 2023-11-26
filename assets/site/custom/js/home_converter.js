@@ -21,7 +21,6 @@ var receive_amount_currency = document.querySelector('#receive_amount_currency')
 		function setAmountToSend(weBuy, weSell){
 			send_amount.onkeyup = function(){
 				send_amount.value;
-
 				receive_amount.value = send_amount.value / weSell;
 			}
 		}
@@ -29,7 +28,6 @@ var receive_amount_currency = document.querySelector('#receive_amount_currency')
 		function setAmountToReceive(weBuy, weSell){
 			receive_amount.onkeyup = function(){
 				receive_amount.value;
-
 				send_amount.value = receive_amount.value * weSell;
 			}
 		}

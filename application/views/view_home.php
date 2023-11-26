@@ -92,6 +92,7 @@
                     </div>
                 </div>
             </div>
+            
             <!-- <div class="col-lg-12 mt-2">
                     <div class="from-group">
                         <label class="text-white">Amount (UGX) </label>
