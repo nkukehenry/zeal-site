@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Jun 19, 2023 at 08:53 AM
--- Server version: 10.1.38-MariaDB
--- PHP Version: 7.3.2
+-- Host: localhost
+-- Generation Time: Nov 28, 2023 at 10:37 AM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -35,7 +34,7 @@ CREATE TABLE `tbl_category` (
   `meta_title` varchar(255) NOT NULL,
   `meta_keyword` text NOT NULL,
   `meta_description` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `tbl_category`
@@ -59,7 +58,7 @@ CREATE TABLE `tbl_client` (
   `name` varchar(255) NOT NULL,
   `url` varchar(255) NOT NULL,
   `photo` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `tbl_client`
@@ -84,7 +83,7 @@ CREATE TABLE `tbl_comment` (
   `id` int(11) NOT NULL,
   `code_body` text NOT NULL,
   `code_main` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `tbl_comment`
@@ -101,11 +100,11 @@ INSERT INTO `tbl_comment` (`id`, `code_body`, `code_main`) VALUES
 
 CREATE TABLE `tbl_countries` (
   `country_id` int(10) UNSIGNED NOT NULL,
-  `country_name` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
-  `country_name_abriviated` varchar(4) COLLATE utf8_unicode_ci NOT NULL,
-  `country_dial_code` varchar(5) COLLATE utf8_unicode_ci NOT NULL,
-  `currency` varchar(3) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `currency_name` varchar(60) COLLATE utf8_unicode_ci DEFAULT NULL
+  `country_name` varchar(100) NOT NULL,
+  `country_name_abriviated` varchar(4) NOT NULL,
+  `country_dial_code` varchar(5) NOT NULL,
+  `currency` varchar(3) DEFAULT NULL,
+  `currency_name` varchar(60) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
@@ -368,12 +367,12 @@ INSERT INTO `tbl_countries` (`country_id`, `country_name`, `country_name_abrivia
 CREATE TABLE `tbl_currencies` (
   `currency_id` int(11) NOT NULL,
   `currency_icon` varchar(100) NOT NULL,
-  `date_added` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `date_added` timestamp NOT NULL DEFAULT current_timestamp(),
   `country_id` int(11) NOT NULL,
   `is_forex` int(11) NOT NULL,
   `we_buy` double NOT NULL,
   `we_sell` double NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `tbl_currencies`
@@ -403,9 +402,9 @@ INSERT INTO `tbl_currencies` (`currency_id`, `currency_icon`, `date_added`, `cou
 CREATE TABLE `tbl_currencies_slider` (
   `currency_slider_id` int(11) NOT NULL,
   `currency_slider_rate_amount` int(11) NOT NULL,
-  `currency_slider_date_added` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `currency_slider_date_added` timestamp NOT NULL DEFAULT current_timestamp(),
   `currency_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 -- --------------------------------------------------------
 
@@ -427,7 +426,7 @@ CREATE TABLE `tbl_event` (
   `meta_title` varchar(255) NOT NULL,
   `meta_keyword` text NOT NULL,
   `meta_description` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `tbl_event`
@@ -449,7 +448,7 @@ CREATE TABLE `tbl_faq` (
   `faq_title` varchar(255) NOT NULL,
   `faq_content` text NOT NULL,
   `show_on_home` varchar(3) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `tbl_faq`
@@ -470,7 +469,7 @@ CREATE TABLE `tbl_feature` (
   `name` varchar(255) NOT NULL,
   `content` text NOT NULL,
   `icon` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `tbl_feature`
@@ -490,7 +489,7 @@ INSERT INTO `tbl_feature` (`id`, `name`, `content`, `icon`) VALUES
 CREATE TABLE `tbl_flags` (
   `flag_id` int(11) NOT NULL,
   `country_id` int(10) UNSIGNED NOT NULL,
-  `flag_icon` varchar(100) COLLATE utf8_unicode_ci NOT NULL
+  `flag_icon` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
@@ -762,14 +761,36 @@ CREATE TABLE `tbl_home_about_section` (
   `about_us_attention_description` text NOT NULL,
   `about_us_button_text` varchar(100) NOT NULL,
   `about_us_button_link` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `tbl_home_about_section`
 --
 
 INSERT INTO `tbl_home_about_section` (`id`, `about_us_top_header`, `about_us_second_header`, `about_us_description`, `about_us_image`, `about_us_rates_header`, `about_us_rates_description`, `about_us_attention_header`, `about_us_attention_description`, `about_us_button_text`, `about_us_button_link`) VALUES
-(1, 'ABOUT US', 'We are committed to excellent service delivery', 'With wealth of expertise under our belt, we give you nothing but the best in financial service offering in Currency Exchange, Money Transfers and remittances and Agent Banking.', 'hero-img-2.jpg', 'Unbeatable Rates', 'Our exchange rates are very considerate and highly negotiable for bigger transactions.', 'Excellent Attention', 'We value your time above everything else, choose us and we shall serve you happily and super fast.', 'Contact Us', 'localhost/zeal-site/contact');
+(1, 'ABOUT US', 'We are committed to excellent service delivery', 'With wealth of expertise under our belt, we give you nothing but the best in financial service offering in Currency Exchange, Money Transfers and remittances and Agent Banking.', 'services.webp', 'Unbeatable Rates', 'Our exchange rates are very considerate and highly negotiable for bigger transactions.', 'Excellent Attention', 'We value your time above everything else, choose us and we shall serve you happily and super fast.', 'Contact Us', 'localhost/zeal-site/contact');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_home_advert`
+--
+
+CREATE TABLE `tbl_home_advert` (
+  `advert_id` int(11) NOT NULL,
+  `ad_header` text NOT NULL,
+  `ad_header_append` text NOT NULL,
+  `ad_background_image` varchar(100) NOT NULL,
+  `ad_button_text` varchar(100) NOT NULL,
+  `ad_button_url` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `tbl_home_advert`
+--
+
+INSERT INTO `tbl_home_advert` (`advert_id`, `ad_header`, `ad_header_append`, `ad_background_image`, `ad_button_text`, `ad_button_url`) VALUES
+(1, 'Send money to your loved ones in India with', 'a better rate & low transfer fees', '', 'CONTINUE TO HOME PAGE ', '#');
 
 -- --------------------------------------------------------
 
@@ -784,7 +805,7 @@ CREATE TABLE `tbl_home_currency_section_headers` (
   `third_header` text NOT NULL,
   `contact_us_button_text` varchar(100) NOT NULL,
   `contact_us_button_url` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `tbl_home_currency_section_headers`
@@ -806,7 +827,7 @@ CREATE TABLE `tbl_home_more_benefits_content` (
   `benefits_content_icon` varchar(100) NOT NULL,
   `benefits_content_duration` int(11) NOT NULL,
   `benefits_content_delay` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `tbl_home_more_benefits_content`
@@ -827,7 +848,7 @@ CREATE TABLE `tbl_home_more_benefits_headers` (
   `id` int(11) NOT NULL,
   `benefits_main_header` varchar(100) NOT NULL,
   `benefits_second_header` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `tbl_home_more_benefits_headers`
@@ -849,7 +870,7 @@ CREATE TABLE `tbl_home_our_review_content` (
   `our_review_client_image` varchar(100) NOT NULL,
   `our_review_icon` varchar(100) NOT NULL,
   `our_review_client_comment` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `tbl_home_our_review_content`
@@ -874,7 +895,7 @@ CREATE TABLE `tbl_home_our_review_headers` (
   `id` int(11) NOT NULL,
   `our_review_main_header` varchar(100) NOT NULL,
   `our_review_second_header` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `tbl_home_our_review_headers`
@@ -894,8 +915,8 @@ CREATE TABLE `tbl_home_partners` (
   `partner_title` varchar(100) NOT NULL,
   `partner_logo` varchar(100) NOT NULL,
   `partner_description` text NOT NULL,
-  `date_posted` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `date_posted` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `tbl_home_partners`
@@ -921,7 +942,7 @@ CREATE TABLE `tbl_home_we_are_flexible_content` (
   `content_icon` varchar(100) NOT NULL,
   `content_button_text` varchar(100) NOT NULL,
   `content_button_url` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `tbl_home_we_are_flexible_content`
@@ -944,7 +965,7 @@ CREATE TABLE `tbl_home_we_are_flexible_headers` (
   `id` int(11) NOT NULL,
   `home_we_are_flexible_top_header` varchar(100) NOT NULL,
   `home_we_are_flexible_second_header` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `tbl_home_we_are_flexible_headers`
@@ -966,7 +987,7 @@ CREATE TABLE `tbl_home_why_choose_us_images_and_shapes` (
   `choose_image_3` varchar(100) NOT NULL,
   `shape_1` varchar(100) NOT NULL,
   `shape_2` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `tbl_home_why_choose_us_images_and_shapes`
@@ -986,7 +1007,7 @@ CREATE TABLE `tbl_home_why_choose_us_services` (
   `service_header` varchar(100) NOT NULL,
   `service_description` text NOT NULL,
   `service_icon` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `tbl_home_why_choose_us_services`
@@ -1008,7 +1029,7 @@ CREATE TABLE `tbl_home_why_choose_us_top_content` (
   `main_header` varchar(100) NOT NULL,
   `second_header` text NOT NULL,
   `main_description` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `tbl_home_why_choose_us_top_content`
@@ -1027,7 +1048,7 @@ CREATE TABLE `tbl_language` (
   `id` int(11) NOT NULL,
   `name` text NOT NULL,
   `value` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `tbl_language`
@@ -1100,7 +1121,7 @@ CREATE TABLE `tbl_news` (
   `meta_title` varchar(255) NOT NULL,
   `meta_keyword` text NOT NULL,
   `meta_description` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `tbl_news`
@@ -1122,7 +1143,7 @@ CREATE TABLE `tbl_page_about` (
   `mt_about` varchar(255) NOT NULL,
   `mk_about` text NOT NULL,
   `md_about` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `tbl_page_about`
@@ -1147,7 +1168,7 @@ CREATE TABLE `tbl_page_contact` (
   `mt_contact` varchar(255) NOT NULL,
   `mk_contact` text NOT NULL,
   `md_contact` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `tbl_page_contact`
@@ -1168,7 +1189,7 @@ CREATE TABLE `tbl_page_event` (
   `mt_event` varchar(255) NOT NULL,
   `mk_event` text NOT NULL,
   `md_event` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `tbl_page_event`
@@ -1189,7 +1210,7 @@ CREATE TABLE `tbl_page_faq` (
   `mt_faq` varchar(255) NOT NULL,
   `mk_faq` text NOT NULL,
   `md_faq` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `tbl_page_faq`
@@ -1272,7 +1293,7 @@ CREATE TABLE `tbl_page_home` (
   `home_cta_text` text NOT NULL,
   `home_cta_button_text` varchar(255) NOT NULL,
   `home_cta_button_url` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `tbl_page_home`
@@ -1293,7 +1314,7 @@ CREATE TABLE `tbl_page_news` (
   `mt_news` varchar(255) NOT NULL,
   `mk_news` text NOT NULL,
   `md_news` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `tbl_page_news`
@@ -1314,7 +1335,7 @@ CREATE TABLE `tbl_page_photo_gallery` (
   `mt_photo_gallery` varchar(255) NOT NULL,
   `mk_photo_gallery` text NOT NULL,
   `md_photo_gallery` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `tbl_page_photo_gallery`
@@ -1335,7 +1356,7 @@ CREATE TABLE `tbl_page_portfolio` (
   `mt_portfolio` varchar(255) NOT NULL,
   `mk_portfolio` text NOT NULL,
   `md_portfolio` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `tbl_page_portfolio`
@@ -1356,7 +1377,7 @@ CREATE TABLE `tbl_page_pricing` (
   `mt_pricing` varchar(255) NOT NULL,
   `mk_pricing` text NOT NULL,
   `md_pricing` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `tbl_page_pricing`
@@ -1378,7 +1399,7 @@ CREATE TABLE `tbl_page_privacy` (
   `mt_privacy` varchar(255) NOT NULL,
   `mk_privacy` text NOT NULL,
   `md_privacy` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `tbl_page_privacy`
@@ -1399,7 +1420,7 @@ CREATE TABLE `tbl_page_search` (
   `mt_search` varchar(255) NOT NULL,
   `mk_search` text NOT NULL,
   `md_search` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `tbl_page_search`
@@ -1420,7 +1441,7 @@ CREATE TABLE `tbl_page_service` (
   `mt_service` varchar(255) NOT NULL,
   `mk_service` text NOT NULL,
   `md_service` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `tbl_page_service`
@@ -1441,7 +1462,7 @@ CREATE TABLE `tbl_page_team` (
   `mt_team` varchar(255) NOT NULL,
   `mk_team` text NOT NULL,
   `md_team` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `tbl_page_team`
@@ -1463,7 +1484,7 @@ CREATE TABLE `tbl_page_term` (
   `mt_term` varchar(255) NOT NULL,
   `mk_term` text NOT NULL,
   `md_term` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 -- --------------------------------------------------------
 
@@ -1477,7 +1498,7 @@ CREATE TABLE `tbl_page_testimonial` (
   `mt_testimonial` varchar(255) NOT NULL,
   `mk_testimonial` text NOT NULL,
   `md_testimonial` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `tbl_page_testimonial`
@@ -1495,7 +1516,7 @@ INSERT INTO `tbl_page_testimonial` (`id`, `testimonial_heading`, `mt_testimonial
 CREATE TABLE `tbl_photo` (
   `photo_id` int(11) NOT NULL,
   `photo_name` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `tbl_photo`
@@ -1535,7 +1556,7 @@ CREATE TABLE `tbl_portfolio` (
   `meta_title` varchar(255) NOT NULL,
   `meta_keyword` text NOT NULL,
   `meta_description` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `tbl_portfolio`
@@ -1559,7 +1580,7 @@ CREATE TABLE `tbl_portfolio_category` (
   `category_id` int(11) NOT NULL,
   `category_name` varchar(255) NOT NULL,
   `status` varchar(30) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `tbl_portfolio_category`
@@ -1580,7 +1601,7 @@ CREATE TABLE `tbl_portfolio_photo` (
   `id` int(11) NOT NULL,
   `portfolio_id` int(11) NOT NULL,
   `photo` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `tbl_portfolio_photo`
@@ -1616,7 +1637,7 @@ CREATE TABLE `tbl_pricing_table` (
   `text` text NOT NULL,
   `button_text` varchar(255) NOT NULL,
   `button_url` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `tbl_pricing_table`
@@ -1643,7 +1664,7 @@ CREATE TABLE `tbl_service` (
   `meta_title` varchar(255) NOT NULL,
   `meta_keyword` text NOT NULL,
   `meta_description` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `tbl_service`
@@ -1710,7 +1731,7 @@ CREATE TABLE `tbl_settings` (
   `sidebar_service_heading_quick_contact` varchar(255) NOT NULL,
   `sidebar_portfolio_heading_project_detail` varchar(255) NOT NULL,
   `sidebar_portfolio_heading_quick_contact` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `tbl_settings`
@@ -1736,7 +1757,7 @@ CREATE TABLE `tbl_slider` (
   `button2_text` varchar(255) NOT NULL,
   `button2_url` varchar(255) NOT NULL,
   `position` varchar(5) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `tbl_slider`
@@ -1757,7 +1778,7 @@ CREATE TABLE `tbl_social` (
   `social_name` varchar(30) NOT NULL,
   `social_url` varchar(255) NOT NULL,
   `social_icon` varchar(30) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `tbl_social`
@@ -1806,7 +1827,7 @@ CREATE TABLE `tbl_team_member` (
   `meta_title` varchar(255) NOT NULL,
   `meta_keyword` text NOT NULL,
   `meta_description` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -1820,7 +1841,7 @@ CREATE TABLE `tbl_testimonial` (
   `designation` varchar(255) NOT NULL,
   `photo` varchar(255) NOT NULL,
   `comment` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `tbl_testimonial`
@@ -1848,7 +1869,7 @@ CREATE TABLE `tbl_user` (
   `token` varchar(255) NOT NULL,
   `role` varchar(30) NOT NULL,
   `status` varchar(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `tbl_user`
@@ -1869,7 +1890,7 @@ CREATE TABLE `tbl_why_choose` (
   `content` text NOT NULL,
   `icon` varchar(50) NOT NULL,
   `photo` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `tbl_why_choose`
@@ -1908,6 +1929,12 @@ ALTER TABLE `tbl_flags`
 --
 ALTER TABLE `tbl_home_about_section`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `tbl_home_advert`
+--
+ALTER TABLE `tbl_home_advert`
+  ADD PRIMARY KEY (`advert_id`);
 
 --
 -- Indexes for table `tbl_home_currency_section_headers`
@@ -2026,6 +2053,12 @@ ALTER TABLE `tbl_flags`
 --
 ALTER TABLE `tbl_home_about_section`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `tbl_home_advert`
+--
+ALTER TABLE `tbl_home_advert`
+  MODIFY `advert_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `tbl_home_currency_section_headers`

@@ -60,9 +60,9 @@ class Home_content_management extends CI_Controller {
             // Upload Image from here if it is available
             $config['upload_path'] = $path;
             $config['allowed_types'] = "jpg|jpeg|gif|png|webp";
-            $config['max_size'] = "5000";
-            $config['max_width'] = "5000";
-            $config['max_height'] = "5000";
+            $config['max_size'] = "50000";
+            $config['max_width'] = "50000";
+            $config['max_height'] = "50000";
 
                 $this->load->library('upload', $config);
                 if(!$this->upload->do_upload()){
