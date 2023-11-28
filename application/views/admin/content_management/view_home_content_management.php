@@ -62,6 +62,93 @@ if(!$this->session->userdata('id')) {
                         <div class="tab-pane active" id="tab_1">
 
                             <!-- Home Content Management Header Section start -->
+                            <h3 class="sec_title">Home Content Management - Advert Section </h3>
+                            <?php echo form_open(base_url().'admin/home_content_management/update_home_content/'.$advert_content['advert_id'].'/'.$advert_content['ad_background_image'], array('class' => 'form-horizontal')); ?>
+                                <!-- Hidden input holds the table -->
+                                <input type="hidden" name="hidden_table" value="tbl_home_advert">
+                                <input type="hidden" name="hidden_image" value="advert">
+                                <!-- Hidden input holds the table -->
+
+                                <div class="form-group">
+                                    <label for="" class="col-sm-2 control-label"> Choose Advert Image </label>
+                                    <div class="col-sm-4">
+                                        <input type="file" class="form-control" name="userfile" />
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <blockquote class="blockquote">
+                                            <header> <small class="text text-primary"> Current Image </small></header>
+                                            <p>
+                                                <img src="<?php echo base_url();?>assets/site/img/advert/<?php echo $advert_content['ad_background_image']; ?>" alt="" width="120px" id="image_1">
+                                            </p>
+                                        </blockquote>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="" class="col-sm-2 control-label"> Advert Header </label>
+                                    <div class="col-sm-4">
+                                        <textarea class="form-control" name="ad_header"> <?php echo $advert_content['ad_header']; ?> </textarea>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <blockquote class="blockquote">
+                                            <header> <small class="text text-primary"> Current Header </small></header>
+                                            <p> <?php echo $advert_content['ad_header_append']; ?> </p>
+                                        </blockquote>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="" class="col-sm-2 control-label"> Advert Header Append</label>
+                                    <div class="col-sm-4">
+                                        <textarea class="form-control" name="ad_header_append"> <?php echo $advert_content['ad_header_append']; ?> </textarea>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <blockquote class="blockquote">
+                                            <header> <small class="text text-primary"> Current Header Append </small></header>
+                                            <p> <?php echo $advert_content['ad_header_append']; ?> </p>
+                                        </blockquote>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="" class="col-sm-2 control-label"> Button Text</label>
+                                    <div class="col-sm-4">
+                                        <textarea class="form-control" name="ad_button_text"> <?php echo $advert_content['ad_button_text']; ?> </textarea>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <blockquote class="blockquote">
+                                            <header> <small class="text text-primary"> Button Text </small></header>
+                                            <p> <?php echo $advert_content['ad_button_text']; ?> </p>
+                                        </blockquote>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="" class="col-sm-2 control-label"> Button URL</label>
+                                    <div class="col-sm-4">
+                                        <textarea class="form-control" name="ad_button_url"> <?php echo $advert_content['ad_button_url']; ?> </textarea>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <blockquote class="blockquote">
+                                            <header> <small class="text text-primary"> Button URL </small></header>
+                                            <p> <?php echo $advert_content['ad_button_url']; ?> </p>
+                                        </blockquote>
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group">
+                                    <label for="" class="col-sm-2"></label>
+                                    <div class="col-sm-6">
+                                        <button type="submit" class="btn btn-success pull-left" name="form_home">Update</button>
+                                    </div>
+                                </div> 
+
+                            <?php echo form_close(); ?>
+
+
+
+                            <!-- Home Content Management Header Section start -->
                             <h3 class="sec_title">Home Content Management - Header Section</h3>
                             <?php echo form_open(base_url().'admin/home_content_management/update_home_content/'.$home_currency_section_headers['id'],array('class' => 'form-horizontal')); ?>
                                 <!-- Hidden input holds the table -->

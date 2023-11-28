@@ -24,6 +24,19 @@ class Home_content_management_mdl extends CI_Model
                 'contact_us_button_url' => $this->input->post('contact_us_button_url'),
                 
             );
+        }elseif($table_name === 'tbl_home_advert'){
+            $data = array(
+
+                'ad_background_image' => $image,
+                'ad_header' => $this->input->post('ad_header'),
+                'ad_header_append' => $this->input->post('ad_header_append'),
+                'ad_button_text' => $this->input->post('ad_button_text'),
+                'ad_button_url' => $this->input->post('ad_button_url'),
+                
+            );
+            $this->db->where('advert_id', $id);
+            $this->db->update($table_name, $data);
+            return true;
         }elseif($table_name === 'tbl_home_about_section'){
             $data = array(
 

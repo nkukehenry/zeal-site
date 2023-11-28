@@ -15,6 +15,7 @@ class Home_content_management extends CI_Controller {
 
 
 		$data['title'] = "Home Content Management";
+        $data['advert_content'] = $this->home_content_management_mdl->get_home_content('tbl_home_advert')->row_array(); // Home Advert Section content
         $data['home_currency_section_headers'] = $this->home_content_management_mdl->get_home_content('tbl_home_currency_section_headers')->row_array(); // Home Currency exchange Section headers
         $data['home_about_us_section'] = $this->home_content_management_mdl->get_home_content('tbl_home_about_section')->row_array(); // Home Content About Us Section
         $data['home_we_are_flexible_headers'] = $this->home_content_management_mdl->get_home_content('tbl_home_we_are_flexible_headers')->row_array(); // Home Content We Are Flexible Section Headers
@@ -51,6 +52,8 @@ class Home_content_management extends CI_Controller {
                 $path = "./assets/site/img/testimonials/";
             }elseif($get_path === 'partner'){
                 $path = "./assets/site/img/partner/";
+            }elseif($get_path === "advert"){
+                $path = "./assets/site/img/advert/";
             }else{
                 $path = "./assets/site/img/hero/";
             }

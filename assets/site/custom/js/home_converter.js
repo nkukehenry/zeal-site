@@ -8,24 +8,27 @@ var receive_amount_currency = document.querySelector('#receive_amount_currency')
 
 	country_name.addEventListener("change", putDataToReceiveCurrency);
 
+
 		function putDataToReceiveCurrency(){
+
 			var splitContent = this.value.split('-');
 			var weBuy = splitContent[0];
 			var weSell = splitContent[1];
 			var currency = splitContent[2];
 			receive_amount_currency.value = currency;
 			setAmountToSend(weBuy, weSell);
-			setAmountToReceive(weBuy, weSell);
+			setAmountToReceive(weBuy, weSell, this.value);
+
 		}
 
-		function setAmountToSend(weBuy, weSell){
+		function setAmountToSend(weBuy, weSell, value){
 			send_amount.onkeyup = function(){
 				send_amount.value;
 				receive_amount.value = send_amount.value / weSell;
 			}
 		}
 
-		function setAmountToReceive(weBuy, weSell){
+		function setAmountToReceive(weBuy, weSell, value){
 			receive_amount.onkeyup = function(){
 				receive_amount.value;
 				send_amount.value = receive_amount.value * weSell;
