@@ -17,17 +17,17 @@
 </style>
 
 
-<div class="preloader advert" style="background-image:url(<?php echo base_url('assets/site/img/advert.webp'); ?>); ">
+<div class="preloader advert" style="background-image:url(<?php echo base_url('assets/site/img/advert/').$advert_content['ad_background_image']; ?>); ">
 
 
     <h2 class="mb-30 text-center">
-        <span class="text-main">Send money to your loved ones in India with </span>
-        <span class="text-alt">a better rate & low transfer fees</span>
+        <span class="text-main"> <?php echo $advert_content['ad_header']; ?> </span>
+        <span class="text-alt"> <?php echo $advert_content['ad_header_append']; ?> </span>
     </h2>
 
 
-  <a href="#" class="btn style1 hide-advert advert-btn" onclick="hideAdvert()">
-    CONTINUE TO HOME PAGE <i class="ri-arrow-right-s-line"></i> </a>
+  <a href="<?php echo $advert_content['ad_button_url']; ?>" class="btn style1 hide-advert advert-btn" onclick="hideAdvert()">
+  <?php echo $advert_content['ad_button_text']; ?> <i class="ri-arrow-right-s-line"></i> </a>
 
 </div>
 
@@ -67,7 +67,7 @@
                     <label  class="text-white">Send Money</label>
                     <label style="padding-bottom:5px;" class="text-white">Choose Country</label>
                     <select class="form-control"  id="country_name">
-                        <option selected="selected" value="none-none-:">Choose Country</option>
+                        <option selected="selected" value="none-none-Other">Choose Country</option>
                         <?php foreach($currency_sending as $send): ?>
                             <option value="<?php echo $send['we_buy']; ?>-<?php echo $send['we_sell']; ?>-<?php echo $send['currency']; ?>"><?php echo $send['country_name']; ?></option>
                         <?php endforeach; ?>
@@ -88,7 +88,7 @@
                 <div class="from-group">
                     <label class="text-white"> They receive </label>
                     <div class="input-group">
-                        <input type="text" readonly value=":" class="form-control text text-center" style="padding: 0px;" id="receive_amount_currency">
+                        <input type="text" readonly value="Other" class="form-control text text-center" style="padding: 0px;" id="receive_amount_currency">
                         <input type="number" value="0" class="form-control" id="receive_amount">
                     </div>
                 </div>

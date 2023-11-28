@@ -333,7 +333,7 @@ Blog
 </div>
 </header>
 
-<link rel="stylesheet" href="<?php echo base_url(); ?>assets/site/custom/css/social.css">
+<!-- <link rel="stylesheet" href="<?php echo base_url(); ?>assets/site/custom/css/social.css"> -->
 
 <!-- Following lines Commented out by Hakim -->
 

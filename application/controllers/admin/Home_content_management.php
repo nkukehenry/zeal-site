@@ -58,11 +58,14 @@ class Home_content_management extends CI_Controller {
                 $path = "./assets/site/img/hero/";
             }
             // Upload Image from here if it is available
+            $pic = explode('.', $_FILES['userfile']['name']);
+            $ext = end($pic);
             $config['upload_path'] = $path;
             $config['allowed_types'] = "jpg|jpeg|gif|png|webp";
             $config['max_size'] = "50000";
             $config['max_width'] = "50000";
             $config['max_height'] = "50000";
+            $config['file_name'] = str_replace('-', '', date('Y-m-d').time().'zealimg.').$ext;
 
                 $this->load->library('upload', $config);
                 if(!$this->upload->do_upload()){
@@ -71,7 +74,7 @@ class Home_content_management extends CI_Controller {
                 }else{
                     
                     $data = array('upload_data' => $this->upload->data());
-                    $update_image = $_FILES['userfile']['name'];
+                    $update_image = $config['file_name'];
 
                 }
 

@@ -36,6 +36,7 @@ class Home extends CI_Controller {
 		// Hakim Modifications Currency List
 
 		// Hakim Modifications Home Content
+		$data['advert_content'] = $this->Model_home->get_home_content('tbl_home_advert')->row_array();
 		$data['currency_section_headers'] = $this->Model_home->get_home_content('tbl_home_currency_section_headers')->row_array();
 		$data['about_section'] = $this->Model_home->get_home_content('tbl_home_about_section')->row_array();
 		$data['we_are_flexible_headers'] = $this->Model_home->get_home_content('tbl_home_we_are_flexible_headers')->row_array();

@@ -63,7 +63,7 @@ if(!$this->session->userdata('id')) {
 
                             <!-- Home Content Management Header Section start -->
                             <h3 class="sec_title">Home Content Management - Advert Section </h3>
-                            <?php echo form_open(base_url().'admin/home_content_management/update_home_content/'.$advert_content['advert_id'].'/'.$advert_content['ad_background_image'], array('class' => 'form-horizontal')); ?>
+                            <?php echo form_open_multipart(base_url().'admin/home_content_management/update_home_content/'.$advert_content['advert_id'].'/'.$advert_content['ad_background_image'], array('class' => 'form-horizontal')); ?>
                                 <!-- Hidden input holds the table -->
                                 <input type="hidden" name="hidden_table" value="tbl_home_advert">
                                 <input type="hidden" name="hidden_image" value="advert">
