@@ -205,6 +205,27 @@ if($class_name == 'event')
 
 <style>
 
+/* Hakim Made Changes Here */
+html, body {
+  overflow-x: hidden;
+}
+
+.homeCurrencySliderClass{
+    color: solid black;
+    .p{
+        color: solid black;
+    }
+}
+
+.homeCurrencySliderClass:hover{
+    color: white;
+    .p{
+        color: white;
+    }
+}
+/* Hakim Made Changes Here */
+
+
 .fx-rates{
     background-image: url(<?php echo base_url(); ?>assets/site/img/map.png);
     background-position:bottom left;
@@ -333,7 +354,7 @@ Blog
 </div>
 </header>
 
-<!-- <link rel="stylesheet" href="<?php echo base_url(); ?>assets/site/custom/css/social.css"> -->
+<link rel="stylesheet" href="<?php echo base_url(); ?>assets/site/custom/css/social.css">
 
 <!-- Following lines Commented out by Hakim -->
 

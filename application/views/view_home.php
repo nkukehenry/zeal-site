@@ -17,7 +17,7 @@
 </style>
 
 
-<div class="preloader advert" style="background-image:url(<?php echo base_url('assets/site/img/advert/').$advert_content['ad_background_image']; ?>); ">
+<div class="preloader advert" style="background-image:url(<?php echo base_url('assets/site/img/advert/').$advert_content['ad_background_image']; ?>); background-size: cover;">
 
 
     <h2 class="mb-30 text-center">
@@ -162,12 +162,12 @@
 
 <div class="partner-wrap pb-30 pt-10 pb-20" >
 <div class="row">
-<div class="partner-slider owl-carousel">
+<div class="partner-slider owl-carousel homeCurrencySliderClass">
 
 <!-- Hakim Modifications --Currency slider -->
 
 <?php foreach($currency_slider as $slider): ?>
-<div class="partner-item partnerStyle forex-item" style="border: solid 1px; padding: 0px; border-radius: 12px; text-align: center;">
+<div class="partner-item partnerStyle forex-item" style="border: solid 1px; padding: 0px; border-radius: 12px; text-align: center;" onmouseover="changeColor();">
     <p class="p"><i class="fi fi-<?php echo $slider['currency_icon']; ?>"></i> <strong style="padding-right: 12px;" class="currency_code"> <?php echo $slider['currency']; ?>  </strong>
         <small>
             <table>
@@ -186,12 +186,14 @@
         </small> 
     </p>
 </div>
+
 <?php endforeach; ?>
 </div>
 
 </div>
 </div>
 </div>
+
 
 
 

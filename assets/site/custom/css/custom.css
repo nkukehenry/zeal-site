@@ -33,8 +33,15 @@
 .partnerStyle:hover{
     background-color: rgb(11, 7, 80);
     box-shadow: 0 0 70px rgba(255, 0, 0, 0.493);
+    color: white;
 }
 
+/* .homeCurrencySliderClass:hover{
+    color: white;
+    p{
+        color: white;
+    }
+} */
 
 .p{
     text-align: center;
