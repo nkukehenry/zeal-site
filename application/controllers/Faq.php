@@ -8,6 +8,7 @@ class Faq extends CI_Controller {
         $this->load->model('Model_common');
         $this->load->model('Model_faq');
         $this->load->model('Model_portfolio');
+        $this->load->model('db/Db');
     }
 
 	public function index()
@@ -20,6 +21,9 @@ class Faq extends CI_Controller {
 
 		$data['faqs'] = $this->Model_faq->all_faq();
 		$data['portfolio_footer'] = $this->Model_portfolio->get_portfolio_data();
+
+		$data['faqs'] = $this->Db->multi_rows_data('tbl_faq'); // multi rows data
+		$data['page_content'] = $this->Db->single_row_data('tbl_faq_page_content'); // Single row data
 
 		$this->load->view('view_header',$data);
 		$this->load->view('view_faq',$data);

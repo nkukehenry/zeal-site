@@ -5,7 +5,7 @@
 <div class="col-xl-3 col-lg-5 col-md-5 col-sm-6">
 <div class="footer-widget">
 <a href="<?php echo base_url(); ?>" class="footer-logo">
-<img src="<?php echo base_url(); ?>assets/site/img/<?php echo $setting['logo']; ?>" alt="Image">
+<img src="<?php echo base_url(); ?>public/uploads/<?php echo $setting['logo']; ?>" width="200px" alt="Image">
 </a>
 <p class="comp-desc">
     <?php echo $setting['newsletter_text']; ?>

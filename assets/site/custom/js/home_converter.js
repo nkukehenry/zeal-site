@@ -106,6 +106,6 @@ var convert_output = document.querySelector('#convert_output');
 		
 		var currency = f/t;
 		var final = currency*a;
-		var outputData = final.toFixed(3);
+		var outputData = final.toFixed(2);
 		convert_output.value = outputData;
 	}

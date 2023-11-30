@@ -8,6 +8,7 @@ class Contact extends CI_Controller {
         $this->load->model('Model_common');
         $this->load->model('Model_contact');
         $this->load->model('Model_portfolio');
+        $this->load->model('db/Db');
     }
 
 	public function index($product=false)
@@ -23,6 +24,8 @@ class Contact extends CI_Controller {
 
 		$data['testimonials'] = $this->Model_contact->all_testimonial();
 		$data['portfolio_footer'] = $this->Model_portfolio->get_portfolio_data();
+
+		// $data['contact_content'] = $this->Db->single_row_data('tbl_page_contact');
 
 		$this->load->view('view_header',$data);
 		$this->load->view('view_contact',$data);

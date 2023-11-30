@@ -4,10 +4,10 @@
 <div class="breadcrumb-wrap bg-f br-1" style="margin-top: -70px!important;">>
 <div class="container">
 <div class="breadcrumb-title">
-<h2>Contact Us</h2>
+<h2><?php echo $page_contact['contact_page_title']; ?></h2>
 <ul class="breadcrumb-menu list-style">
 <li><a href="index-2.html">Home </a></li>
-<li>Contact Us</li>
+<li><?php echo $page_contact['contact_page_title']; ?></li>
 </ul>
 </div>
 </div>
@@ -23,9 +23,12 @@
 <i class="ri-map-pin-line"></i>
 </span>
 <div class="contact-info">
-<h3>Our Location</h3>
-<p>Plot 1 Namaganda Plaza. P.O.Box 11562 kampala-Russel Rd
-</p>
+
+    <h3><?php echo $page_contact['address_title']; ?></h3>
+    <?php if(!empty($page_contact['address_2'])){ echo "<p>".$page_contact['address_1']."</p><hr>";}else{ echo "<p>".$page_contact['address_1']."</p>"; }?>
+    <?php if(!empty($page_contact['address_3'])){ echo "<p>".$page_contact['address_2']."</p><hr>";}else{ echo "<p>".$page_contact['address_2']."</p>"; }?>
+    <?php echo "<p>".$page_contact['address_3']."</p>"; ?>
+
 </div>
 </div>
 </div>
@@ -35,9 +38,24 @@
 <i class="ri-mail-send-line"></i>
 </span>
 <div class="contact-info">
-<h3>Email Us</h3>
-<a href=""><span class="__cf_email__" >zealforex@gmail.com</span></a>
-<a href=""><span class="__cf_email__" >info@zealforex.net</span></a>
+
+    <?php 
+
+        $emails = array(
+            $page_contact['email_1'],
+            $page_contact['email_2'],
+            $page_contact['email_3'],
+            $page_contact['email_4'],
+            $page_contact['email_5'],
+        );
+    
+    ?>
+    <h3><?php echo $page_contact['emails_title']; ?></h3>
+    <?php foreach($emails as $email): ?>
+        <?php if(!empty($email)){ ?>
+        <a href="mailto:<?php echo $email; ?>"><span class="__cf_email__" ><?php echo $email; ?></span></a>
+        <?php } ?>
+    <?php endforeach; ?>
 </div>
 </div>
 </div>
@@ -47,9 +65,27 @@
 <i class="ri-phone-line"></i>
 </span>
 <div class="contact-info">
-<h3>Phone</h3>
-<a href="tel:+256755544555">+256 755 544555.</a>
-<a href="tel:+256414666898">+256 414 666898</a>
+
+    <?php 
+
+    $phones = array(
+        $page_contact['phone_1'],
+        $page_contact['phone_2'],
+        $page_contact['phone_3'],
+        $page_contact['phone_4'],
+        $page_contact['phone_5'],
+    );
+
+    ?>
+
+    <h3><?php echo $page_contact['phones_title']; ?></h3>
+    <?php foreach($phones as $phone): ?>
+        <?php if(!empty($phone)){ ?>
+        <a href="tel:<?php echo $phone; ?>"><span class="__cf_email__" ><?php echo $phone; ?></span></a>
+        <?php } ?>
+    <?php endforeach; ?>
+
+
 </div>
 </div>
 </div>
