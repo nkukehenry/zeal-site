@@ -8,6 +8,7 @@ class News extends CI_Controller {
         $this->load->model('Model_common');
         $this->load->model('Model_news');
         $this->load->model('Model_portfolio');
+        $this->load->model('db/Db');
     }
 
 	public function index()
@@ -78,14 +79,18 @@ class News extends CI_Controller {
 		$data['all_news'] = $this->Model_common->all_news();
 		$data['all_categories'] = $this->Model_common->all_categories();
 
-		$data['news'] = $this->Model_news->all_news();
+		// $data['news'] = $this->Model_news->all_news();
+
 		$data['news_detail'] = $this->Model_news->news_detail_with_category($id);
 		//$data['news_detail_category'] = $this->Model_news->news_detail_with_category($id);
 		$data['category'] = $this->Model_news->get_category_name_by_id($data['news_detail']['category_id']);
 		$data['category_name'] = $data['category']['category_name'];
 		$data['id'] = $id;
 
-		$data['categories'] = $this->Model_news->all_categories();
+		$data['categories'] = $this->Db->multi_rows_data('tbl_category');
+		$data['currency'] = $this->Db->multi_rows_data_joins('tbl_currencies');
+		$data['news'] = $this->Db->multi_rows_data_limited('tbl_news', 3);
+		// $data['categories'] = $this->Model_news->all_categories();
 		$data['portfolio_footer'] = $this->Model_portfolio->get_portfolio_data();
 		
 		$this->load->view('view_header',$data);

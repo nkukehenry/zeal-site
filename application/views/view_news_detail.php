@@ -5,11 +5,11 @@
 <div class="breadcrumb-wrap bg-f br-1">
 <div class="container">
 <div class="breadcrumb-title">
-<h2>How Can Exchange Rate Movement Effect Your Business & Financial Condition</h2>
+<h2><?php echo $news_detail['news_title']; ?></h2>
 <ul class="breadcrumb-menu list-style">
 <li><a href="index-2.html">Home</a></li>
 <li><a href="blog-right-sidebar.html">Blog</a></li>
-<li>How Can Exchange Rate Movement Effect Your Business & Financial Condition</li>
+<li><?php echo $news_detail['news_title']; ?></li>
 </ul>
 </div>
 </div>
@@ -21,52 +21,25 @@
 <div class="col-xl-8 col-lg-12">
 <article>
 <div class="post-img mt-0">
-<img src="<?php echo base_url(); ?>assets/site/img/blog/single-blog-1.jpg" alt="Image">
+<img src="<?php echo base_url(); ?>public/uploads/<?php echo $news_detail['photo']; ?>" alt="Image">
 <a href="posts-by-category.html" class="post-cat">Corporate</a>
 </div>
 <ul class="post-metainfo  list-style">
-<li><i class="ri-calendar-event-line"></i><a href="posts-by-date.html">12 May, 2022</a></li>
+<li><i class="ri-calendar-event-line"></i><a href="posts-by-date.html"><?php echo $news_detail['news_date']; ?></a></li>
 <li><i class="ri-message-2-line"></i>3 Comments</li>
 </ul>
-<h2>How Can Exchange Rate Movement Effect Your Business &amp; Financial Condition</h2>
+<h2><?php echo $news_detail['news_title']; ?></h2>
 <div class="post-para">
-<p>
-In the dynamic landscape of global commerce, exchange rate movements 
-play a pivotal role in shaping the financial condition of businesses. 
-Whether you're a small local enterprise or a multinational corporation, understanding 
-how these fluctuations can influence your bottom line is essential for strategic decision-making.
-</p>
 
 <blockquote class="wp-block-quote">
 <span class="wp-quote-icon"><i class="flaticon-quote"></i></span>
 <div class="wp-quote-text">
-<p>"For businesses engaged in exporting or importing, exchange rate movements introduce an added layer of complexity"</p>
+<p><?php echo $news_detail['news_content_short']; ?></p>
 </div>
 </blockquote>
-<h3>The Ripple Effect on Costs and Prices:</h3>
-<p>
-Fluctuations in exchange rates can directly impact the cost of goods and services. For businesses involved in international trade, sudden currency depreciations can lead to increased import costs, affecting profit margins. Conversely, a strengthening local currency can make imported goods more affordable, potentially boosting sales. It's crucial for businesses to stay vigilant, monitor currency trends, and adjust pricing strategies accordingly.
-</p>
-<div class="row mt-25">
-<div class="col-md-6">
-<div class="post-img">
-<img src="<?php echo base_url(); ?>assets/site/img/blog/blog-1.jpg" alt="Image">
-</div>
-</div>
-<div class="col-md-6">
-<div class="post-img">
-<img src="<?php echo base_url(); ?>assets/site/img/blog/blog-3.jpg" alt="Image">
-</div>
-</div>
-</div>
-<h3>The Ripple Effect on Costs and Prices:</h3>
-<p>
-Fluctuations in exchange rates can directly impact the cost of goods and services. For businesses involved in international trade, sudden currency depreciations can lead to increased import costs, affecting profit margins. Conversely, a strengthening local currency can make imported goods more affordable, potentially boosting sales. It's crucial for businesses to stay vigilant, monitor currency trends, and adjust pricing strategies accordingly.
-</p>
 
-<h3>Mitigating Currency Risks:</h3>
-<p>
-To navigate the unpredictable waters of exchange rate movements, businesses can employ various risk management tools. Forward contracts, currency options, and other hedging instruments can help mitigate the impact of adverse currency movements. Developing a comprehensive risk management strategy aligned with the business's goals and risk tolerance is crucial for maintaining financial stability.</p>
+<?php echo $news_detail['news_content']; ?>
+
 
 </div>
 </article>
@@ -221,96 +194,66 @@ Save my name,email,website addres in this browser for the next time I commnet.
 <h4>Categories <span></span></h4>
 </div>
 <ul class="list-style category-box">
-<li>
-<a href="posts-by-category.html">
-<i class="ri-arrow-right-line"></i>
-Business
-</a>
-</li>
-<li>
-<a href="posts-by-category.html">
-<i class="ri-arrow-right-line"></i>
-International
-</a>
-</li>
-<li>
-<a href="posts-by-category.html">
-<i class="ri-arrow-right-line"></i>
-World Economy
-</a>
-</li>
-<li>
-<a href="posts-by-category.html">
-<i class="ri-arrow-right-line"></i>
-Money Transfer
-</a>
-</li>
-<li>
-<a href="posts-by-category.html">
-<i class="ri-arrow-right-line"></i>
-Payment Method
-</a>
-</li>
+
+    <?php foreach($categories as $category): ?>
+    <li>
+        <a href="posts-by-category.html">
+        <i class="ri-arrow-right-line"></i>
+        <?php echo $category->category_name; ?>
+        </a>
+    </li>
+    <?php endforeach; ?>
+
 </ul>
 </div>
-<div class="sidebar-widget">
- <div class="widget-title">
-<h4>Trending Post <span></span></h4>
-</div>
-<div class="popular-post-widget">
-<div class="pp-post-item">
-<a href="blog-details-right-sidebar.html" class="pp-post-img">
-<img src="<?php echo base_url(); ?>assets/site/img/blog/post-thumb-1.jpg" alt="Image">
-</a>
-<div class="pp-post-info">
-<span><i class="ri-calendar-event-line"></i>25 Jun 2022</span>
-<h6>
-<a href="blog-details-no-sidebar.html">
-MDC Online Bridges The Gap For Currency Deficit
-</a>
-</h6>
-</div>
-</div>
-<div class="pp-post-item">
-<a href="blog-details-right-sidebar.html" class="pp-post-img">
-<img src="<?php echo base_url(); ?>assets/site/img/blog/post-thumb-2.jpg" alt="Image">
-</a>
-<div class="pp-post-info">
-<span><i class="ri-calendar-event-line"></i>07 Jun 2022</span>
-<h6>
-<a href="blog-details-no-sidebar.html">
-How To Manage The Emotions Of Trading
-</a>
-</h6>
-</div>
-</div>
-<div class="pp-post-item">
-<a href="blog-details-right-sidebar.html" class="pp-post-img">
-<img src="<?php echo base_url(); ?>assets/site/img/blog/post-thumb-3.jpg" alt="Image">
-</a>
-<div class="pp-post-info">
-<span><i class="ri-calendar-event-line"></i>09 May 2022</span>
-<h6>
-<a href="blog-details-no-sidebar.html">
-Dollar Up After Biggest Drop In Last 2 Months
-</a>
-</h6>
-</div>
-</div>
-</div>
-</div>
+
+<?php if(count($news) > 1){ ?>
+    <div class="sidebar-widget">
+    <div class="widget-title">
+    <h4>Trending Post <span></span></h4>
+    </div>
+    <div class="popular-post-widget">
+
+        <?php foreach($news as $item): ?>
+            <?php if($item->news_id != $news_detail['news_id']){ ?>
+            <div class="pp-post-item">
+            <a href="blog-details-right-sidebar.html" class="pp-post-img">
+            <img src="<?php echo base_url(); ?>public/uploads/<?php echo $item->photo; ?>" alt="Image">
+            </a>
+            <div class="pp-post-info">
+            <span><i class="ri-calendar-event-line"></i><?php echo $item->news_date; ?></span>
+            <h6>
+            <a href="blog-details-no-sidebar.html">
+                <?php echo $item->news_title; ?>
+            </a>
+            </h6>
+            </div>
+            </div>
+            <?php } ?>
+        <?php endforeach; ?>
+
+    </div>
+    </div>
+<?php } ?>
+
 <div class="sidebar-widget">
 <div class="widget-title">
-<h4>Tags<span></span></h4>
+<h4>Our Forex Rates</h4>
 </div>
 <ul class="tag-list list-style">
-<li><a href="posts-by-tag.html">Exchange</a></li>
-<li><a href="posts-by-tag.html">Money</a></li>
-<li><a href="posts-by-tag.html">Currency</a></li>
-<li><a href="posts-by-tag.html">Risks</a></li>
-<li><a href="posts-by-tag.html">Paypal</a></li>
-<li><a href="posts-by-tag.html">Security</a></li>
-<li><a href="posts-by-tag.html">Business</a></li>
+    
+    <?php foreach($currency as $rate): ?>
+        <?php if($rate->currency != 'UGX'){ ?>
+    <li class="col-lg-12 row" style="border-bottom:2px dotted navy;">
+        <div class="text-danger col-lg-12"> <?php echo $rate->currency; ?></div>
+        <div class="row" style="font-size:9pt!important;  padd-left:0px; padding-right:0px;">
+            <div class="col-lg-6 text-success"><small>WE BUY: <?php echo $rate->we_buy; ?></small></div>
+            <div class="col-lg-6 text-danger"><small>WE SELL: UGX <?php echo $rate->we_sell; ?> </small></div>
+        </div>
+    </li>
+    <?php } ?>
+    <?php endforeach; ?>
+
 </ul>
 </div>
 </div>

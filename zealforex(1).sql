@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 28, 2023 at 10:37 AM
+-- Generation Time: Nov 30, 2023 at 05:33 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -447,16 +447,42 @@ CREATE TABLE `tbl_faq` (
   `faq_id` int(11) NOT NULL,
   `faq_title` varchar(255) NOT NULL,
   `faq_content` text NOT NULL,
-  `show_on_home` varchar(3) NOT NULL
+  `show_on_home` varchar(3) NOT NULL,
+  `collapse` varchar(10) NOT NULL,
+  `faq_active` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `tbl_faq`
 --
 
-INSERT INTO `tbl_faq` (`faq_id`, `faq_title`, `faq_content`, `show_on_home`) VALUES
-(1, 'Where do I find you?', '<p align=\"justify\">We are located at Namanda Plaza Russell road and at Tirupat Mazima Mallalong Ggaba road.</p><p align=\"justify\">You can also call us on 0750 000000</p>', 'Yes'),
-(5, 'Do you provide remittance services', '<p align=\"justify\">Yes, we do provide both out going and incoming remittance services .</p><p align=\"justify\">We send money to almost all countries through Banks and Mobile Money.</p>', 'Yes');
+INSERT INTO `tbl_faq` (`faq_id`, `faq_title`, `faq_content`, `show_on_home`, `collapse`, `faq_active`) VALUES
+(6, 'What Currency pares do you Support?', '<p>We offer a wide range of currency pairs, including major, minor, and exotic pairs.</p>', 'Yes', 'show', 'false'),
+(7, 'Is my personal information secure?', '<p>Absolutely. We employ robust encryption and security measures to safeguard your personal and financial data.</p>', 'Yes', '', ''),
+(8, 'Are there any hidden fees?', '<p>We believe in transparency. All fees are clearly outlined in our fee schedule, and there are no hidden charges.</p>', 'Yes', '', ''),
+(9, 'Do i need to make an appointment for currency exchange at your storefront?', '<p>No appointment is necessary. Our friendly and efficient staff is ready \r\nto assist you during regular business hours, ensuring quick and \r\nconvenient currency exchange services.</p>', 'Yes', '', '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_faq_page_content`
+--
+
+CREATE TABLE `tbl_faq_page_content` (
+  `faq_content_id` int(11) NOT NULL,
+  `faq_page_title` varchar(100) NOT NULL,
+  `faq_main_header` varchar(255) NOT NULL,
+  `faq_main_image` varchar(100) NOT NULL,
+  `faq_main_image_shape` varchar(100) NOT NULL,
+  `faq_header_image` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `tbl_faq_page_content`
+--
+
+INSERT INTO `tbl_faq_page_content` (`faq_content_id`, `faq_page_title`, `faq_main_header`, `faq_main_image`, `faq_main_image_shape`, `faq_header_image`) VALUES
+(1, 'FAQ', 'Frequently Asked Questions', 'faq-img-1.png', 'faq-shape-1.png', '');
 
 -- --------------------------------------------------------
 
@@ -790,7 +816,7 @@ CREATE TABLE `tbl_home_advert` (
 --
 
 INSERT INTO `tbl_home_advert` (`advert_id`, `ad_header`, `ad_header_append`, `ad_background_image`, `ad_button_text`, `ad_button_url`) VALUES
-(1, 'Send money to your loved ones in India with', 'a better rate & low transfer fees', '', 'CONTINUE TO HOME PAGE ', '#');
+(1, '   Send money to your loved ones in India with   ', '   a better rate & low transfer fees   ', '202311281701178866zealimg.jpg', '   CONTINUE TO HOME PAGE    ', '   #   ');
 
 -- --------------------------------------------------------
 
@@ -834,7 +860,7 @@ CREATE TABLE `tbl_home_more_benefits_content` (
 --
 
 INSERT INTO `tbl_home_more_benefits_content` (`id`, `benefits_content_header`, `benefits_content_description`, `benefits_content_icon`, `benefits_content_duration`, `benefits_content_delay`) VALUES
-(1, 'Lowest Feespppp', 'Our transaction fees are very affordable so you money is truly yours.oooo', 'flaticon-money-1', 1000, 500),
+(1, 'Lowest Fees', 'Our transaction fees are very affordable so you money is truly yours.', 'flaticon-money-1', 1000, 500),
 (2, 'Instant Processing', 'We prioritise each and every customer apy maximum attention fast transaction processing.', 'flaticon-automation', 1000, 600),
 (3, 'Bank Level Security', 'Your data is secure with us, we don\'t share or expose it with/to anyone.', 'flaticon-shield', 1000, 700);
 
@@ -877,13 +903,12 @@ CREATE TABLE `tbl_home_our_review_content` (
 --
 
 INSERT INTO `tbl_home_our_review_content` (`id`, `our_review_client_name`, `our_review_client_roll`, `our_review_client_image`, `our_review_icon`, `our_review_client_comment`) VALUES
-(1, 'Mike Tolin', 'Manager at Ken Park', '3.jpg', 'flaticon-quotation-mark', 'I am really grateful of what Zeal Forex did for me...'),
-(2, 'Client 1', 'Director, BAT', 'client.jpg', 'flaticon-quotation-mark', 'I appreciate the sense of urgency and exception treatment I was given.'),
-(3, 'Client 2', 'Director, BAT', 'client.jpg', 'flaticon-quotation-mark', 'I appreciate the sense of urgency and exception treatment I was given.'),
-(4, 'Client 3', 'Director, BAT', 'client.jpg', 'flaticon-quotation-mark', 'I appreciate the sense of urgency and exception treatment I was given.'),
-(5, 'Client 4', 'Director, BAT', 'client.jpg', 'flaticon-quotation-mark', 'I appreciate the sense of urgency and exception treatment I was given.'),
-(6, 'Client 5', 'Director, BAT', 'client.jpg', 'flaticon-quotation-mark', 'I appreciate the sense of urgency and exception treatment I was given.'),
-(7, 'Will Smith', 'Clients Contact', '0_Son.jpg', '', 'Thank you all for your Services \r\n\r\nplease...');
+(1, 'Willian Evans', 'Manager at Ken Park', 'client.jpg', 'flaticon-quotation-mark', 'I am really grateful of what Zeal Forex did for me...'),
+(2, 'Mugisha Robert', 'Director', 'client.jpg', 'flaticon-quotation-mark', 'I appreciate the sense of urgency and exception treatment I was given.'),
+(3, 'Gerlard Lubega', 'Accountant', 'client.jpg', 'flaticon-quotation-mark', 'I appreciate the sense of urgency and exception treatment I was given.'),
+(4, 'Kevin Lugumbya', 'Technical Analyst', 'client.jpg', 'flaticon-quotation-mark', 'I appreciate the sense of urgency and exception treatment I was given.'),
+(5, 'Dorian Nambi', 'Lecturer', 'client.jpg', 'flaticon-quotation-mark', 'I appreciate the sense of urgency and exception treatment I was given.'),
+(6, 'Joseph Kazibwe', 'H.R Consultant', 'client.jpg', 'flaticon-quotation-mark', 'I appreciate the sense of urgency and exception treatment I was given.');
 
 -- --------------------------------------------------------
 
@@ -1128,7 +1153,7 @@ CREATE TABLE `tbl_news` (
 --
 
 INSERT INTO `tbl_news` (`news_id`, `news_title`, `news_content`, `news_content_short`, `news_date`, `photo`, `banner`, `category_id`, `comment`, `meta_title`, `meta_keyword`, `meta_description`) VALUES
-(5, 'Covid 19 Pandemic - Updates', '<div align=\"justify\">President Yoweri Museveni has said that he has played his part in \r\ncontaining the spread of the coronavirus disease (COVID-19) and can no \r\nlonger take the blame if Ugandans start dying due to “carelessness”.</div>\r\n<p align=\"justify\">Museveni said people have not died in Uganda because initially, his \r\ndirectives were followed to the letter which led to a few people being \r\nhospitalized. He however said with the ever-rising numbers which \r\ncurrently stand at 657, it might be very hard to stop deaths.</p>\r\n<p align=\"justify\">His caution comes amid an increased number of COVID-19 community \r\ncases reported by the Ministry of Health coupled with the laxity amongst\r\n the population, the majority of whom have ignored advice to maintain \r\nsocial distance, wear face masks or even stay at home. Despite the \r\nincrease in cases, the city is crowded and the streets are filled up.</p>\r\n<p align=\"justify\">“Those who were healed were healed because the numbers in the \r\ntreatment centres were few and the doctors could concentrate on them. I \r\nappeal to you Ugandans for those whose activities we have opened up, \r\nobserve the social distance, I beg you for the sake of yourself. Keep \r\nthe distance, put on the mask don’t go in public without a mask.”</p>\r\n<p align=\"justify\">“The mask is not very comfortable but medicine apart from that of \r\nchildren is bitter,” Museveni said as he presided over the National \r\nHeroes Day celebrations at State House, Entebbe today.</p>\r\n<p align=\"justify\">He added that he is disturbed by images of Ugandans disregarding all the preventive measures against the coronavirus.</p>\r\n<p align=\"justify\">Museveni said although his ministry of health officials were planning\r\n for health facilities with 9000-bed capacity, he advised them to plan \r\nfor 40,000-bed capacity and that places like Namboole stadium are being \r\nprepared to treat a big number of people if cases continue to rise. He \r\nwarned, “if the numbers are too big, then they will overwhelm even the \r\nbig place we have prepared.”</p><div data-ad-id=\"117315\" style=\"text-align:-webkit-left; margin-top:px; margin-bottom:px; margin-left:px; margin-right:px;float:none;\" class=\"afw afw_custom afw_ad afwadid-117315\" align=\"justify\">\r\n                                                                                                                               \r\n                                                            <div id=\"M458147ScriptRootC720837\"> \r\n                                                             </div>\r\n                                                            </div>\r\n<p align=\"justify\">“Today, we are confronted by an enemy worse than the war of bullets \r\nthat we fought. It is a biological war and the value of discipline \r\ncannot be over-emphasised. Without a cure or vaccine for Covid-19, it is\r\n our personal discipline that matters most,” he said.</p>\r\n<p align=\"justify\">The president added that Ugandan scientists are in advanced stages of\r\n looking for a coronavirus vaccine. He however cited corruption as the \r\nbiggest impediment to the process. “Parasites go to hell; I’m really \r\ntired of those people who don’t care about the country but themselves,” \r\nMuseveni said.</p>\r\n<p align=\"justify\">Today’s heroes’ day celebrations were supposed to be held in \r\nLyantonde district however due to the COVID-19 pandemic, it was shifted \r\nto State House. Esther Mbayo, the Minister for the Presidency said that \r\neven people who had been vetted to receive medals this year couldn’t \r\nreceive them because of the same issue.</p>', 'Kreb Home & Support Care Services is keeping fully abreast of developments relating to the continued spread of Coronavirus (COVID-19) across Uganda', '2020-06-23', 'news-5.jpg', 'news-banner-5.jpg', 1, 'On', 'Covid 19 Pandemic - Updates', '', '');
+(1, 'How Can Exchange Rate Movement Effect Your Business & Financial Condition', '<p>In the dynamic landscape of global commerce, exchange rate movements \r\nplay a pivotal role in shaping the financial condition of businesses. \r\nWhether you\'re a small local enterprise or a multinational corporation, understanding \r\nhow these fluctuations can influence your bottom line is essential for strategic decision-making.</p><h3>The Ripple Effect on Costs and Prices:</h3>\r\n<p>\r\nFluctuations in exchange rates can directly impact the cost of goods and\r\n services. For businesses involved in international trade, sudden \r\ncurrency depreciations can lead to increased import costs, affecting \r\nprofit margins. Conversely, a strengthening local currency can make \r\nimported goods more affordable, potentially boosting sales. It\'s crucial\r\n for businesses to stay vigilant, monitor currency trends, and adjust \r\npricing strategies accordingly.\r\n</p>\r\n\r\n<h3>Mitigating Currency Risks:</h3>\r\n<p>\r\nTo navigate the unpredictable waters of exchange rate movements, \r\nbusinesses can employ various risk management tools. Forward contracts, \r\ncurrency options, and other hedging instruments can help mitigate the \r\nimpact of adverse currency movements. Developing a comprehensive risk \r\nmanagement strategy aligned with the business\'s goals and risk tolerance\r\n is crucial for maintaining financial stability.</p><p></p><p></p>', 'For businesses engaged in exporting or importing, exchange rate movements introduce an added layer of complexity\"', '2023-11-22', 'news-5.jpg', 'news-banner-5.jpg', 1, 'On', 'How Can Exchange Rate Movement Effect Your Business & Financial Condition', 'forex,money markets', 'For businesses engaged in exporting or importing, exchange rate movements introduce an added layer of complexity\"');
 
 -- --------------------------------------------------------
 
@@ -1142,15 +1167,43 @@ CREATE TABLE `tbl_page_about` (
   `about_content` text NOT NULL,
   `mt_about` varchar(255) NOT NULL,
   `mk_about` text NOT NULL,
-  `md_about` text NOT NULL
+  `md_about` text NOT NULL,
+  `page_top_header` varchar(250) NOT NULL,
+  `page_top_description` text NOT NULL,
+  `page_services_header` varchar(250) NOT NULL,
+  `page_services_description` text NOT NULL,
+  `page_service_1_header` varchar(100) NOT NULL,
+  `page_service_1_description` text NOT NULL,
+  `page_service_2_header` varchar(100) NOT NULL,
+  `page_service_2_description` text NOT NULL,
+  `page_button_text` varchar(100) NOT NULL,
+  `page_button_url` text NOT NULL,
+  `what_we_offer_main` varchar(100) NOT NULL,
+  `what_we_offer_heading` varchar(250) NOT NULL,
+  `what_we_offer_description` text NOT NULL,
+  `offered_service_1_title` varchar(100) NOT NULL,
+  `offered_service_1_description` text NOT NULL,
+  `offered_service_2_title` varchar(100) NOT NULL,
+  `offered_service_2_description` text NOT NULL,
+  `offered_service_3_title` varchar(100) NOT NULL,
+  `offered_service_3_description` text NOT NULL,
+  `main_image_1` varchar(100) NOT NULL,
+  `main_image_2` varchar(100) NOT NULL,
+  `main_image_3` varchar(100) NOT NULL,
+  `main_image_4` varchar(100) NOT NULL,
+  `main_image_animated` varchar(100) NOT NULL,
+  `main_image_animated_bg` varchar(100) NOT NULL,
+  `sub_image_1` varchar(100) NOT NULL,
+  `sub_image_2` varchar(100) NOT NULL,
+  `sub_image_animated` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `tbl_page_about`
 --
 
-INSERT INTO `tbl_page_about` (`id`, `about_heading`, `about_content`, `mt_about`, `mk_about`, `md_about`) VALUES
-(1, 'ABOUT US', '<div align=\"justify\"><p style=\"margin-bottom: 11.5px;  font-family: &quot;Gotham Rounded Book&quot;, sans-serif; font-size: 14px; text-align: left;\">Zeal Forex offers the best currency exchange services at the most competitive rates in Uganda.</p><p style=\"margin-bottom: 11.5px; font-family: &quot;Gotham Rounded Book&quot;, sans-serif; font-size: 14px; text-align: left;\">With the global economy being dynamic, currency values tend to fluctuate on a daily and even hourly basis. Whether you are an avid traveller exploring the world or a businessman traversing time zones making business deals or a student going abroad for education, trust us with all your foreign currency needs.</p><br><b>Mission</b></div><div align=\"justify\"><b><br></b></div><div align=\"justify\">Financial growth and Finance made easy one step at a time<br><br><b>Vision</b></div><div align=\"justify\"><b><br></b></div><div align=\"justify\"><div align=\"justify\" style=\"\">Developing the financial market by connecting the global village through easy and faster money services</div><div align=\"justify\" style=\"\">and trade.</div><div align=\"justify\" style=\"\"><br></div></div><div align=\"justify\"><b>Purpose</b></div><div align=\"justify\"><b><br></b></div><ul><li>Make remittance easy both to and from</li><li>Provide easier ways for businesses to market their products</li><li>Make local transfers affordable, easier and faster</li><li>Bring bill payments to the tip of your fingers with just one click.</li><li>Values of the company</li><li>Customers are our number one priority</li><li>We aim at providing high quality services to our customers hence always improving</li><li>Trust between our company and the customers is highly valued.</li><li>We will always keep our word.</li></ul><div align=\"justify\"><br></div><div align=\"justify\"><b>Goal of the service</b></div><div align=\"justify\">To reduce the use of paper money and boost Financial Services provision</div><div align=\"justify\"><b><br></b><br></div>', 'About Zeal Forex Services', 'Zeal forex', 'We are developing the financial market by connecting the global village through easy and faster money services\r\nand trade.\r\n');
+INSERT INTO `tbl_page_about` (`id`, `about_heading`, `about_content`, `mt_about`, `mk_about`, `md_about`, `page_top_header`, `page_top_description`, `page_services_header`, `page_services_description`, `page_service_1_header`, `page_service_1_description`, `page_service_2_header`, `page_service_2_description`, `page_button_text`, `page_button_url`, `what_we_offer_main`, `what_we_offer_heading`, `what_we_offer_description`, `offered_service_1_title`, `offered_service_1_description`, `offered_service_2_title`, `offered_service_2_description`, `offered_service_3_title`, `offered_service_3_description`, `main_image_1`, `main_image_2`, `main_image_3`, `main_image_4`, `main_image_animated`, `main_image_animated_bg`, `sub_image_1`, `sub_image_2`, `sub_image_animated`) VALUES
+(1, 'About Us', '<div align=\"justify\"><p style=\"margin-bottom: 11.5px;  font-family: &quot;Gotham Rounded Book&quot;, sans-serif; font-size: 14px; text-align: left;\">Zeal Forex offers the best currency exchange services at the most competitive rates in Uganda.</p><p style=\"margin-bottom: 11.5px; font-family: &quot;Gotham Rounded Book&quot;, sans-serif; font-size: 14px; text-align: left;\">With the global economy being dynamic, currency values tend to fluctuate on a daily and even hourly basis. Whether you are an avid traveller exploring the world or a businessman traversing time zones making business deals or a student going abroad for education, trust us with all your foreign currency needs.</p><br><b>Mission</b></div><div align=\"justify\"><b><br></b></div><div align=\"justify\">Financial growth and Finance made easy one step at a time<br><br><b>Vision</b></div><div align=\"justify\"><b><br></b></div><div align=\"justify\"><div align=\"justify\" style=\"\">Developing the financial market by connecting the global village through easy and faster money services</div><div align=\"justify\" style=\"\">and trade.</div><div align=\"justify\" style=\"\"><br></div></div><div align=\"justify\"><b>Purpose</b></div><div align=\"justify\"><b><br></b></div><ul><li>Make remittance easy both to and from</li><li>Provide easier ways for businesses to market their products</li><li>Make local transfers affordable, easier and faster</li><li>Bring bill payments to the tip of your fingers with just one click.</li><li>Values of the company</li><li>Customers are our number one priority</li><li>We aim at providing high quality services to our customers hence always improving</li><li>Trust between our company and the customers is highly valued.</li><li>We will always keep our word.</li></ul><div align=\"justify\"><br></div><div align=\"justify\"><b>Goal of the service</b></div><div align=\"justify\">To reduce the use of paper money and boost Financial Services provision</div><div align=\"justify\"><b><br></b><br></div>', 'About Zeal Forex Services', 'Zeal forex', 'We are developing the financial market by connecting the global village through easy and faster money services\r\nand trade.\r\n', 'With strategic partnerships, we serve better.', '', 'Exchange, Bank and Remitt with us', 'We have been your trusted Money Transfer, Forex and Banking partner since 2009, doing it with exceptional levels of expertise.', 'Service Variety', 'Explore a spectrum, tailored just for you, In the forex exchange game, we\'re the true blue. Varieties galore, satisfaction at the core.', 'Exceptional Support', 'Experience worry-free service brilliance with our Support Assurance—24/7 reliability, expert assistance, and a commitment to evolving with your needs.', 'READ MORE', '#', 'WHAT WE OFFER', 'We Provide Currency Exchange and Money Transfer Services World Wide', 'From inception, we have continuously assisted our customers to exchange, tranfer and bank their money seemlessly.We still keep the same promise for today and the days to come.', ' Competitive Currency Rates', 'In the forex arena, we redefine reliability, offering rates that exceed industry norms. Your financial advantage is our commitment, ensuring a streamlined exchange experience where excellence is not just promised but delivered.', 'International Transfers', 'Rest assured, we deliver the pinnacle of service in International Transfers, ensuring your transactions are swift, secure, and unparalleled.', ' Multi-bank Agency', 'We are a trusted agent for several banks, guaranteeing a seamless and secure financial experience. Your confidence in our expertise is the cornerstone of our commitment to excellence.', 'about-img-1.jpg', 'about-img-2.jpg', 'about-img-3.jpg', 'about-img-4.jpg', 'shape-1.png', 'about-shape-4.png', 'wh-img-3.jpg', '', 'shape-6.png');
 
 -- --------------------------------------------------------
 
@@ -1167,15 +1220,32 @@ CREATE TABLE `tbl_page_contact` (
   `contact_map` text NOT NULL,
   `mt_contact` varchar(255) NOT NULL,
   `mk_contact` text NOT NULL,
-  `md_contact` text NOT NULL
+  `md_contact` text NOT NULL,
+  `contact_page_title` varchar(100) NOT NULL,
+  `address_title` varchar(100) NOT NULL,
+  `address_1` text NOT NULL,
+  `address_2` text NOT NULL,
+  `address_3` text NOT NULL,
+  `emails_title` varchar(100) NOT NULL,
+  `email_1` text NOT NULL,
+  `email_2` text NOT NULL,
+  `email_3` text NOT NULL,
+  `email_4` text NOT NULL,
+  `email_5` text NOT NULL,
+  `phones_title` varchar(100) NOT NULL,
+  `phone_1` varchar(30) NOT NULL,
+  `phone_2` varchar(30) NOT NULL,
+  `phone_3` varchar(30) NOT NULL,
+  `phone_4` varchar(30) NOT NULL,
+  `phone_5` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `tbl_page_contact`
 --
 
-INSERT INTO `tbl_page_contact` (`id`, `contact_heading`, `contact_address`, `contact_email`, `contact_phone`, `contact_map`, `mt_contact`, `mk_contact`, `md_contact`) VALUES
-(1, 'Let us serve you', 'US Address: 467\r\nAcree Lane,\r\nColumbus, OH 43228.', 'info@flyfee.com\r\nsupport@flyfee.com\r\n', 'Office : \r\n+256-786-77-8075 (Uganda)\r\n+1-304-283-6268 (USA)', '<iframe src=\"https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3989.7590720128974!2d32.582677!3d0.312248!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x177dbc7e0237c2c7%3A0xced9084d49a23229!2sRussel%20Ln%2C%20Kampala%2C%20Uganda!5e0!3m2!1sen!2sus!4v1677837957369!5m2!1sen!2sus\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>', 'Contact -Let us know what you need', '', 'US Address: 467\r\nAcree Lane,\r\nColumbus, OH 43228.');
+INSERT INTO `tbl_page_contact` (`id`, `contact_heading`, `contact_address`, `contact_email`, `contact_phone`, `contact_map`, `mt_contact`, `mk_contact`, `md_contact`, `contact_page_title`, `address_title`, `address_1`, `address_2`, `address_3`, `emails_title`, `email_1`, `email_2`, `email_3`, `email_4`, `email_5`, `phones_title`, `phone_1`, `phone_2`, `phone_3`, `phone_4`, `phone_5`) VALUES
+(1, 'Let us serve you', 'US Address: 467\r\nAcree Lane,\r\nColumbus, OH 43228.', 'info@flyfee.com\r\nsupport@flyfee.com\r\n', 'Office : \n+256-786-77-8075 (Uganda)\n+1-304-283-6268 (USA)', '<iframe src=\"https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3989.7590720128974!2d32.582677!3d0.312248!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x177dbc7e0237c2c7%3A0xced9084d49a23229!2sRussel%20Ln%2C%20Kampala%2C%20Uganda!5e0!3m2!1sen!2sus!4v1677837957369!5m2!1sen!2sus\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>', 'Contact -Let us know what you need', '', 'US Address: 467\r\nAcree Lane,\r\nColumbus, OH 43228.', 'Contact Us', 'Our Location', 'Plot 1 Namaganda Plaza. P.O.Box 11562 kampala-Russel Rd ', '', '', 'Email Us', 'zealforex@gmail.com', 'info@zealforex.net', '', '', '', 'Phones', '+256 755 544555', '+256 414 666898', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -1786,21 +1856,7 @@ CREATE TABLE `tbl_social` (
 
 INSERT INTO `tbl_social` (`social_id`, `social_name`, `social_url`, `social_icon`) VALUES
 (1, 'Facebook', 'http://www.facebook.com/', 'fa fa-facebook'),
-(2, 'Twitter', 'http://www.twitter.com', 'fa fa-twitter'),
-(3, 'LinkedIn', 'http://www.linkedin.com', 'fa fa-linkedin'),
-(4, 'Google Plus', '', 'fa fa-google-plus'),
-(5, 'Pinterest', 'http://www.pinterest.com', 'fa fa-pinterest'),
-(6, 'YouTube', 'http://www.youtube.com', 'fa fa-youtube'),
-(7, 'Instagram', '', 'fa fa-instagram'),
-(8, 'Tumblr', '', 'fa fa-tumblr'),
-(9, 'Flickr', '', 'fa fa-flickr'),
-(10, 'Reddit', '', 'fa fa-reddit'),
-(11, 'Snapchat', '', 'fa fa-snapchat'),
-(12, 'WhatsApp', '', 'fa fa-whatsapp'),
-(13, 'Quora', '', 'fa fa-quora'),
-(14, 'StumbleUpon', '', 'fa fa-stumbleupon'),
-(15, 'Delicious', '', 'fa fa-delicious'),
-(16, 'Digg', '', 'fa fa-digg');
+(2, 'Twitter', 'http://www.twitter.com', 'fa fa-twitter');
 
 -- --------------------------------------------------------
 
@@ -1919,6 +1975,18 @@ ALTER TABLE `tbl_currencies`
   ADD PRIMARY KEY (`currency_id`);
 
 --
+-- Indexes for table `tbl_faq`
+--
+ALTER TABLE `tbl_faq`
+  ADD PRIMARY KEY (`faq_id`);
+
+--
+-- Indexes for table `tbl_faq_page_content`
+--
+ALTER TABLE `tbl_faq_page_content`
+  ADD PRIMARY KEY (`faq_content_id`);
+
+--
 -- Indexes for table `tbl_flags`
 --
 ALTER TABLE `tbl_flags`
@@ -2003,6 +2071,18 @@ ALTER TABLE `tbl_home_why_choose_us_top_content`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `tbl_news`
+--
+ALTER TABLE `tbl_news`
+  ADD PRIMARY KEY (`news_id`);
+
+--
+-- Indexes for table `tbl_page_about`
+--
+ALTER TABLE `tbl_page_about`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `tbl_page_contact`
 --
 ALTER TABLE `tbl_page_contact`
@@ -2019,6 +2099,12 @@ ALTER TABLE `tbl_service`
 --
 ALTER TABLE `tbl_slider`
   ADD PRIMARY KEY (`ry`);
+
+--
+-- Indexes for table `tbl_social`
+--
+ALTER TABLE `tbl_social`
+  ADD PRIMARY KEY (`social_id`);
 
 --
 -- Indexes for table `tbl_user`
@@ -2041,6 +2127,18 @@ ALTER TABLE `tbl_countries`
 --
 ALTER TABLE `tbl_currencies`
   MODIFY `currency_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+
+--
+-- AUTO_INCREMENT for table `tbl_faq`
+--
+ALTER TABLE `tbl_faq`
+  MODIFY `faq_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- AUTO_INCREMENT for table `tbl_faq_page_content`
+--
+ALTER TABLE `tbl_faq_page_content`
+  MODIFY `faq_content_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `tbl_flags`
@@ -2127,10 +2225,28 @@ ALTER TABLE `tbl_home_why_choose_us_top_content`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
+-- AUTO_INCREMENT for table `tbl_news`
+--
+ALTER TABLE `tbl_news`
+  MODIFY `news_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `tbl_page_about`
+--
+ALTER TABLE `tbl_page_about`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `tbl_slider`
 --
 ALTER TABLE `tbl_slider`
   MODIFY `ry` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `tbl_social`
+--
+ALTER TABLE `tbl_social`
+  MODIFY `social_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `tbl_user`
