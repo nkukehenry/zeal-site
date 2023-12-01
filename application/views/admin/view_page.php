@@ -8,6 +8,9 @@ if(!$this->session->userdata('id')) {
 	<div class="content-header-left">
 		<h1>Page Section</h1>
 	</div>
+    <!-- <div class="content-header-left pull-right">
+		<a href="<?php echo base_url(); ?>admin/add_page_content" class="btn btn-primary">Add Content</a>
+	</div> -->
 </section>
 
 <section class="content" style="min-height:auto;margin-bottom: -30px;">
@@ -655,7 +658,7 @@ if(!$this->session->userdata('id')) {
                         </div>
 
                         <div class="tab-pane" id="tab_2">
-                            <?php echo form_open(base_url().'admin/page/update',array('class' => 'form-horizontal')); ?>
+                            <?php echo form_open_multipart(base_url().'admin/page/update',array('class' => 'form-horizontal')); ?>
                                 <div class="form-group">
                                     <label for="" class="col-sm-2 control-label">About Heading </label>
                                     <div class="col-sm-6">
@@ -668,6 +671,125 @@ if(!$this->session->userdata('id')) {
                                         <textarea name="about_content" class="form-control" cols="30" rows="10" id="editor1"><?php echo $page_about['about_content']; ?></textarea>
                                     </div>
                                 </div>
+                                <div class="form-group">
+                                    <label for="" class="col-sm-2 control-label"> Page Top Header </label>
+                                    <div class="col-sm-9">
+                                        <input type="text" name="page_top_header" class="form-control" value="<?php echo $page_about['page_top_header']; ?>">
+                                    </div>
+                                </div>
+                                <!-- <div class="form-group">
+                                    <label for="" class="col-sm-2 control-label"> Page Top Description </label>
+                                    <div class="col-sm-9">
+                                        <textarea type="text" name="page_top_description" class="form-control"><?php //echo $page_about['page_top_description']; ?></textarea>
+                                    </div>
+                                </div> -->
+                                <h3 class="sec_title">About Us Service Section</h3>
+                                <div class="form-group">
+                                    <label for="" class="col-sm-2 control-label"> About Services Header </label>
+                                    <div class="col-sm-9">
+                                        <input type="text" name="page_services_header" class="form-control" value="<?php echo $page_about['page_services_header']; ?>">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="" class="col-sm-2 control-label"> About Services Description </label>
+                                    <div class="col-sm-9">
+                                        <textarea type="text" name="page_services_description" class="form-control"><?php echo $page_about['page_services_description']; ?></textarea>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="" class="col-sm-2 control-label"> About Service 1 Header </label>
+                                    <div class="col-sm-6">
+                                        <input type="text" name="page_service_1_header" class="form-control" value="<?php echo $page_about['page_service_1_header']; ?>">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="" class="col-sm-2 control-label"> About Service 1 Description </label>
+                                    <div class="col-sm-6">
+                                        <textarea type="text" name="page_service_1_description" class="form-control"><?php echo $page_about['page_service_1_description']; ?></textarea>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="" class="col-sm-2 control-label"> About Service 2 Header </label>
+                                    <div class="col-sm-6">
+                                        <input type="text" name="page_service_2_header" class="form-control" value="<?php echo $page_about['page_service_2_header']; ?>">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="" class="col-sm-2 control-label"> About Service 2 Description </label>
+                                    <div class="col-sm-6">
+                                        <textarea type="text" name="page_service_2_description" class="form-control"><?php echo $page_about['page_service_2_description']; ?></textarea>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="" class="col-sm-2 control-label"> Page Button Text </label>
+                                    <div class="col-sm-6">
+                                        <input type="text" name="page_button_text" class="form-control" value="<?php echo $page_about['page_button_text']; ?>">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="" class="col-sm-2 control-label"> Page Button URL </label>
+                                    <div class="col-sm-6">
+                                        <textarea type="text" name="page_button_url" class="form-control"><?php echo $page_about['page_button_url']; ?></textarea>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="" class="col-sm-2 control-label"> What We Offer Main </label>
+                                    <div class="col-sm-6">
+                                        <input type="text" name="what_we_offer_main" class="form-control" value="<?php echo $page_about['what_we_offer_main']; ?>">
+                                    </div>
+                                </div>
+                                
+                                <h3 class="sec_title">What We Offer Section</h3>
+                                <div class="form-group">
+                                    <label for="" class="col-sm-2 control-label"> What We Offer Heading </label>
+                                    <div class="col-sm-6">
+                                        <input type="text" name="what_we_offer_heading" class="form-control" value="<?php echo $page_about['what_we_offer_heading']; ?>">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="" class="col-sm-2 control-label"> What We Offer Description </label>
+                                    <div class="col-sm-6">
+                                        <textarea type="text" name="what_we_offer_description" class="form-control"><?php echo $page_about['what_we_offer_description']; ?></textarea>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="" class="col-sm-2 control-label"> Offered Service 1 Title </label>
+                                    <div class="col-sm-6">
+                                        <input type="text" name="offered_service_1_title" class="form-control" value="<?php echo $page_about['offered_service_1_title']; ?>">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="" class="col-sm-2 control-label"> Offered Service 1 Description </label>
+                                    <div class="col-sm-6">
+                                        <textarea type="text" name="offered_service_1_description" class="form-control"><?php echo $page_about['offered_service_1_description']; ?></textarea>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="" class="col-sm-2 control-label"> Offered Service 2 Title </label>
+                                    <div class="col-sm-6">
+                                        <input type="text" name="offered_service_2_title" class="form-control" value="<?php echo $page_about['offered_service_2_title']; ?>">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="" class="col-sm-2 control-label"> Offered Service 2 Description </label>
+                                    <div class="col-sm-6">
+                                        <textarea type="text" name="offered_service_2_description" class="form-control"><?php echo $page_about['offered_service_2_description']; ?></textarea>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="" class="col-sm-2 control-label"> Offered Service 3 Title </label>
+                                    <div class="col-sm-6">
+                                        <input type="text" name="offered_service_3_title" class="form-control" value="<?php echo $page_about['offered_service_3_title']; ?>">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="" class="col-sm-2 control-label"> Offered Service 3 Description </label>
+                                    <div class="col-sm-6">
+                                        <textarea type="text" name="offered_service_3_description" class="form-control"><?php echo $page_about['offered_service_3_description']; ?></textarea>
+                                    </div>
+                                </div>
+
+
                                 <div class="form-group">
                                     <label for="" class="col-sm-2 control-label">Meta Title </label>
                                     <div class="col-sm-9">
@@ -691,9 +813,294 @@ if(!$this->session->userdata('id')) {
                                     <div class="col-sm-6">
                                         <button type="submit" class="btn btn-success pull-left" name="form_about">Update</button>
                                     </div>
-                                </div>                              
+                                </div>                            
                             <?php echo form_close(); ?>
+
+                            <div class="form-horizontal">
+                                <h3 class="sec_title">About Us Images Section</h3>
+                                <div class="row">
+
+                                    <div class="col-sm-3">
+                                        <select name="select" id="select_image" class="form-control">
+                                            <option selected value="none">Select Image ti Update</option>
+                                            <option value="main_image_1">Main Image 1</option>
+                                            <option value="main_image_2">Main Image 2</option>
+                                            <option value="main_image_3">Main Image 3</option>
+                                            <option value="main_image_4">Main Image 4</option>
+                                            <option value="main_image_animated">Main Image Animated 1</option>
+                                            <option value="main_image_animated_bg">Main Image Animated 2</option>
+                                            <option value="sub_image_1">Sub Image 1</option>
+                                            <option value="sub_image_2">Sub Image 2</option>
+                                            <option value="sub_image_animated">Sub Image Animated</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="col-sm-4">
+                                        <div class="row" id="show_main_image_1" style="display: none;">
+                                            <div class="col-sm-12">
+                                                <p>Current Image</p>
+                                                <img src="<?php echo base_url(); ?>assets/site/img/about/<?php echo $page_about['main_image_1']; ?>" alt="image" width="220px">
+                                            </div>
+                                            <div class="col-sm-12">
+                                                <?php echo form_open_multipart(base_url().'admin/page/update_image',array('class' => 'form-horizontal')); ?>
+                                                    <input type="hidden" name="active_image" value="<?php echo $page_about['main_image_1']; ?>">
+                                                    <input type="hidden" name="column_name" value="id">
+                                                    <input type="hidden" name="caller_value" value="<?php echo $page_about['id']; ?>">
+                                                    <input type="hidden" name="column_to_insert" value="main_image_1">
+                                                    <input type="hidden" name="table_name" value="tbl_page_about">
+                                                    <input type="hidden" name="image_path" value="./assets/site/img/about/">
+                                                    <div class="form-group">
+                                                        <div class="col-sm-9">
+                                                            <input type="file" name="userfile" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <div class="col-sm-9">
+                                                            <button type="submit" class="btn btn-primary"> Update </button>
+                                                        </div>
+                                                    </div>
+                                                <?php echo form_close(); ?>
+                                            </div>
+                                        </div>
+                                        <div class="row" id="show_main_image_2" style="display: none;">
+                                            <div class="col-sm-12">
+                                                <p>Current Image</p>
+                                                <img src="<?php echo base_url(); ?>assets/site/img/about/<?php echo $page_about['main_image_2']; ?>" alt="image" width="220px">
+                                            </div>
+                                            <div class="col-sm-12">
+                                                <?php echo form_open_multipart(base_url().'admin/page/update_image',array('class' => 'form-horizontal')); ?>
+                                                    <input type="hidden" name="active_image" value="<?php echo $page_about['main_image_2']; ?>">
+                                                    <input type="hidden" name="column_name" value="id">
+                                                    <input type="hidden" name="caller_value" value="<?php echo $page_about['id']; ?>">
+                                                    <input type="hidden" name="column_to_insert" value="main_image_2">
+                                                    <input type="hidden" name="table_name" value="tbl_page_about">
+                                                    <input type="hidden" name="image_path" value="./assets/site/img/about/">
+                                                    <div class="form-group">
+                                                        <div class="col-sm-9">
+                                                            <input type="file" name="userfile" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <div class="col-sm-9">
+                                                            <button type="submit" class="btn btn-primary"> Update </button>
+                                                        </div>
+                                                    </div>
+                                                <?php echo form_close(); ?>
+                                            </div>
+                                        </div>
+                                        <div class="row" id="show_main_image_3" style="display: none;">
+                                            <div class="col-sm-12">
+                                                <p>Current Image</p>
+                                                <img src="<?php echo base_url(); ?>assets/site/img/about/<?php echo $page_about['main_image_3']; ?>" alt="image" width="220px">
+                                            </div>
+                                            <div class="col-sm-12">
+                                                <?php echo form_open_multipart(base_url().'admin/page/update_image',array('class' => 'form-horizontal')); ?>
+                                                    <input type="hidden" name="active_image" value="<?php echo $page_about['main_image_3']; ?>">
+                                                    <input type="hidden" name="column_name" value="id">
+                                                    <input type="hidden" name="caller_value" value="<?php echo $page_about['id']; ?>">
+                                                    <input type="hidden" name="column_to_insert" value="main_image_3">
+                                                    <input type="hidden" name="table_name" value="tbl_page_about">
+                                                    <input type="hidden" name="image_path" value="./assets/site/img/about/">
+                                                    <div class="form-group">
+                                                        <div class="col-sm-9">
+                                                            <input type="file" name="userfile" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <div class="col-sm-9">
+                                                            <button type="submit" class="btn btn-primary"> Update </button>
+                                                        </div>
+                                                    </div>
+                                                <?php echo form_close(); ?>
+                                            </div>
+                                        </div>
+                                        <div class="row" id="show_main_image_4" style="display: none;">
+                                            <div class="col-sm-12">
+                                                <p>Current Image</p>
+                                                <img src="<?php echo base_url(); ?>assets/site/img/about/<?php echo $page_about['main_image_4']; ?>" alt="image" width="220px">
+                                            </div>
+                                            <div class="col-sm-12">
+                                                <?php echo form_open_multipart(base_url().'admin/page/update_image',array('class' => 'form-horizontal')); ?>
+                                                    <input type="hidden" name="active_image" value="<?php echo $page_about['main_image_4']; ?>">
+                                                    <input type="hidden" name="column_name" value="id">
+                                                    <input type="hidden" name="caller_value" value="<?php echo $page_about['id']; ?>">
+                                                    <input type="hidden" name="column_to_insert" value="main_image_4">
+                                                    <input type="hidden" name="table_name" value="tbl_page_about">
+                                                    <input type="hidden" name="image_path" value="./assets/site/img/about/">
+                                                    <div class="form-group">
+                                                        <div class="col-sm-9">
+                                                            <input type="file" name="userfile" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <div class="col-sm-9">
+                                                            <button type="submit" class="btn btn-primary"> Update </button>
+                                                        </div>
+                                                    </div>
+                                                <?php echo form_close(); ?>
+                                            </div>
+                                        </div>
+                                        <div class="row" id="show_main_image_animated" style="display: none;">
+                                            <div class="col-sm-12">
+                                                <p>Current Image</p>
+                                                <img src="<?php echo base_url(); ?>assets/site/img/about/<?php echo $page_about['main_image_animated']; ?>" alt="image" width="220px">
+                                            </div>
+                                            <div class="col-sm-12">
+                                                <?php echo form_open_multipart(base_url().'admin/page/update_image',array('class' => 'form-horizontal')); ?>
+                                                    <input type="hidden" name="active_image" value="<?php echo $page_about['main_image_animated']; ?>">
+                                                    <input type="hidden" name="column_name" value="id">
+                                                    <input type="hidden" name="caller_value" value="<?php echo $page_about['id']; ?>">
+                                                    <input type="hidden" name="column_to_insert" value="main_image_animated">
+                                                    <input type="hidden" name="table_name" value="tbl_page_about">
+                                                    <input type="hidden" name="image_path" value="./assets/site/img/about/">
+                                                    <div class="form-group">
+                                                        <div class="col-sm-9">
+                                                            <input type="file" name="userfile" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <div class="col-sm-9">
+                                                            <button type="submit" class="btn btn-primary"> Update </button>
+                                                        </div>
+                                                    </div>
+                                                <?php echo form_close(); ?>
+                                            </div>
+                                        </div>
+                                        <div class="row" id="show_main_image_animated_bg" style="display: none;">
+                                            <div class="col-sm-12">
+                                                <p>Current Image</p>
+                                                <img src="<?php echo base_url(); ?>assets/site/img/about/<?php echo $page_about['main_image_animated_bg']; ?>" alt="image" width="220px">
+                                            </div>
+                                            <div class="col-sm-12">
+                                                <?php echo form_open_multipart(base_url().'admin/page/update_image',array('class' => 'form-horizontal')); ?>
+                                                    <input type="hidden" name="active_image" value="<?php echo $page_about['main_image_animated_bg']; ?>">
+                                                    <input type="hidden" name="column_name" value="id">
+                                                    <input type="hidden" name="caller_value" value="<?php echo $page_about['id']; ?>">
+                                                    <input type="hidden" name="column_to_insert" value="main_image_animated_bg">
+                                                    <input type="hidden" name="table_name" value="tbl_page_about">
+                                                    <input type="hidden" name="image_path" value="./assets/site/img/about/">
+                                                    <div class="form-group">
+                                                        <div class="col-sm-9">
+                                                            <input type="file" name="userfile" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <div class="col-sm-9">
+                                                            <button type="submit" class="btn btn-primary"> Update </button>
+                                                        </div>
+                                                    </div>
+                                                <?php echo form_close(); ?>
+                                            </div>
+                                        </div>
+                                        <div class="row" id="show_sub_image_1" style="display: none;">
+                                            <div class="col-sm-12">
+                                                <p>Current Image</p>
+                                                <img src="<?php echo base_url(); ?>assets/site/img/about/<?php echo $page_about['sub_image_1']; ?>" alt="image" width="220px">
+                                            </div>
+                                            <div class="col-sm-12">
+                                                <?php echo form_open_multipart(base_url().'admin/page/update_image',array('class' => 'form-horizontal')); ?>
+                                                    <input type="hidden" name="active_image" value="<?php echo $page_about['sub_image_1']; ?>">
+                                                    <input type="hidden" name="column_name" value="id">
+                                                    <input type="hidden" name="caller_value" value="<?php echo $page_about['id']; ?>">
+                                                    <input type="hidden" name="column_to_insert" value="sub_image_1">
+                                                    <input type="hidden" name="table_name" value="tbl_page_about">
+                                                    <input type="hidden" name="image_path" value="./assets/site/img/about/">
+                                                    <div class="form-group">
+                                                        <div class="col-sm-9">
+                                                            <input type="file" name="userfile" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <div class="col-sm-9">
+                                                            <button type="submit" class="btn btn-primary"> Update </button>
+                                                        </div>
+                                                    </div>
+                                                <?php echo form_close(); ?>
+                                            </div>
+                                        </div>
+                                        <div class="row" id="show_sub_image_2" style="display: none;">
+                                            <div class="col-sm-12">
+                                                <p>Current Image</p>
+                                                <img src="<?php echo base_url(); ?>assets/site/img/about/<?php echo $page_about['sub_image_2']; ?>" alt="No image" width="220px">
+                                            </div>
+                                            <div class="col-sm-12">
+                                                <?php echo form_open_multipart(base_url().'admin/page/update_image',array('class' => 'form-horizontal')); ?>
+                                                    <input type="hidden" name="active_image" value="<?php echo $page_about['sub_image_2']; ?>">
+                                                    <input type="hidden" name="column_name" value="id">
+                                                    <input type="hidden" name="caller_value" value="<?php echo $page_about['id']; ?>">
+                                                    <input type="hidden" name="column_to_insert" value="sub_image_2">
+                                                    <input type="hidden" name="table_name" value="tbl_page_about">
+                                                    <input type="hidden" name="image_path" value="./assets/site/img/about/">
+                                                    <div class="form-group">
+                                                        <div class="col-sm-9">
+                                                            <input type="file" name="userfile" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <div class="col-sm-9">
+                                                            <button type="submit" class="btn btn-primary"> Update </button>
+                                                        </div>
+                                                    </div>
+                                                <?php echo form_close(); ?>
+                                            </div>
+                                        </div>
+                                        <div class="row" id="show_sub_image_animated" style="display: none;">
+                                            <div class="col-sm-12">
+                                                <p>Current Image</p>
+                                                <img src="<?php echo base_url(); ?>assets/site/img/about/<?php echo $page_about['sub_image_animated']; ?>" alt="image" width="220px">
+                                            </div>
+                                            <div class="col-sm-12">
+                                                <?php echo form_open_multipart(base_url().'admin/page/update_image',array('class' => 'form-horizontal')); ?>
+                                                    <input type="hidden" name="active_image" value="<?php echo $page_about['sub_image_animated']; ?>">
+                                                    <input type="hidden" name="column_name" value="id">
+                                                    <input type="hidden" name="caller_value" value="<?php echo $page_about['id']; ?>">
+                                                    <input type="hidden" name="column_to_insert" value="sub_image_animated">
+                                                    <input type="hidden" name="table_name" value="tbl_page_about">
+                                                    <input type="hidden" name="image_path" value="./assets/site/img/about/">
+                                                    <div class="form-group">
+                                                        <div class="col-sm-9">
+                                                            <input type="file" name="userfile" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <div class="col-sm-9">
+                                                            <button type="submit" class="btn btn-primary"> Update </button>
+                                                        </div>
+                                                    </div>
+                                                <?php echo form_close(); ?>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="col-sm-5">
+                                        <div class="row">
+                                            <tr>
+                                                <td><img src="<?php echo base_url(); ?>assets/site/img/about/<?php echo $page_about['main_image_1']; ?>" alt="image" width="60px"></td>
+                                                <td><img src="<?php echo base_url(); ?>assets/site/img/about/<?php echo $page_about['main_image_2']; ?>" alt="image" width="60px"></td>
+                                                <td><img src="<?php echo base_url(); ?>assets/site/img/about/<?php echo $page_about['main_image_3']; ?>" alt="image" width="60px"></td>
+                                                <td><img src="<?php echo base_url(); ?>assets/site/img/about/<?php echo $page_about['main_image_4']; ?>" alt="image" width="60px"></td>
+                                                <td><img src="<?php echo base_url(); ?>assets/site/img/about/<?php echo $page_about['main_image_animated']; ?>" alt="" width="60px"></td>
+                                                <td><img src="<?php echo base_url(); ?>assets/site/img/about/<?php echo $page_about['main_image_animated_bg']; ?>" alt="" width="60px"></td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="6"><hr></td>
+                                            </tr>
+                                            <tr>
+                                                <td><img src="<?php echo base_url(); ?>assets/site/img/about/<?php echo $page_about['sub_image_1']; ?>" alt="" width="60px"></td>
+                                                <td><img src="<?php echo base_url(); ?>assets/site/img/about/<?php echo $page_about['sub_image_2']; ?>" alt="" width="60px"></td>
+                                                <td><img src="<?php echo base_url(); ?>assets/site/img/about/<?php echo $page_about['sub_image_animated']; ?>" alt="" width="60px"></td>
+                                            </tr>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
                         </div>
+
+
                         
 
 
@@ -1151,3 +1558,141 @@ if(!$this->session->userdata('id')) {
     </div>
 
 </section>
+
+<script>
+
+    // Image Selector
+    var main_image_1 = document.getElementById('main_image_1');
+    var main_image_2 = document.getElementById('main_image_2');
+    var main_image_3 = document.getElementById('main_image_3');
+    var main_image_4 = document.getElementById('main_image_4');
+    var main_image_animated = document.getElementById('main_image_animated');
+    var main_image_animated_bg = document.getElementById('main_image_animated_bg');
+    var sub_image_1 = document.getElementById('sub_image_1');
+    var sub_image_2 = document.getElementById('sub_image_2');
+    var sub_image_animated = document.getElementById('sub_image_animated');
+
+    var select_image = document.getElementById('select_image');
+
+    
+
+    // Image Insertion
+    var show_main_image_1 = document.getElementById('show_main_image_1');
+    var show_main_image_2 = document.getElementById('show_main_image_2');
+    var show_main_image_3 = document.getElementById('show_main_image_3');
+    var show_main_image_4 = document.getElementById('show_main_image_4');
+    var show_main_image_animated = document.getElementById('show_main_image_animated');
+    var show_main_image_animated_bg = document.getElementById('show_main_image_animated_bg');
+    var show_sub_image_1 = document.getElementById('show_sub_image_1');
+    var show_sub_image_2 = document.getElementById('show_sub_image_2');
+    var show_sub_image_animated = document.getElementById('show_sub_image_animated');
+
+    select_image.addEventListener('change', select);
+
+    function select(){
+        var selected_value = this.value;
+
+        if(selected_value == 'main_image_1'){
+            show_main_image_1.style.display = "unset";
+            show_main_image_2.style.display = "none";
+            show_main_image_3.style.display = "none";
+            show_main_image_4.style.display = "none";
+            show_main_image_animated.style.display = "none";
+            show_main_image_animated_bg.style.display = "none";
+            show_sub_image_1.style.display = "none";
+            show_sub_image_2.style.display = "none";
+            show_sub_image_animated.style.display = "none";
+        }else if(selected_value == 'main_image_2'){
+            show_main_image_1.style.display = "none";
+            show_main_image_2.style.display = "unset";
+            show_main_image_3.style.display = "none";
+            show_main_image_4.style.display = "none";
+            show_main_image_animated.style.display = "none";
+            show_main_image_animated_bg.style.display = "none";
+            show_sub_image_1.style.display = "none";
+            show_sub_image_2.style.display = "none";
+            show_sub_image_animated.style.display = "none";
+        }else if(selected_value == 'main_image_3'){
+            show_main_image_1.style.display = "none";
+            show_main_image_2.style.display = "none";
+            show_main_image_3.style.display = "unset";
+            show_main_image_4.style.display = "none";
+            show_main_image_animated.style.display = "none";
+            show_main_image_animated_bg.style.display = "none";
+            show_sub_image_1.style.display = "none";
+            show_sub_image_2.style.display = "none";
+            show_sub_image_animated.style.display = "none";
+        }else if(selected_value == 'main_image_4'){
+            show_main_image_1.style.display = "none";
+            show_main_image_2.style.display = "none";
+            show_main_image_3.style.display = "none";
+            show_main_image_4.style.display = "unset";
+            show_main_image_animated.style.display = "none";
+            show_main_image_animated_bg.style.display = "none";
+            show_sub_image_1.style.display = "none";
+            show_sub_image_2.style.display = "none";
+            show_sub_image_animated.style.display = "none";
+        }else if(selected_value == 'main_image_animated'){
+            show_main_image_1.style.display = "none";
+            show_main_image_2.style.display = "none";
+            show_main_image_3.style.display = "none";
+            show_main_image_4.style.display = "none";
+            show_main_image_animated.style.display = "unset";
+            show_main_image_animated_bg.style.display = "none";
+            show_sub_image_1.style.display = "none";
+            show_sub_image_2.style.display = "none";
+            show_sub_image_animated.style.display = "none";
+        }else if(selected_value == 'main_image_animated_bg'){
+            show_main_image_1.style.display = "none";
+            show_main_image_2.style.display = "none";
+            show_main_image_3.style.display = "none";
+            show_main_image_4.style.display = "none";
+            show_main_image_animated.style.display = "none";
+            show_main_image_animated_bg.style.display = "unset";
+            show_sub_image_1.style.display = "none";
+            show_sub_image_2.style.display = "none";
+            show_sub_image_animated.style.display = "none";
+        }else if(selected_value == 'sub_image_1'){
+            show_main_image_1.style.display = "none";
+            show_main_image_2.style.display = "none";
+            show_main_image_3.style.display = "none";
+            show_main_image_4.style.display = "none";
+            show_main_image_animated.style.display = "none";
+            show_main_image_animated_bg.style.display = "none";
+            show_sub_image_1.style.display = "unset";
+            show_sub_image_2.style.display = "none";
+            show_sub_image_animated.style.display = "none";
+        }else if(selected_value == 'sub_image_2'){
+            show_main_image_1.style.display = "none";
+            show_main_image_2.style.display = "none";
+            show_main_image_3.style.display = "none";
+            show_main_image_4.style.display = "none";
+            show_main_image_animated.style.display = "none";
+            show_main_image_animated_bg.style.display = "none";
+            show_sub_image_1.style.display = "none";
+            show_sub_image_2.style.display = "unset";
+            show_sub_image_animated.style.display = "none";
+        }else if(selected_value == 'sub_image_animated'){
+            show_main_image_1.style.display = "none";
+            show_main_image_2.style.display = "none";
+            show_main_image_3.style.display = "none";
+            show_main_image_4.style.display = "none";
+            show_main_image_animated.style.display = "none";
+            show_main_image_animated_bg.style.display = "none";
+            show_sub_image_1.style.display = "none";
+            show_sub_image_2.style.display = "none";
+            show_sub_image_animated.style.display = "unset";
+        }else {
+            show_main_image_1.style.display = "none";
+            show_main_image_2.style.display = "none";
+            show_main_image_3.style.display = "none";
+            show_main_image_4.style.display = "none";
+            show_main_image_animated.style.display = "none";
+            show_main_image_animated_bg.style.display = "none";
+            show_sub_image_1.style.display = "none";
+            show_sub_image_2.style.display = "none";
+            show_sub_image_animated.style.display = "none";
+        }
+    }
+
+</script>

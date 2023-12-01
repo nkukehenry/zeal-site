@@ -60,4 +60,15 @@
                 return $query->result();
             }
 
+            // Update Image here
+            public function update_image($table_name, $column_name, $caller_value, $column_to_insert, $zeal_image)
+            {
+                $data = array(
+                    $column_to_insert => $zeal_image,
+                );
+                $this->db->where($column_name, $caller_value);
+                $this->db->update($table_name, $data);
+                return true;
+            }
+
       }

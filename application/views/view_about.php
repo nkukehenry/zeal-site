@@ -50,7 +50,7 @@
 </div>
 </div>
 <div class="col-6 about-img-wrap lgm-70">
-<img src="<?php echo base_url(); ?>assets/site/img/<?php echo $about_content['main_image_animated']; ?>" alt="Image" class="about-shape-two moveHorizontal">
+<img src="<?php echo base_url(); ?>assets/site/img/about/<?php echo $about_content['main_image_animated']; ?>" alt="Image" class="about-shape-two moveHorizontal">
 <div class="about-img">
 <img src="<?php echo base_url(); ?>assets/site/img/about/<?php echo $about_content['main_image_3']; ?>" alt="Image">
 </div>

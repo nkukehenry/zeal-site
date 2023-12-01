@@ -180,16 +180,6 @@ Save my name,email,website addres in this browser for the next time I commnet.
 <div class="col-xl-4 col-lg-12">
 <div class="sidebar">
 <div class="sidebar-widget">
-<div class="search-box">
-<div class="form-group">
-<input type="search" placeholder="Search">
-<button type="submit">
-<i class="ri-search-line"></i>
-</button>
-</div>
-</div>
-</div>
-<div class="sidebar-widget">
 <div class="widget-title">
 <h4>Categories <span></span></h4>
 </div>

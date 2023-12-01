@@ -8,6 +8,7 @@ class Page extends CI_Controller
         parent::__construct();
         $this->load->model('admin/Model_common');
         $this->load->model('admin/Model_page');
+        $this->load->model('db/Db');
     }
 	public function index()
 	{
@@ -369,7 +370,26 @@ class Page extends CI_Controller
 				'about_content' => $_POST['about_content'],
 				'mt_about'      => $_POST['mt_about'],
 				'mk_about'      => $_POST['mk_about'],
-				'md_about'      => $_POST['md_about']
+				'md_about'      => $_POST['md_about'],
+				'page_top_header'      => $_POST['page_top_header'],
+				'page_top_description'      => $_POST['page_top_description'],
+				'page_services_header'      => $_POST['page_services_header'],
+				'page_services_description'      => $_POST['page_services_description'],
+				'page_service_1_header'      => $_POST['page_service_1_header'],
+				'page_service_1_description'      => $_POST['page_service_1_description'],
+				'page_service_2_header'      => $_POST['page_service_2_header'],
+				'page_service_2_description'      => $_POST['page_service_2_description'],
+				'page_button_text'      => $_POST['page_button_text'],
+				'page_button_url'      => $_POST['page_button_url'],
+				'what_we_offer_main'      => $_POST['what_we_offer_main'],
+				'what_we_offer_heading'      => $_POST['what_we_offer_heading'],
+				'what_we_offer_description'      => $_POST['what_we_offer_description'],
+				'offered_service_1_title'      => $_POST['offered_service_1_title'],
+				'offered_service_1_description'      => $_POST['offered_service_1_description'],
+				'offered_service_2_title'      => $_POST['offered_service_2_title'],
+				'offered_service_2_description'      => $_POST['offered_service_2_description'],
+				'offered_service_3_title'      => $_POST['offered_service_3_title'],
+				'offered_service_3_description'      => $_POST['offered_service_3_description'],
             );
         	$this->Model_page->update_about($form_data);
         	$success = 'About Page Setting is updated successfully!';
@@ -525,6 +545,46 @@ class Page extends CI_Controller
         	$this->session->set_flashdata('success',$success);
 		    redirect(base_url().'admin/page');
 		}
+
+	}
+
+	// Update Image here
+	public function update_image(){
+
+		$table_name = $this->input->post('table_name');
+		$column_name = $this->input->post('column_name');
+		$caller_value = $this->input->post('caller_value');
+		$column_to_insert = $this->input->post('column_to_insert');
+		$image_path = $this->input->post('image_path');
+		$active_image = $this->input->post('active_image');
+
+		// Update Image Here
+		$pic = explode('.', $_FILES['userfile']['name']);
+		$ext = end($pic);
+		$config['upload_path'] = $image_path;
+		$config['allowed_types'] = "jpg|jpeg|gif|png|webp";
+		$config['max_size'] = "100000";
+		$config['max_width'] = "100000";
+		$config['max_height'] = "100000";
+		$config['file_name'] = str_replace('-', '', date('Y-m-d').time().'zealimg.').$ext;
+
+			$this->load->library('upload', $config);
+
+			if(!$this->upload->do_upload()){
+				$errors = array('error' => $this->upload->display_errors());
+				$zeal_image = $active_image;
+				die($this->upload->display_errors());
+			}else{
+				
+				$data = array('upload_data' => $this->upload->data());
+				$zeal_image = $config['file_name'];
+
+			}
+			
+		$this->Db->update_image($table_name, $column_name, $caller_value, $column_to_insert, $zeal_image);
+		$success = 'About Page Setting is updated successfully!';
+		$this->session->set_flashdata('success',$success);
+		redirect(base_url().'admin/page');
 
 	}
 	
