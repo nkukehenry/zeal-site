@@ -402,7 +402,9 @@ class Page extends CI_Controller
 				'faq_heading' => $_POST['faq_heading'],
 				'mt_faq'      => $_POST['mt_faq'],
 				'mk_faq'      => $_POST['mk_faq'],
-				'md_faq'      => $_POST['md_faq']
+				'md_faq'      => $_POST['md_faq'],
+				'faq_page_title'      => $_POST['faq_heading'],
+				'faq_main_header'      => $_POST['faq_main_header'],
             );
         	$this->Model_page->update_faq($form_data);
         	$success = 'FAQ Page Setting is updated successfully!';

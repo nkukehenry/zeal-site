@@ -822,7 +822,7 @@ if(!$this->session->userdata('id')) {
 
                                     <div class="col-sm-3">
                                         <select name="select" id="select_image" class="form-control">
-                                            <option selected value="none">Select Image ti Update</option>
+                                            <option selected value="none">Select Image to Update</option>
                                             <option value="main_image_1">Main Image 1</option>
                                             <option value="main_image_2">Main Image 2</option>
                                             <option value="main_image_3">Main Image 3</option>
@@ -1113,6 +1113,12 @@ if(!$this->session->userdata('id')) {
                                     </div>
                                 </div>
                                 <div class="form-group">
+                                    <label for="" class="col-sm-2 control-label">FAQ Main Heading </label>
+                                    <div class="col-sm-9">
+                                        <input type="text" name="faq_main_header" class="form-control" value="<?php echo $page_faq['faq_main_header']; ?>">
+                                    </div>
+                                </div>
+                                <div class="form-group">
                                     <label for="" class="col-sm-2 control-label">Meta Title </label>
                                     <div class="col-sm-9">
                                         <input type="text" name="mt_faq" class="form-control" value="<?php echo $page_faq['mt_faq']; ?>">
@@ -1137,6 +1143,94 @@ if(!$this->session->userdata('id')) {
                                     </div>
                                 </div>                              
                             <?php echo form_close(); ?>
+                            
+
+
+
+
+
+
+
+
+                            <div class="form-horizontal">
+                                <h3 class="sec_title">Faq Images Section</h3>
+                                <div class="row">
+
+                                    <div class="col-sm-3">
+                                        <select name="select" id="faq_select_image" class="form-control">
+                                            <option selected value="no">Select Image to Update</option>
+                                            <option value="faq_main_image">Faq Main Image </option>
+                                            <option value="faq_main_shape">Faq Main Shape</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="col-sm-4">
+                                        <div class="row" id="show_faq_main_shape" style="display: none;">
+                                            <div class="col-sm-12">
+                                                <p>Current Shape</p>
+                                                <img src="<?php echo base_url(); ?>assets/site/img/about/<?php echo $page_faq['faq_main_shape']; ?>" alt="image" width="220px">
+                                            </div>
+                                            <div class="col-sm-12">
+                                                <?php echo form_open_multipart(base_url().'admin/page/update_image',array('class' => 'form-horizontal')); ?>
+                                                    <input type="hidden" name="active_image" value="<?php echo $page_faq['faq_main_shape']; ?>">
+                                                    <input type="hidden" name="column_name" value="id">
+                                                    <input type="hidden" name="caller_value" value="<?php echo $page_faq['id']; ?>">
+                                                    <input type="hidden" name="column_to_insert" value="faq_main_shape">
+                                                    <input type="hidden" name="table_name" value="tbl_page_faq">
+                                                    <input type="hidden" name="image_path" value="./assets/site/img/about/">
+                                                    <div class="form-group">
+                                                        <div class="col-sm-9">
+                                                            <input type="file" name="userfile" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <div class="col-sm-9">
+                                                            <button type="submit" class="btn btn-primary"> Update </button>
+                                                        </div>
+                                                    </div>
+                                                <?php echo form_close(); ?>
+                                            </div>
+                                        </div>
+                                        <div class="row" id="show_faq_main_image" style="display: none;">
+                                            <div class="col-sm-12">
+                                                <p>Current Image</p>
+                                                <img src="<?php echo base_url(); ?>assets/site/img/about/<?php echo $page_faq['faq_main_image']; ?>" alt="image" width="220px">
+                                            </div>
+                                            <div class="col-sm-12">
+                                                <?php echo form_open_multipart(base_url().'admin/page/update_image',array('class' => 'form-horizontal')); ?>
+                                                    <input type="hidden" name="active_image" value="<?php echo $page_faq['faq_main_image']; ?>">
+                                                    <input type="hidden" name="column_name" value="id">
+                                                    <input type="hidden" name="caller_value" value="<?php echo $page_faq['id']; ?>">
+                                                    <input type="hidden" name="column_to_insert" value="faq_main_image">
+                                                    <input type="hidden" name="table_name" value="tbl_page_faq">
+                                                    <input type="hidden" name="image_path" value="./assets/site/img/about/">
+                                                    <div class="form-group">
+                                                        <div class="col-sm-9">
+                                                            <input type="file" name="userfile" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <div class="col-sm-9">
+                                                            <button type="submit" class="btn btn-primary"> Update </button>
+                                                        </div>
+                                                    </div>
+                                                <?php echo form_close(); ?>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="col-sm-5">
+                                        <div class="row">
+                                            <tr>
+                                                <td><img src="<?php echo base_url(); ?>assets/site/img/about/<?php echo $page_faq['faq_main_shape']; ?>" alt="image" width="100px"></td>
+                                                <td><img src="<?php echo base_url(); ?>assets/site/img/about/<?php echo $page_faq['faq_main_image']; ?>" alt="image" width="100px"></td>
+                                            </tr>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
                         </div>
 
 
@@ -1692,6 +1786,25 @@ if(!$this->session->userdata('id')) {
             show_sub_image_1.style.display = "none";
             show_sub_image_2.style.display = "none";
             show_sub_image_animated.style.display = "none";
+        }
+    }
+
+    var faq_select = document.getElementById('faq_select_image');
+    var show_faq_main_image = document.getElementById('show_faq_main_image');
+    var show_faq_main_shape = document.getElementById('show_faq_main_shape');
+
+    faq_select.onchange = function(){
+        var myVar = this.value;
+
+        if(myVar == "faq_main_image"){
+            show_faq_main_image.style.display = "unset";
+            show_faq_main_shape.style.display = "none";
+        }else if(myVar == "faq_main_shape"){
+            show_faq_main_image.style.display = "none";
+            show_faq_main_shape.style.display = "unset";
+        }else{
+            show_faq_main_image.style.display = "none";
+            show_faq_main_shape.style.display = "none";
         }
     }
 

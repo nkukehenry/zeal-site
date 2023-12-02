@@ -19,7 +19,7 @@
 <div class="row gx-5 align-items-center">
 <div class="col-lg-6">
 <div class="faq-img">
-<img src="<?php echo base_url(); ?>assets/site/img/about/<?php echo $page_content['faq_main_image_shape']; ?>" alt="Image" class="faq-shape-one ">
+<img src="<?php echo base_url(); ?>assets/site/img/about/<?php echo $page_content['faq_main_shape']; ?>" alt="Image" class="faq-shape-one ">
 <img src="<?php echo base_url(); ?>assets/site/img/about/<?php echo $page_content['faq_main_image']; ?>" alt="Image" class="moveHorizontal">
 </div>
 </div>

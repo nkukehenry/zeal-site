@@ -23,7 +23,7 @@ class Faq extends CI_Controller {
 		$data['portfolio_footer'] = $this->Model_portfolio->get_portfolio_data();
 
 		$data['faqs'] = $this->Db->multi_rows_data('tbl_faq'); // multi rows data
-		$data['page_content'] = $this->Db->single_row_data('tbl_faq_page_content'); // Single row data
+		$data['page_content'] = $this->Db->single_row_data('tbl_page_faq'); // Single row data
 
 		$this->load->view('view_header',$data);
 		$this->load->view('view_faq',$data);
