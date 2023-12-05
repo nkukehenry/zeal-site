@@ -73,4 +73,10 @@ class Model_news extends CI_Model
         $query = $this->db->query($sql,array($cat_id));
         return $query->first_row('array');
     }
+
+    // Leave a comment
+    public function leave_comment($table_name, $data){
+        $this->db->insert($table_name, $data);
+        return true;
+    }
 }

@@ -82,7 +82,7 @@ class Contact extends CI_Controller {
 
 				$this->email->send();
 
-		        $success = 'Thank you for sending the email. We will contact you shortly.';
+		        $success = 'Thank you for contacting us. We will get back to you shortly.';
         		$this->session->set_flashdata('success',$success);
 
 		    } 

@@ -74,7 +74,7 @@ class News extends CI_Controller {
 		$data['setting'] = $this->Model_common->all_setting();
 		$data['page_home'] = $this->Model_common->all_page_home();
 		$data['page_news'] = $this->Model_common->all_page_news();
-		$data['comment'] = $this->Model_common->all_comment();
+		$data['comment'] = $this->Model_common->all_comment_by_news_id($id);
 		$data['social'] = $this->Model_common->all_social();
 		$data['all_news'] = $this->Model_common->all_news();
 		$data['all_categories'] = $this->Model_common->all_categories();
@@ -97,5 +97,21 @@ class News extends CI_Controller {
 		$this->load->view('view_news_detail',$data);
 		$this->load->view('view_footer',$data);
 
+	}
+
+	// Leave a comment
+	public function leave_comment($news_id){
+        $this->load->model('Model_news');
+		$news_id = $this->input->post('news_id');
+		$data = array(
+			'client_name' => $this->input->post('client_name'),
+			'client_email' => $this->input->post('client_email'),
+			'client_website' => $this->input->post('client_website'),
+			'comment_body' => $this->input->post('comment_body'),
+			'client_image' => "avatar.png",
+			'news_id' => $this->input->post('news_id'),
+		);
+		$this->Model_news->leave_comment('tbl_comment', $data);
+		redirect('news/view/'.$news_id);
 	}
 }

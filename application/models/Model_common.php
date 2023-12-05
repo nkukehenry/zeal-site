@@ -87,7 +87,12 @@ class Model_common extends CI_Model
     public function all_comment()
     {
         $query = $this->db->query("SELECT * from tbl_comment WHERE id=1");
-        return $query->first_row('array');
+        return $query->result();
+    }
+    public function all_comment_by_news_id($id)
+    {
+        $query = $this->db->query("SELECT * from tbl_comment WHERE news_id=$id");
+        return $query->result();
     }
     public function all_social()
     {
