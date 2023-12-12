@@ -79,4 +79,10 @@ class Model_news extends CI_Model
         $this->db->insert($table_name, $data);
         return true;
     }
+
+    public function comment_category($id)
+    {
+        $query = $this->db->query("SELECT * FROM tbl_category WHERE category_id=$id");
+        return $query->row_array();
+    }
 }

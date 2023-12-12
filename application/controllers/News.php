@@ -78,6 +78,7 @@ class News extends CI_Controller {
 		$data['social'] = $this->Model_common->all_social();
 		$data['all_news'] = $this->Model_common->all_news();
 		$data['all_categories'] = $this->Model_common->all_categories();
+		$data['comment_category'] = $this->Model_news->comment_category($id);
 
 		// $data['news'] = $this->Model_news->all_news();
 

@@ -100,8 +100,8 @@
 
 <script src="<?php echo base_url(); ?>assets/site/js/jquery.min.js"></script>
 <script src="<?php echo base_url(); ?>assets/site/js/bootstrap.bundle.min.js"></script>
-<script src="<?php echo base_url(); ?>assets/site/js/form-validator.min.js"></script>
-<script src="<?php echo base_url(); ?>assets/site/js/contact-form-script.js"></script>
+<!-- <script src="<?php echo base_url(); ?>assets/site/js/form-validator.min.js"></script> -->
+<!-- <script src="<?php echo base_url(); ?>assets/site/js/contact-form-script.js"></script> -->
 <script src="<?php echo base_url(); ?>assets/site/js/aos.js"></script>
 <script src="<?php echo base_url(); ?>assets/site/js/owl.carousel.min.js"></script>
 <script src="<?php echo base_url(); ?>assets/site/js/odometer.min.js"></script>

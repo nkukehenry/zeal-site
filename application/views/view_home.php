@@ -14,15 +14,26 @@
   border-radius: 0;
 }
 
+  .append-text{
+    color: #020768;
+  }
+
+  @media (max-width: 768px) {
+  /* Text color for mobile screens */
+  .append-text {
+    color: #e19507;
+  }
+}
+
 </style>
 
 
-<div class="preloader advert" style="background-image:url(<?php echo base_url('assets/site/img/advert/').$advert_content['ad_background_image']; ?>); background-size: cover;">
+<div class="preloader advert" style="background: linear-gradient(to right, #020768 24%, #ff00009b 70%, transparent 100%), url(<?php echo base_url('assets/site/img/advert/').$advert_content['ad_background_image']; ?>); background-size: cover;">
 
 
     <h2 class="mb-30 text-center">
-        <span class="text-main"> <?php echo $advert_content['ad_header']; ?> </span>
-        <span class="text-alt"> <?php echo $advert_content['ad_header_append']; ?> </span>
+        <span class="text text-white"> <?php echo $advert_content['ad_header']; ?> </span>
+        <span class="text-alt append-text"> <?php echo $advert_content['ad_header_append']; ?> </span>
     </h2>
 
 
@@ -32,7 +43,7 @@
 </div>
 
 
-<section class="hero-wrap style2"  style="background-image:url(<?php echo base_url('assets/site/img/banner.webp'); ?>); background-size:cover; background-repeat:no-repeat;">
+<section class="hero-wrap style2"  style="background-image:url(<?php echo base_url('assets/site/img/banner.png'); ?>); background-size:cover; background-repeat:no-repeat;">
 <div class="container">
 <div class="hero-shape" data-speed="0.06" data-revert="true">
 <img src="<?php echo base_url(); ?>assets/site/img/hero/hero-shape-4.png"  class="hero-shape-one">
@@ -45,10 +56,10 @@
 <div class="hero-content">
 <span data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200" class="text-white text-bold"><?php echo $currency_section_headers['top_header'];?></span>
 <h3 data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300" class="text-white"><?php echo $currency_section_headers['second_header'];?></h3>
-<p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400" class="text-main text-bold"><?php echo $currency_section_headers['third_header'];?></p>
+<p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400" class="text-bold text-danger"><?php echo $currency_section_headers['third_header'];?></p>
 
 <div class="hero-btn" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500">
-<a href="<?php echo base_url(); ?>contact" class="btn style1"><?php echo $currency_section_headers['contact_us_button_text'];?><i class="ri-arrow-right-s-line"></i></a>
+<a href="<?php echo base_url(); ?>contact" class="btn style1 bg-danger"><?php echo $currency_section_headers['contact_us_button_text'];?><i class="ri-arrow-right-s-line"></i></a>
 
 </div>
 

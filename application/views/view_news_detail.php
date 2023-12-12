@@ -22,7 +22,7 @@
 <article>
 <div class="post-img mt-0">
 <img src="<?php echo base_url(); ?>public/uploads/<?php echo $news_detail['photo']; ?>" alt="Image">
-<a href="posts-by-category.html" class="post-cat">Corporate</a>
+<a href="posts-by-category.html" class="post-cat"><?php echo $comment_category['category_name']; ?></a>
 </div>
 <ul class="post-metainfo  list-style">
 <li><i class="ri-calendar-event-line"></i><a href="posts-by-date.html"><?php echo $news_detail['news_date']; ?></a></li>

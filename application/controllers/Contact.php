@@ -41,34 +41,35 @@ class Contact extends CI_Controller {
 
 		if(isset($_POST['form_contact'])) {
 
-			$valid = 1;
+			// $valid = 1;
 
 			$this->form_validation->set_rules('name', 'Name', 'trim|required');
 			$this->form_validation->set_rules('phone', 'Phone', 'trim|required');
 			$this->form_validation->set_rules('email', 'Email Address', 'trim|required|valid_email');
 			$this->form_validation->set_rules('message', 'Message', 'trim|required');
+			$this->form_validation->set_rules('confirm', 'Human Confirmation', 'required');
 			$this->form_validation->set_error_delimiters('', '<br>');
 
 			if($this->form_validation->run() == FALSE) {
-				$valid = 0;
+				$valid  = 0;
                 $error .= validation_errors();
-            }
+            }else{
+
+			if($this->input->post('confirm') != 5){
+			  $error = "Your answer to the confirmation question was wrong";
+			  $valid = 0;
+			}
 
 		    if($valid == 1)
 		    {
-				$product="";
-
-				if(!empty($_POST['product']))
-		    		$product="<h5>Product: ".$_POST['product']."</h5>";
-
-				$msg = $product.'
-            		<h3>Sender Information</h3>
+				
+				$msg = '<h3>Sender Information</h3>
 					<b>Name: </b> '.$_POST['name'].'<br><br>
 					<b>Phone: </b> '.$_POST['phone'].'<br><br>
 					<b>Email: </b> '.$_POST['email'].'<br><br>
 					<b>Subject: </b> '.$_POST['subject'].'<br><br>
-					<b>Message: </b> '.$_POST['message'].'
-				';
+					<b>Message: </b> '.$_POST['message'];
+
             	$this->load->library('email');
 
 				$this->email->from($data['setting']['send_email_from']);
@@ -84,13 +85,12 @@ class Contact extends CI_Controller {
 
 		        $success = 'Thank you for contacting us. We will get back to you shortly.';
         		$this->session->set_flashdata('success',$success);
-
 		    } 
 		    else
 		    {
         		$this->session->set_flashdata('error',$error);
 		    }
-
+		}
 			redirect(base_url().'contact');
             
         } else {
